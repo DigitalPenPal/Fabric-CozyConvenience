@@ -14,6 +14,30 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        // Pillar Blocks
+        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
+
+        // Regular Blocks
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.WHITE_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIGHT_GRAY_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GRAY_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLACK_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BROWN_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RED_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ORANGE_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.YELLOW_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIME_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.GREEN_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CYAN_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LIGHT_BLUE_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BLUE_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MAGENTA_CONCRETE_TILES);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PINK_CONCRETE_TILES);
+
+        // Slab Blocks
         BlockStateModelGenerator.BlockTexturePool WhiteWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_WOOL);
         BlockStateModelGenerator.BlockTexturePool LightGrayWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_WOOL);
         BlockStateModelGenerator.BlockTexturePool GrayWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_WOOL);
@@ -47,10 +71,6 @@ public class ModModelProvider extends FabricModelProvider {
         PurpleWoolPool.slab(ModBlocks.PURPLE_WOOL_SLAB);
         MagentaWoolPool.slab(ModBlocks.MAGENTA_WOOL_SLAB);
         PinkWoolPool.slab(ModBlocks.PINK_WOOL_SLAB);
-
-        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
     }
 
     @Override

@@ -18,7 +18,24 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.STONE_COLUMN)
                 .add(ModBlocks.MOSSY_STONE_COLUMN)
-                .add(ModBlocks.CRACKED_STONE_COLUMN);
+                .add(ModBlocks.CRACKED_STONE_COLUMN)
+
+                .add(ModBlocks.WHITE_CONCRETE_TILES)
+                .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILES)
+                .add(ModBlocks.GRAY_CONCRETE_TILES)
+                .add(ModBlocks.BLACK_CONCRETE_TILES)
+                .add(ModBlocks.BROWN_CONCRETE_TILES)
+                .add(ModBlocks.RED_CONCRETE_TILES)
+                .add(ModBlocks.ORANGE_CONCRETE_TILES)
+                .add(ModBlocks.YELLOW_CONCRETE_TILES)
+                .add(ModBlocks.LIME_CONCRETE_TILES)
+                .add(ModBlocks.GREEN_CONCRETE_TILES)
+                .add(ModBlocks.CYAN_CONCRETE_TILES)
+                .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILES)
+                .add(ModBlocks.BLUE_CONCRETE_TILES)
+                .add(ModBlocks.PURPLE_CONCRETE_TILES)
+                .add(ModBlocks.MAGENTA_CONCRETE_TILES)
+                .add(ModBlocks.PINK_CONCRETE_TILES);
 
         getOrCreateTagBuilder(BlockTags.WOOL)
                 .add(ModBlocks.WHITE_WOOL_SLAB)

@@ -19,6 +19,24 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MOSSY_STONE_COLUMN);
         addDrop(ModBlocks.CRACKED_STONE_COLUMN);
 
+        // Regular Blocks
+        addDrop(ModBlocks.WHITE_CONCRETE_TILES);
+        addDrop(ModBlocks.LIGHT_GRAY_CONCRETE_TILES);
+        addDrop(ModBlocks.GRAY_CONCRETE_TILES);
+        addDrop(ModBlocks.BLACK_CONCRETE_TILES);
+        addDrop(ModBlocks.BROWN_CONCRETE_TILES);
+        addDrop(ModBlocks.RED_CONCRETE_TILES);
+        addDrop(ModBlocks.ORANGE_CONCRETE_TILES);
+        addDrop(ModBlocks.YELLOW_CONCRETE_TILES);
+        addDrop(ModBlocks.LIME_CONCRETE_TILES);
+        addDrop(ModBlocks.GREEN_CONCRETE_TILES);
+        addDrop(ModBlocks.CYAN_CONCRETE_TILES);
+        addDrop(ModBlocks.LIGHT_BLUE_CONCRETE_TILES);
+        addDrop(ModBlocks.BLUE_CONCRETE_TILES);
+        addDrop(ModBlocks.PURPLE_CONCRETE_TILES);
+        addDrop(ModBlocks.MAGENTA_CONCRETE_TILES);
+        addDrop(ModBlocks.PINK_CONCRETE_TILES);
+
         // Slab Blocks
         addDrop(ModBlocks.WHITE_WOOL_SLAB, slabDrops(ModBlocks.WHITE_WOOL_SLAB));
         addDrop(ModBlocks.LIGHT_GRAY_WOOL_SLAB, slabDrops(ModBlocks.LIGHT_GRAY_WOOL_SLAB));

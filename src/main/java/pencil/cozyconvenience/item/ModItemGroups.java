@@ -25,11 +25,28 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.STONE_COLUMN))
                     .displayName(Text.translatable("itemgroup.cozy-convenience.cozy_blocks"))
                     .entries((displayContext, entries) -> {
-
                         // Pillar Blocks
                         entries.add(ModBlocks.STONE_COLUMN);
                         entries.add(ModBlocks.MOSSY_STONE_COLUMN);
                         entries.add(ModBlocks.CRACKED_STONE_COLUMN);
+
+                        // Regular Blocks
+                        entries.add(ModBlocks.WHITE_CONCRETE_TILES);
+                        entries.add(ModBlocks.LIGHT_GRAY_CONCRETE_TILES);
+                        entries.add(ModBlocks.GRAY_CONCRETE_TILES);
+                        entries.add(ModBlocks.BLACK_CONCRETE_TILES);
+                        entries.add(ModBlocks.BROWN_CONCRETE_TILES);
+                        entries.add(ModBlocks.RED_CONCRETE_TILES);
+                        entries.add(ModBlocks.ORANGE_CONCRETE_TILES);
+                        entries.add(ModBlocks.YELLOW_CONCRETE_TILES);
+                        entries.add(ModBlocks.LIME_CONCRETE_TILES);
+                        entries.add(ModBlocks.GREEN_CONCRETE_TILES);
+                        entries.add(ModBlocks.CYAN_CONCRETE_TILES);
+                        entries.add(ModBlocks.LIGHT_BLUE_CONCRETE_TILES);
+                        entries.add(ModBlocks.BLUE_CONCRETE_TILES);
+                        entries.add(ModBlocks.PURPLE_CONCRETE_TILES);
+                        entries.add(ModBlocks.MAGENTA_CONCRETE_TILES);
+                        entries.add(ModBlocks.PINK_CONCRETE_TILES);
 
                         // Slab Blocks
                         entries.add(ModBlocks.WHITE_WOOL_SLAB);
