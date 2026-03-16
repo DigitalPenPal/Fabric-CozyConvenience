@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column_horizontal",
-  "textures": {
-    "end": "cozy-convenience:block/stone_column_end_mossy",
-    "side": "cozy-convenience:block/stone_column_mossy"
-  }
-}

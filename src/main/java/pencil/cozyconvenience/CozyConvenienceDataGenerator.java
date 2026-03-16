@@ -1,8 +1,8 @@
-package pencil.cozyconvene;
+package pencil.cozyconvenience;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import pencil.cozyconvene.datagen.*;
+import pencil.cozyconvenience.datagen.*;
 
 public class CozyConvenienceDataGenerator implements DataGeneratorEntrypoint {
 	@Override

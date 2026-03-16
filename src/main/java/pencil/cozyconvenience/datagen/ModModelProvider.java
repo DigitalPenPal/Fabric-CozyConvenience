@@ -1,11 +1,11 @@
-package pencil.cozyconvene.datagen;
+package pencil.cozyconvenience.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
-import pencil.cozyconvene.block.MoBlocks;
+import pencil.cozyconvenience.block.ModBlocks;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -31,37 +31,26 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool MagentaWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_WOOL);
         BlockStateModelGenerator.BlockTexturePool PinkWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_WOOL);
 
-        WhiteWoolPool.slab(MoBlocks.WHITE_WOOL_SLAB);
+        WhiteWoolPool.slab(ModBlocks.WHITE_WOOL_SLAB);
+        LightGrayWoolPool.slab(ModBlocks.LIGHT_GRAY_WOOL_SLAB);
+        GrayWoolPool.slab(ModBlocks.GRAY_WOOL_SLAB);
+        BlackWoolPool.slab(ModBlocks.BLACK_WOOL_SLAB);
+        BrownWoolPool.slab(ModBlocks.BROWN_WOOL_SLAB);
+        RedWoolPool.slab(ModBlocks.RED_WOOL_SLAB);
+        OrangeWoolPool.slab(ModBlocks.ORANGE_WOOL_SLAB);
+        YellowWoolPool.slab(ModBlocks.YELLOW_WOOL_SLAB);
+        LimeWoolPool.slab(ModBlocks.LIME_WOOL_SLAB);
+        GreenWoolPool.slab(ModBlocks.GREEN_WOOL_SLAB);
+        CyanWoolPool.slab(ModBlocks.CYAN_WOOL_SLAB);
+        LightBlueWoolPool.slab(ModBlocks.LIGHT_BLUE_WOOL_SLAB);
+        BlueWoolPool.slab(ModBlocks.BLUE_WOOL_SLAB);
+        PurpleWoolPool.slab(ModBlocks.PURPLE_WOOL_SLAB);
+        MagentaWoolPool.slab(ModBlocks.MAGENTA_WOOL_SLAB);
+        PinkWoolPool.slab(ModBlocks.PINK_WOOL_SLAB);
 
-        LightGrayWoolPool.slab(MoBlocks.LIGHT_GRAY_WOOL_SLAB);
-
-        GrayWoolPool.slab(MoBlocks.GRAY_WOOL_SLAB);
-
-        BlackWoolPool.slab(MoBlocks.BLACK_WOOL_SLAB);
-
-        BrownWoolPool.slab(MoBlocks.BROWN_WOOL_SLAB);
-
-        RedWoolPool.slab(MoBlocks.RED_WOOL_SLAB);
-
-        OrangeWoolPool.slab(MoBlocks.ORANGE_WOOL_SLAB);
-
-        YellowWoolPool.slab(MoBlocks.YELLOW_WOOL_SLAB);
-
-        LimeWoolPool.slab(MoBlocks.LIME_WOOL_SLAB);
-
-        GreenWoolPool.slab(MoBlocks.GREEN_WOOL_SLAB);
-
-        CyanWoolPool.slab(MoBlocks.CYAN_WOOL_SLAB);
-
-        LightBlueWoolPool.slab(MoBlocks.LIGHT_BLUE_WOOL_SLAB);
-
-        BlueWoolPool.slab(MoBlocks.BLUE_WOOL_SLAB);
-
-        PurpleWoolPool.slab(MoBlocks.PURPLE_WOOL_SLAB);
-
-        MagentaWoolPool.slab(MoBlocks.MAGENTA_WOOL_SLAB);
-
-        PinkWoolPool.slab(MoBlocks.PINK_WOOL_SLAB);
+        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
     }
 
     @Override
