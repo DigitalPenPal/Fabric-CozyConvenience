@@ -4,5 +4,22 @@
 
   "block.cozy-convenience.stone_column": "Stone Column",
   "block.cozy-convenience.stone_column_cracked": "Cracked Stone Column",
-  "block.cozy-convenience.stone_column_mossy": "Mossy Stone Column"
+  "block.cozy-convenience.stone_column_mossy": "Mossy Stone Column",
+
+  "block.cozy-convenience.white_wool_slab": "White Wool Slab",
+  "block.cozy-convenience.light_gray_wool_slab": "Light Gray Wool Slab",
+  "block.cozy-convenience.gray_wool_slab": "Gray Wool Slab",
+  "block.cozy-convenience.black_wool_slab": "Black Wool Slab",
+  "block.cozy-convenience.brown_wool_slab": "Brown Wool Slab",
+  "block.cozy-convenience.red_wool_slab": "Red Wool Slab",
+  "block.cozy-convenience.orange_wool_slab": "Orange Wool Slab",
+  "block.cozy-convenience.yellow_wool_slab": "Yellow Wool Slab",
+  "block.cozy-convenience.lime_wool_slab": "Lime Wool Slab",
+  "block.cozy-convenience.green_wool_slab": "Green Wool Slab",
+  "block.cozy-convenience.cyan_wool_slab": "Cyan Wool Slab",
+  "block.cozy-convenience.light_blue_wool_slab": "Light Blue Wool Slab",
+  "block.cozy-convenience.blue_wool_slab": "Blue Wool Slab",
+  "block.cozy-convenience.purple_wool_slab": "Purple Wool Slab",
+  "block.cozy-convenience.magenta_wool_slab": "Magenta Wool Slab",
+  "block.cozy-convenience.pink_wool_slab": "Pink Wool Slab"
 }

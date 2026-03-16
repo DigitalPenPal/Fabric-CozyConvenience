@@ -31,6 +31,23 @@ public class MoTabGroups {
                         entries.add(MoBlocks.STONE_COLUMN);
                         entries.add(MoBlocks.STONE_COLUMN_CRACKED);
                         entries.add(MoBlocks.STONE_COLUMN_MOSSY);
+
+                        entries.add(MoBlocks.WHITE_WOOL_SLAB);
+                        entries.add(MoBlocks.LIGHT_GRAY_WOOL_SLAB);
+                        entries.add(MoBlocks.GRAY_WOOL_SLAB);
+                        entries.add(MoBlocks.BLACK_WOOL_SLAB);
+                        entries.add(MoBlocks.BROWN_WOOL_SLAB);
+                        entries.add(MoBlocks.RED_WOOL_SLAB);
+                        entries.add(MoBlocks.ORANGE_WOOL_SLAB);
+                        entries.add(MoBlocks.YELLOW_WOOL_SLAB);
+                        entries.add(MoBlocks.LIME_WOOL_SLAB);
+                        entries.add(MoBlocks.GREEN_WOOL_SLAB);
+                        entries.add(MoBlocks.CYAN_WOOL_SLAB);
+                        entries.add(MoBlocks.LIGHT_BLUE_WOOL_SLAB);
+                        entries.add(MoBlocks.BLUE_WOOL_SLAB);
+                        entries.add(MoBlocks.PURPLE_WOOL_SLAB);
+                        entries.add(MoBlocks.MAGENTA_WOOL_SLAB);
+                        entries.add(MoBlocks.PINK_WOOL_SLAB);
                     }).build());
 
 
