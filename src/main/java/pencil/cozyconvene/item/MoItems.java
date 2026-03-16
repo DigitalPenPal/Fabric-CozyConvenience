@@ -1,4 +1,4 @@
-package pencil.cozyconven.item;
+package pencil.cozyconvene.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -6,7 +6,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import pencil.cozyconven.CozyConvenience;
+import pencil.cozyconvene.CozyConvenience;
 
 public class MoItems {
 

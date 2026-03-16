@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "cozy-convenience:block/stone_column_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cozy-convenience:block/stone_column"
+    },
+    "axis=z": {
+      "model": "cozy-convenience:block/stone_column_horizontal",
+      "x": 90
+    }
+  }
+}

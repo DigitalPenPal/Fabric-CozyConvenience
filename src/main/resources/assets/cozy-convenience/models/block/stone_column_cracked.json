@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "cozy-convenience:block/stone_column_end_cracked",
+    "side": "cozy-convenience:block/stone_column_cracked"
+  }
+}

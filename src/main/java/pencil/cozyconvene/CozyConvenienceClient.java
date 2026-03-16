@@ -1,4 +1,4 @@
-package pencil.cozyconven;
+package pencil.cozyconvene;
 
 import net.fabricmc.api.ClientModInitializer;
 

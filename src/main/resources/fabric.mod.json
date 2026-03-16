@@ -5,24 +5,24 @@
 	"name": "Cozy Convenience",
 	"description": "Grab a seat, cuz we got lots of stuff, from blocks to plants to decor your world !",
 	"authors": [
-		"A pencil pal!"
+		"A pencil pal !"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "MIT",
-	"icon": "assets/cozy-convenience/icon.png",
+	"icon": "assets/cozyconvene/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"pencil.cozyconven.CozyConvenience"
+			"pencil.cozyconvene.CozyConvenience"
 		],
 		"fabric-datagen": [
-			"pencil.cozyconven.CozyConvenienceDataGenerator"
+			"pencil.cozyconvene.CozyConvenienceDataGenerator"
 		],
 		"client": [
-			"pencil.cozyconven.CozyConvenienceClient"
+			"pencil.cozyconvene.CozyConvenienceClient"
 		]
 	},
 	"mixins": [

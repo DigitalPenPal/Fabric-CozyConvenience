@@ -1,11 +1,12 @@
-package pencil.cozyconven;
+package pencil.cozyconvene;
 
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pencil.cozyconven.item.MoItems;
-import pencil.cozyconven.item.MoTabGroups;
+import pencil.cozyconvene.block.MoBlocks;
+import pencil.cozyconvene.item.MoItems;
+import pencil.cozyconvene.item.MoTabGroups;
 
 public class CozyConvenience implements ModInitializer {
 
@@ -17,6 +18,8 @@ public class CozyConvenience implements ModInitializer {
 
 		MoItems.registerMoItems();
 		MoTabGroups.registerTabGroups();
+		MoBlocks.registerMoBlocks();
+
 		LOGGER.info("Hello Fabric world!");
 	}
 }

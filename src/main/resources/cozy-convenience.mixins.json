@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "pencil.cozyconven.mixin",
+	"package": "pencil.cozyconvene.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin"
