@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
@@ -20,6 +21,55 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
+        // Concrete Blocks ** NOTE: Must add concrete variant recipes.
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_CONCRETE_TILES, Blocks.WHITE_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_CONCRETE_TILES, Blocks.WHITE_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_CONCRETE_TILES, Blocks.LIGHT_GRAY_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_CONCRETE_TILES, Blocks.LIGHT_GRAY_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_CONCRETE_TILES, Blocks.GRAY_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_CONCRETE_TILES, Blocks.GRAY_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_CONCRETE_TILES, Blocks.BLACK_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_CONCRETE_TILES, Blocks.BLACK_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BROWN_CONCRETE_TILES, Blocks.BROWN_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BROWN_CONCRETE_TILES, Blocks.BROWN_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CONCRETE_TILES, Blocks.RED_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CONCRETE_TILES, Blocks.RED_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_CONCRETE_TILES, Blocks.ORANGE_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_CONCRETE_TILES, Blocks.ORANGE_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_CONCRETE_TILES, Blocks.YELLOW_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_CONCRETE_TILES, Blocks.YELLOW_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_CONCRETE_TILES, Blocks.LIME_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_CONCRETE_TILES, Blocks.LIME_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_CONCRETE_TILES, Blocks.GREEN_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_CONCRETE_TILES, Blocks.GREEN_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_CONCRETE_TILES, Blocks.CYAN_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_CONCRETE_TILES, Blocks.CYAN_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_CONCRETE_TILES, Blocks.LIGHT_BLUE_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_CONCRETE_TILES, Blocks.LIGHT_BLUE_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CONCRETE_TILES, Blocks.BLUE_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CONCRETE_TILES, Blocks.BLUE_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_CONCRETE_TILES, Blocks.PURPLE_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_CONCRETE_TILES, Blocks.PURPLE_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_CONCRETE_TILES, Blocks.MAGENTA_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_CONCRETE_TILES, Blocks.MAGENTA_CONCRETE);
+
+        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_CONCRETE_TILES, Blocks.PINK_CONCRETE);
+        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_CONCRETE_TILES, Blocks.PINK_CONCRETE);
+
         // Pillar Blocks
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.STONE_COLUMN, 2)
                 .pattern("#")
@@ -35,41 +85,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STONE_COLUMN, Blocks.STONE);
         offerCrackingRecipe(recipeExporter, ModBlocks.CRACKED_STONE_COLUMN, ModBlocks.STONE_COLUMN);
 
-        // Regular Blocks
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_CONCRETE_TILES, Blocks.WHITE_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_CONCRETE_TILES, Blocks.WHITE_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_CONCRETE_TILES, Blocks.LIGHT_GRAY_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_CONCRETE_TILES, Blocks.LIGHT_GRAY_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_CONCRETE_TILES, Blocks.GRAY_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_CONCRETE_TILES, Blocks.GRAY_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_CONCRETE_TILES, Blocks.BLACK_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLACK_CONCRETE_TILES, Blocks.BLACK_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BROWN_CONCRETE_TILES, Blocks.BROWN_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BROWN_CONCRETE_TILES, Blocks.BROWN_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CONCRETE_TILES, Blocks.RED_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RED_CONCRETE_TILES, Blocks.RED_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_CONCRETE_TILES, Blocks.ORANGE_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ORANGE_CONCRETE_TILES, Blocks.ORANGE_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_CONCRETE_TILES, Blocks.YELLOW_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.YELLOW_CONCRETE_TILES, Blocks.YELLOW_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_CONCRETE_TILES, Blocks.LIME_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIME_CONCRETE_TILES, Blocks.LIME_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_CONCRETE_TILES, Blocks.GREEN_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_CONCRETE_TILES, Blocks.GREEN_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_CONCRETE_TILES, Blocks.CYAN_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CYAN_CONCRETE_TILES, Blocks.CYAN_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_CONCRETE_TILES, Blocks.LIGHT_BLUE_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_BLUE_CONCRETE_TILES, Blocks.LIGHT_BLUE_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CONCRETE_TILES, Blocks.BLUE_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.BLUE_CONCRETE_TILES, Blocks.BLUE_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_CONCRETE_TILES, Blocks.PURPLE_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PURPLE_CONCRETE_TILES, Blocks.PURPLE_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_CONCRETE_TILES, Blocks.MAGENTA_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MAGENTA_CONCRETE_TILES, Blocks.MAGENTA_CONCRETE);
-        offer2x2CompactingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_CONCRETE_TILES, Blocks.PINK_CONCRETE);
-        offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PINK_CONCRETE_TILES, Blocks.PINK_CONCRETE);
-
-        // Slab Blocks
+        // Wool Blocks
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_WOOL_SLAB, Blocks.WHITE_WOOL);
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_WOOL_SLAB, Blocks.LIGHT_GRAY_WOOL);
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_WOOL_SLAB, Blocks.GRAY_WOOL);
