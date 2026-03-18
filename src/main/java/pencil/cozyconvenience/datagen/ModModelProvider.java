@@ -14,6 +14,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        // Pillar Blocks
+        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
+        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
+
         // Concrete Blocks
         BlockStateModelGenerator.BlockTexturePool WhiteConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_CONCRETE);
         BlockStateModelGenerator.BlockTexturePool LightGrayConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_CONCRETE);
@@ -144,11 +149,6 @@ public class ModModelProvider extends FabricModelProvider {
         PinkConcretePool.button(ModBlocks.PINK_CONCRETE_BUTTON);
         PinkConcretePool.wall(ModBlocks.PINK_CONCRETE_WALL);
 
-        // Pillar Blocks
-        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
-
         // Wool Blocks
         BlockStateModelGenerator.BlockTexturePool WhiteWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_WOOL);
         BlockStateModelGenerator.BlockTexturePool LightGrayWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_WOOL);
@@ -167,21 +167,52 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool MagentaWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_WOOL);
         BlockStateModelGenerator.BlockTexturePool PinkWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_WOOL);
 
+        WhiteWoolPool.stairs(ModBlocks.WHITE_WOOL_STAIRS);
         WhiteWoolPool.slab(ModBlocks.WHITE_WOOL_SLAB);
+
+        LightGrayWoolPool.stairs(ModBlocks.LIGHT_GRAY_WOOL_STAIRS);
         LightGrayWoolPool.slab(ModBlocks.LIGHT_GRAY_WOOL_SLAB);
+
+        GrayWoolPool.stairs(ModBlocks.GRAY_WOOL_STAIRS);
         GrayWoolPool.slab(ModBlocks.GRAY_WOOL_SLAB);
+
+        BlackWoolPool.stairs(ModBlocks.BLACK_WOOL_STAIRS);
         BlackWoolPool.slab(ModBlocks.BLACK_WOOL_SLAB);
+
+        BrownWoolPool.stairs(ModBlocks.BROWN_WOOL_STAIRS);
         BrownWoolPool.slab(ModBlocks.BROWN_WOOL_SLAB);
+
+        RedWoolPool.stairs(ModBlocks.RED_WOOL_STAIRS);
         RedWoolPool.slab(ModBlocks.RED_WOOL_SLAB);
+
+        OrangeWoolPool.stairs(ModBlocks.ORANGE_WOOL_STAIRS);
         OrangeWoolPool.slab(ModBlocks.ORANGE_WOOL_SLAB);
+
+        YellowWoolPool.stairs(ModBlocks.YELLOW_WOOL_STAIRS);
         YellowWoolPool.slab(ModBlocks.YELLOW_WOOL_SLAB);
+
+        LimeWoolPool.stairs(ModBlocks.LIME_WOOL_STAIRS);
         LimeWoolPool.slab(ModBlocks.LIME_WOOL_SLAB);
+
+        GreenWoolPool.stairs(ModBlocks.GREEN_WOOL_STAIRS);
         GreenWoolPool.slab(ModBlocks.GREEN_WOOL_SLAB);
+
+        CyanWoolPool.stairs(ModBlocks.CYAN_WOOL_STAIRS);
         CyanWoolPool.slab(ModBlocks.CYAN_WOOL_SLAB);
+
+        LightBlueWoolPool.stairs(ModBlocks.LIGHT_BLUE_WOOL_STAIRS);
         LightBlueWoolPool.slab(ModBlocks.LIGHT_BLUE_WOOL_SLAB);
+
+        BlueWoolPool.stairs(ModBlocks.BLUE_WOOL_STAIRS);
         BlueWoolPool.slab(ModBlocks.BLUE_WOOL_SLAB);
+
+        PurpleWoolPool.stairs(ModBlocks.PURPLE_WOOL_STAIRS);
         PurpleWoolPool.slab(ModBlocks.PURPLE_WOOL_SLAB);
+
+        MagentaWoolPool.stairs(ModBlocks.MAGENTA_WOOL_STAIRS);
         MagentaWoolPool.slab(ModBlocks.MAGENTA_WOOL_SLAB);
+
+        PinkWoolPool.stairs(ModBlocks.PINK_WOOL_STAIRS);
         PinkWoolPool.slab(ModBlocks.PINK_WOOL_SLAB);
     }
 

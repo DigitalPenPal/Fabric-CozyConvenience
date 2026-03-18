@@ -22,39 +22,101 @@ public class CozyConvenience implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		// Register Flammability
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WHITE_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.WHITE_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIGHT_GRAY_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GRAY_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GRAY_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLACK_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLACK_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BROWN_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BROWN_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.RED_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.RED_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ORANGE_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.ORANGE_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.YELLOW_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.YELLOW_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIME_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIME_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GREEN_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.GREEN_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CYAN_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.CYAN_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.LIGHT_BLUE_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BLUE_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.MAGENTA_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.MAGENTA_WOOL_SLAB,60, 30);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PINK_WOOL_STAIRS,60, 30);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PINK_WOOL_SLAB,60, 30);
 
 		// Register Fuels
+		FuelRegistry.INSTANCE.add(ModBlocks.WHITE_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.WHITE_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.LIGHT_GRAY_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.GRAY_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.GRAY_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.BLACK_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.BLACK_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.BROWN_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.BROWN_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.RED_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.RED_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.ORANGE_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.ORANGE_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.YELLOW_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.YELLOW_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.LIME_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.LIME_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.GREEN_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.GREEN_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.CYAN_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.CYAN_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.LIGHT_BLUE_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.BLUE_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.BLUE_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.PURPLE_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.PURPLE_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.MAGENTA_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.MAGENTA_WOOL_SLAB, 50);
+
+		FuelRegistry.INSTANCE.add(ModBlocks.PINK_WOOL_STAIRS, 50);
 		FuelRegistry.INSTANCE.add(ModBlocks.PINK_WOOL_SLAB, 50);
 	}
 }

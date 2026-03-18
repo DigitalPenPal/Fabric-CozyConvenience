@@ -25,6 +25,11 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.STONE_COLUMN))
                     .displayName(Text.translatable("itemgroup.cozy-convenience.cozy_blocks"))
                     .entries((displayContext, entries) -> {
+                        // Pillar Blocks
+                        entries.add(ModBlocks.STONE_COLUMN);
+                        entries.add(ModBlocks.MOSSY_STONE_COLUMN);
+                        entries.add(ModBlocks.CRACKED_STONE_COLUMN);
+
                         // Concrete Blocks
                         entries.add(ModBlocks.WHITE_CONCRETE_TILES);
                         entries.add(ModBlocks.WHITE_CONCRETE_STAIRS);
@@ -138,27 +143,53 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PINK_CONCRETE_BUTTON);
                         entries.add(ModBlocks.PINK_CONCRETE_WALL);
 
-                        // Pillar Blocks
-                        entries.add(ModBlocks.STONE_COLUMN);
-                        entries.add(ModBlocks.MOSSY_STONE_COLUMN);
-                        entries.add(ModBlocks.CRACKED_STONE_COLUMN);
-
                         // Wool Blocks
+                        entries.add(ModBlocks.WHITE_WOOL_STAIRS);
                         entries.add(ModBlocks.WHITE_WOOL_SLAB);
+
+                        entries.add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS);
                         entries.add(ModBlocks.LIGHT_GRAY_WOOL_SLAB);
+
+                        entries.add(ModBlocks.GRAY_WOOL_STAIRS);
                         entries.add(ModBlocks.GRAY_WOOL_SLAB);
+
+                        entries.add(ModBlocks.BLACK_WOOL_STAIRS);
                         entries.add(ModBlocks.BLACK_WOOL_SLAB);
+
+                        entries.add(ModBlocks.BROWN_WOOL_STAIRS);
                         entries.add(ModBlocks.BROWN_WOOL_SLAB);
+
+                        entries.add(ModBlocks.RED_WOOL_STAIRS);
                         entries.add(ModBlocks.RED_WOOL_SLAB);
+
+                        entries.add(ModBlocks.ORANGE_WOOL_STAIRS);
                         entries.add(ModBlocks.ORANGE_WOOL_SLAB);
+
+                        entries.add(ModBlocks.YELLOW_WOOL_STAIRS);
                         entries.add(ModBlocks.YELLOW_WOOL_SLAB);
+
+                        entries.add(ModBlocks.LIME_WOOL_STAIRS);
                         entries.add(ModBlocks.LIME_WOOL_SLAB);
+
+                        entries.add(ModBlocks.GREEN_WOOL_STAIRS);
                         entries.add(ModBlocks.GREEN_WOOL_SLAB);
+
+                        entries.add(ModBlocks.CYAN_WOOL_STAIRS);
                         entries.add(ModBlocks.CYAN_WOOL_SLAB);
+
+                        entries.add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS);
                         entries.add(ModBlocks.LIGHT_BLUE_WOOL_SLAB);
+
+                        entries.add(ModBlocks.BLUE_WOOL_STAIRS);
                         entries.add(ModBlocks.BLUE_WOOL_SLAB);
+
+                        entries.add(ModBlocks.PURPLE_WOOL_STAIRS);
                         entries.add(ModBlocks.PURPLE_WOOL_SLAB);
+
+                        entries.add(ModBlocks.MAGENTA_WOOL_STAIRS);
                         entries.add(ModBlocks.MAGENTA_WOOL_SLAB);
+
+                        entries.add(ModBlocks.PINK_WOOL_STAIRS);
                         entries.add(ModBlocks.PINK_WOOL_SLAB);
                     }).build());
 

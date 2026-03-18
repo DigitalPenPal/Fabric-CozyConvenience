@@ -85,7 +85,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STONE_COLUMN, Blocks.STONE);
         offerCrackingRecipe(recipeExporter, ModBlocks.CRACKED_STONE_COLUMN, ModBlocks.STONE_COLUMN);
 
-        // Wool Blocks
+        // Wool Blocks ** NOTE: Stair recipes still have not been added :3 I'm lazy
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.WHITE_WOOL_SLAB, Blocks.WHITE_WOOL);
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.LIGHT_GRAY_WOOL_SLAB, Blocks.LIGHT_GRAY_WOOL);
         offerSlabRecipe(recipeExporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRAY_WOOL_SLAB, Blocks.GRAY_WOOL);
