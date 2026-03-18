@@ -6,10 +6,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import pencil.cozyconvenience.CozyConvenience;
 
 public class ModBlocks {
+
+    public static final Block IRON_BAR_GATE = registerBlock("iron_bar_gate", new TrapdoorBlock(BlockSetType.COPPER, AbstractBlock.Settings.create().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL).nonOpaque()));
+
     // Pillar Blocks
     public static final Block STONE_COLUMN = registerBlock("stone_column", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)));
     public static final Block CRACKED_STONE_COLUMN = registerBlock("cracked_stone_column", new PillarBlock(AbstractBlock.Settings.copy(Blocks.STONE_BRICKS)));

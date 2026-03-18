@@ -30,6 +30,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MOSSY_STONE_COLUMN);
                         entries.add(ModBlocks.CRACKED_STONE_COLUMN);
 
+                        entries.add(ModBlocks.IRON_BAR_GATE);
+
                         // Concrete Blocks
                         entries.add(ModBlocks.WHITE_CONCRETE_TILES);
                         entries.add(ModBlocks.WHITE_CONCRETE_STAIRS);

@@ -19,6 +19,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.MOSSY_STONE_COLUMN);
         addDrop(ModBlocks.CRACKED_STONE_COLUMN);
 
+        addDrop(ModBlocks.IRON_BAR_GATE);
+
         // Concrete Blocks
         addDrop(ModBlocks.WHITE_CONCRETE_TILES);
         addDrop(ModBlocks.WHITE_CONCRETE_STAIRS);
