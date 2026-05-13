@@ -15,6 +15,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
+        getOrCreateTagBuilder ( BlockTags.SHOVEL_MINEABLE )
+
+                // "Dirt + Grass" Blocks
+                .add ( ModBlocks.GRASS_SLAB )
+                .add ( ModBlocks.DIRT_SLAB )
+                .add ( ModBlocks.COARSE_DIRT_SLAB )
+                .add ( ModBlocks.ROOTED_DIRT_SLAB )
+                .add ( ModBlocks.PODZOL_SLAB )
+                .add ( ModBlocks.MYCELIUM_SLAB );
+
+
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
             // Wood Blocks
             .add(ModBlocks.OAK_WALL)
@@ -140,6 +152,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             .add(ModBlocks.CRACKED_NETHER_BRICK_WALL)
             .add(ModBlocks.CRACKED_NETHER_BRICK_PRESSURE_PLATE)
             .add(ModBlocks.RED_NETHER_BRICK_PRESSURE_PLATE)
+
+            .add(ModBlocks.CRIMSON_NYLIUM_SLAB)
+            .add(ModBlocks.WARPED_NYLIUM_SLAB)
 
 
             // Basalt Blocks -- [ Here be Broken Blocks ]
@@ -868,5 +883,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PINK_WOOL_WALL)
                 .add(ModBlocks.PINK_WOOL_PRESSURE_PLATE)
                 .add(ModBlocks.PINK_WOOL_BUTTON);
+
+        getOrCreateTagBuilder(BlockTags.NYLIUM)
+                .add ( ModBlocks.CRIMSON_NYLIUM_SLAB )
+                .add ( ModBlocks.WARPED_NYLIUM_SLAB );
     }
 }

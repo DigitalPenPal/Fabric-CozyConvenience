@@ -17,6 +17,15 @@ public class ModModelProvider extends FabricModelProvider {
         // ++ Building Blocks Category ++
 
 
+        BlockStateModelGenerator.BlockTexturePool DirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.DIRT );
+        BlockStateModelGenerator.BlockTexturePool CoarseDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.COARSE_DIRT );
+        BlockStateModelGenerator.BlockTexturePool RootedDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.ROOTED_DIRT );
+
+        DirtPool.slab ( ModBlocks.DIRT_SLAB );
+        CoarseDirtPool.slab ( ModBlocks.COARSE_DIRT_SLAB );
+        RootedDirtPool.slab ( ModBlocks.ROOTED_DIRT_SLAB );
+
+
         // Wood Blocks
         BlockStateModelGenerator.BlockTexturePool OakPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.OAK_PLANKS);
         BlockStateModelGenerator.BlockTexturePool SprucePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.SPRUCE_PLANKS);

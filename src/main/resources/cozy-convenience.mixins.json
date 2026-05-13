@@ -3,7 +3,12 @@
 	"package": "pencil.cozyconvenience.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"NetherrackBlockMixin",
+		"MegaSpruceTreeTrunkPlacerMixin",
+		"PlantBlockMixin",
+		"AzaleaBlockMixin",
+		"ShovelItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

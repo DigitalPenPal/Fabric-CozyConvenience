@@ -9,9 +9,23 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import pencil.cozyconvenience.CozyConvenience;
+import pencil.cozyconvenience.block.custom.*;
 
 public class ModBlocks {
     // ++ Building Blocks Category ++
+
+
+    // "Dirt + Grass" Blocks
+    public static final Block GRASS_SLAB = registerBlock ( "grass_slab", new GrassSlabBlock ( AbstractBlock.Settings.copy ( Blocks.GRASS_BLOCK ) ) );
+    public static final Block DIRT_SLAB = registerBlock ( "dirt_slab", new SlabBlock ( AbstractBlock.Settings.copy ( Blocks.DIRT ) ) );
+    public static final Block DIRT_PATH_SLAB = registerBlock ( "dirt_path_slab", new DirtPathSlabBlock ( AbstractBlock.Settings.copy ( Blocks.DIRT_PATH ) ) );
+    public static final Block COARSE_DIRT_SLAB = registerBlock ( "coarse_dirt_slab", new SlabBlock ( AbstractBlock.Settings.copy ( Blocks.COARSE_DIRT ) ) );
+    public static final Block ROOTED_DIRT_SLAB = registerBlock ( "rooted_dirt_slab", new RootedDirtSlabBlock ( AbstractBlock.Settings.copy ( Blocks.ROOTED_DIRT ) ) );
+    public static final Block PODZOL_SLAB = registerBlock ( "podzol_slab", new PodzolSlabBlock ( AbstractBlock.Settings.copy ( Blocks.PODZOL ) ) );
+    public static final Block MYCELIUM_SLAB = registerBlock ( "mycelium_slab", new MyceliumSlabBlock ( AbstractBlock.Settings.copy ( Blocks.MYCELIUM ) ) );
+    public static final Block CRIMSON_NYLIUM_SLAB = registerBlock ( "crimson_nylium_slab", new NyliumSlabBlock ( AbstractBlock.Settings.copy ( Blocks.CRIMSON_NYLIUM ) ) );
+    public static final Block WARPED_NYLIUM_SLAB = registerBlock ( "warped_nylium_slab", new NyliumSlabBlock ( AbstractBlock.Settings.copy ( Blocks.WARPED_NYLIUM ) ) );
+
 
 
     // Wood Blocks
@@ -162,7 +176,7 @@ public class ModBlocks {
 
     // Netherrack Blocks
     public static final Block NETHERRACK_STAIRS = registerBlock("netherrack_stairs", new StairsBlock(Blocks.NETHERRACK.getDefaultState(), AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
-    public static final Block NETHERRACK_SLAB = registerBlock("netherrack_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
+    public static final Block NETHERRACK_SLAB = registerBlock("netherrack_slab", new NetherrackSlabBlock (AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
     public static final Block NETHERRACK_WALL = registerBlock("netherrack_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.NETHERRACK)));
     public static final Block NETHERRACK_PRESSURE_PLATE = registerBlock("netherrack_pressure_plate", new PressurePlateBlock(BlockSetType.STONE, AbstractBlock.Settings.copy(Blocks.NETHERRACK).solid().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block NETHERRACK_BUTTON = registerBlock("netherrack_button", new ButtonBlock(BlockSetType.STONE, 20, AbstractBlock.Settings.create().noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY)));

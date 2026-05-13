@@ -30,6 +30,16 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         // ++ Building Blocks Category ++
 
+                        // "Dirt + Grass" Blocks
+                        entries.add ( ModBlocks.GRASS_SLAB );
+                        entries.add ( ModBlocks.DIRT_SLAB );
+                        entries.add ( ModBlocks.DIRT_PATH_SLAB );
+                        entries.add ( ModBlocks.COARSE_DIRT_SLAB );
+                        entries.add ( ModBlocks.ROOTED_DIRT_SLAB );
+                        entries.add ( ModBlocks.PODZOL_SLAB );
+                        entries.add ( ModBlocks.MYCELIUM_SLAB );
+                        entries.add ( ModBlocks.CRIMSON_NYLIUM_SLAB );
+                        entries.add ( ModBlocks.WARPED_NYLIUM_SLAB );
 
                         // Wood Blocks
                         entries.add(ModBlocks.OAK_WALL);
@@ -732,287 +742,287 @@ public class ModItemGroups {
 
     // Registries
     public static void registerItemGroups() {
-        CozyConvenience.LOGGER.info("Registering Item Groups for " + CozyConvenience.MOD_ID);
+        CozyConvenience.LOGGER.info ( "Registering Item Groups for " + CozyConvenience.MOD_ID );
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
+        ItemGroupEvents.modifyEntriesEvent ( ItemGroups.BUILDING_BLOCKS ).register ( entries -> {
             // Pillar Blocks
-            entries.addAfter(Items.CHISELED_STONE_BRICKS,
+            entries.addAfter ( Items.CHISELED_STONE_BRICKS,
                     ModBlocks.STONE_COLUMN,
                     ModBlocks.CRACKED_STONE_COLUMN,
                     ModBlocks.MOSSY_STONE_COLUMN
             );
 
-            entries.addAfter(Items.IRON_BARS,
+            entries.addAfter ( Items.IRON_BARS,
                     ModBlocks.IRON_BAR_GATE
             );
 
-            entries.addAfter(Items.OAK_SLAB,
+            entries.addAfter ( Items.OAK_SLAB,
                     ModBlocks.OAK_WALL
             );
-            entries.addAfter(Items.SPRUCE_SLAB,
+            entries.addAfter ( Items.SPRUCE_SLAB,
                     ModBlocks.SPRUCE_WALL
             );
-            entries.addAfter(Items.BIRCH_SLAB,
+            entries.addAfter ( Items.BIRCH_SLAB,
                     ModBlocks.BIRCH_WALL
             );
-            entries.addAfter(Items.JUNGLE_SLAB,
+            entries.addAfter ( Items.JUNGLE_SLAB,
                     ModBlocks.JUNGLE_WALL
             );
-            entries.addAfter(Items.ACACIA_SLAB,
+            entries.addAfter ( Items.ACACIA_SLAB,
                     ModBlocks.ACACIA_WALL
             );
-            entries.addAfter(Items.DARK_OAK_SLAB,
+            entries.addAfter ( Items.DARK_OAK_SLAB,
                     ModBlocks.DARK_OAK_WALL
             );
-            entries.addAfter(Items.MANGROVE_SLAB,
+            entries.addAfter ( Items.MANGROVE_SLAB,
                     ModBlocks.MANGROVE_WALL
             );
-            entries.addAfter(Items.CHERRY_SLAB,
+            entries.addAfter ( Items.CHERRY_SLAB,
                     ModBlocks.CHERRY_WALL
             );
-            entries.addAfter(Items.BAMBOO_SLAB,
+            entries.addAfter ( Items.BAMBOO_SLAB,
                     ModBlocks.BAMBOO_WALL
             );
-            entries.addAfter(Items.BAMBOO_MOSAIC_SLAB,
+            entries.addAfter ( Items.BAMBOO_MOSAIC_SLAB,
                     ModBlocks.BAMBOO_MOSAIC_WALL
             );
-            entries.addAfter(Items.CRIMSON_SLAB,
+            entries.addAfter ( Items.CRIMSON_SLAB,
                     ModBlocks.CRIMSON_WALL
             );
-            entries.addAfter(Items.WARPED_SLAB,
+            entries.addAfter ( Items.WARPED_SLAB,
                     ModBlocks.WARPED_WALL
             );
-            entries.addAfter(Items.STONE_SLAB,
+            entries.addAfter ( Items.STONE_SLAB,
                     ModBlocks.STONE_WALL
             );
-            entries.addAfter(Items.COBBLESTONE_WALL,
+            entries.addAfter ( Items.COBBLESTONE_WALL,
                     ModBlocks.COBBLESTONE_PRESSURE_PLATE,
                     ModBlocks.COBBLESTONE_BUTTON
             );
-            entries.addAfter(Items.MOSSY_COBBLESTONE_WALL,
+            entries.addAfter ( Items.MOSSY_COBBLESTONE_WALL,
                     ModBlocks.MOSSY_COBBLESTONE_PRESSURE_PLATE,
                     ModBlocks.MOSSY_COBBLESTONE_BUTTON
             );
-            entries.addAfter(Items.SMOOTH_STONE_SLAB,
+            entries.addAfter ( Items.SMOOTH_STONE_SLAB,
                     ModBlocks.SMOOTH_STONE_STAIRS,
                     ModBlocks.SMOOTH_STONE_PRESSURE_PLATE,
                     ModBlocks.SMOOTH_STONE_BUTTON,
                     ModBlocks.SMOOTH_STONE_WALL
             );
-            entries.addAfter(Items.STONE_BRICK_WALL,
+            entries.addAfter ( Items.STONE_BRICK_WALL,
                     ModBlocks.STONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.STONE_BRICK_BUTTON
             );
-            entries.addAfter(Items.CRACKED_STONE_BRICKS,
+            entries.addAfter ( Items.CRACKED_STONE_BRICKS,
                     ModBlocks.CRACKED_STONE_BRICK_STAIRS,
                     ModBlocks.CRACKED_STONE_BRICK_SLAB,
                     ModBlocks.CRACKED_STONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.CRACKED_STONE_BRICK_BUTTON,
                     ModBlocks.CRACKED_STONE_BRICK_WALL
             );
-            entries.addAfter(Items.MOSSY_STONE_BRICK_WALL,
+            entries.addAfter ( Items.MOSSY_STONE_BRICK_WALL,
                     ModBlocks.MOSSY_STONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.MOSSY_STONE_BRICK_BUTTON
             );
-            entries.addAfter(Items.GRANITE_WALL,
+            entries.addAfter ( Items.GRANITE_WALL,
                     ModBlocks.GRANITE_PRESSURE_PLATE,
                     ModBlocks.GRANITE_BUTTON
             );
-            entries.addAfter(Items.POLISHED_GRANITE_SLAB,
+            entries.addAfter ( Items.POLISHED_GRANITE_SLAB,
                     ModBlocks.POLISHED_GRANITE_WALL,
                     ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE,
                     ModBlocks.POLISHED_GRANITE_BUTTON
             );
-            entries.addAfter(Items.DIORITE_WALL,
+            entries.addAfter ( Items.DIORITE_WALL,
                     ModBlocks.DIORITE_PRESSURE_PLATE,
                     ModBlocks.DIORITE_BUTTON
             );
-            entries.addAfter(Items.POLISHED_DIORITE_SLAB,
+            entries.addAfter ( Items.POLISHED_DIORITE_SLAB,
                     ModBlocks.POLISHED_DIORITE_WALL,
                     ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE,
                     ModBlocks.POLISHED_DIORITE_BUTTON
             );
-            entries.addAfter(Items.ANDESITE_WALL,
+            entries.addAfter ( Items.ANDESITE_WALL,
                     ModBlocks.ANDESITE_PRESSURE_PLATE,
                     ModBlocks.ANDESITE_BUTTON
             );
-            entries.addAfter(Items.POLISHED_ANDESITE_SLAB,
+            entries.addAfter ( Items.POLISHED_ANDESITE_SLAB,
                     ModBlocks.POLISHED_ANDESITE_WALL,
                     ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE,
                     ModBlocks.POLISHED_ANDESITE_BUTTON
             );
-            entries.addAfter(Items.DEEPSLATE,
+            entries.addAfter ( Items.DEEPSLATE,
                     ModBlocks.DEEPSLATE_STAIRS,
                     ModBlocks.DEEPSLATE_SLAB,
                     ModBlocks.DEEPSLATE_WALL,
                     ModBlocks.DEEPSLATE_PRESSURE_PLATE,
                     ModBlocks.DEEPSLATE_BUTTON
             );
-            entries.addAfter(Items.COBBLED_DEEPSLATE_WALL,
+            entries.addAfter ( Items.COBBLED_DEEPSLATE_WALL,
                     ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE,
                     ModBlocks.COBBLED_DEEPSLATE_BUTTON
             );
-            entries.addAfter(Items.POLISHED_DEEPSLATE_WALL,
+            entries.addAfter ( Items.POLISHED_DEEPSLATE_WALL,
                     ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE,
                     ModBlocks.POLISHED_DEEPSLATE_BUTTON
             );
-            entries.addAfter(Items.DEEPSLATE_BRICK_WALL,
+            entries.addAfter ( Items.DEEPSLATE_BRICK_WALL,
                     ModBlocks.DEEPSLATE_BRICK_PRESSURE_PLATE,
                     ModBlocks.DEEPSLATE_BRICK_BUTTON
             );
-            entries.addAfter(Items.CRACKED_DEEPSLATE_BRICKS,
+            entries.addAfter ( Items.CRACKED_DEEPSLATE_BRICKS,
                     ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS,
                     ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB,
                     ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL,
                     ModBlocks.CRACKED_DEEPSLATE_BRICK_PRESSURE_PLATE,
                     ModBlocks.CRACKED_DEEPSLATE_BRICK_BUTTON
             );
-            entries.addAfter(Items.DEEPSLATE_TILE_WALL,
+            entries.addAfter ( Items.DEEPSLATE_TILE_WALL,
                     ModBlocks.DEEPSLATE_TILE_PRESSURE_PLATE,
                     ModBlocks.DEEPSLATE_TILE_BUTTON
             );
-            entries.addAfter(Items.CRACKED_DEEPSLATE_TILES,
+            entries.addAfter ( Items.CRACKED_DEEPSLATE_TILES,
                     ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS,
                     ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB,
                     ModBlocks.CRACKED_DEEPSLATE_TILE_WALL,
                     ModBlocks.CRACKED_DEEPSLATE_TILE_PRESSURE_PLATE,
                     ModBlocks.CRACKED_DEEPSLATE_TILE_BUTTON
             );
-            entries.addAfter(Items.TUFF_WALL,
+            entries.addAfter ( Items.TUFF_WALL,
                     ModBlocks.TUFF_PRESSURE_PLATE,
                     ModBlocks.TUFF_BUTTON
             );
-            entries.addAfter(Items.POLISHED_TUFF_WALL,
+            entries.addAfter ( Items.POLISHED_TUFF_WALL,
                     ModBlocks.POLISHED_TUFF_PRESSURE_PLATE,
                     ModBlocks.POLISHED_TUFF_BUTTON
             );
-            entries.addAfter(Items.TUFF_BRICK_WALL,
+            entries.addAfter ( Items.TUFF_BRICK_WALL,
                     ModBlocks.TUFF_BRICK_PRESSURE_PLATE,
                     ModBlocks.TUFF_BRICK_BUTTON
             );
-            entries.addAfter(Items.BRICK_WALL,
+            entries.addAfter ( Items.BRICK_WALL,
                     ModBlocks.BRICK_PRESSURE_PLATE,
                     ModBlocks.BRICK_BUTTON
             );
-            entries.addAfter(Items.PACKED_MUD,
+            entries.addAfter ( Items.PACKED_MUD,
                     ModBlocks.PACKED_MUD_STAIRS,
                     ModBlocks.PACKED_MUD_SLAB,
                     ModBlocks.PACKED_MUD_WALL,
                     ModBlocks.PACKED_MUD_PRESSURE_PLATE,
                     ModBlocks.PACKED_MUD_BUTTON
             );
-            entries.addAfter(Items.MUD_BRICK_WALL,
+            entries.addAfter ( Items.MUD_BRICK_WALL,
                     ModBlocks.MUD_BRICK_PRESSURE_PLATE,
                     ModBlocks.MUD_BRICK_BUTTON
             );
-            entries.addAfter(Items.PRISMARINE_WALL,
+            entries.addAfter ( Items.PRISMARINE_WALL,
                     ModBlocks.PRISMARINE_PRESSURE_PLATE,
                     ModBlocks.PRISMARINE_BUTTON
             );
-            entries.addAfter(Items.PRISMARINE_BRICK_SLAB,
+            entries.addAfter ( Items.PRISMARINE_BRICK_SLAB,
                     ModBlocks.PRISMARINE_BRICK_WALL,
                     ModBlocks.PRISMARINE_BRICK_PRESSURE_PLATE,
                     ModBlocks.PRISMARINE_BRICK_BUTTON
             );
-            entries.addAfter(Items.DARK_PRISMARINE_SLAB,
+            entries.addAfter ( Items.DARK_PRISMARINE_SLAB,
                     ModBlocks.DARK_PRISMARINE_WALL,
                     ModBlocks.DARK_PRISMARINE_PRESSURE_PLATE,
                     ModBlocks.DARK_PRISMARINE_BUTTON
             );
-            entries.addAfter(Items.NETHERRACK,
+            entries.addAfter ( Items.NETHERRACK,
                     ModBlocks.NETHERRACK_STAIRS,
                     ModBlocks.NETHERRACK_SLAB,
                     ModBlocks.NETHERRACK_WALL,
                     ModBlocks.NETHERRACK_PRESSURE_PLATE,
                     ModBlocks.NETHERRACK_BUTTON
             );
-            entries.addAfter(Items.NETHER_BRICK_WALL,
+            entries.addAfter ( Items.NETHER_BRICK_WALL,
                     ModBlocks.NETHER_BRICK_PRESSURE_PLATE,
                     ModBlocks.NETHER_BRICK_BUTTON
             );
-            entries.addAfter(Items.CRACKED_NETHER_BRICKS,
+            entries.addAfter ( Items.CRACKED_NETHER_BRICKS,
                     ModBlocks.CRACKED_NETHER_BRICK_STAIRS,
                     ModBlocks.CRACKED_NETHER_BRICK_SLAB,
                     ModBlocks.CRACKED_NETHER_BRICK_WALL,
                     ModBlocks.CRACKED_NETHER_BRICK_PRESSURE_PLATE,
                     ModBlocks.CRACKED_NETHER_BRICK_BUTTON
             );
-            entries.addAfter(Items.RED_NETHER_BRICK_WALL,
+            entries.addAfter ( Items.RED_NETHER_BRICK_WALL,
                     ModBlocks.RED_NETHER_BRICK_PRESSURE_PLATE,
                     ModBlocks.RED_NETHER_BRICK_BUTTON
             );
-            entries.addAfter(Items.BLACKSTONE_WALL,
+            entries.addAfter ( Items.BLACKSTONE_WALL,
                     ModBlocks.BLACKSTONE_PRESSURE_PLATE,
                     ModBlocks.BLACKSTONE_BUTTON
             );
-            entries.addAfter(Items.GILDED_BLACKSTONE,
+            entries.addAfter ( Items.GILDED_BLACKSTONE,
                     ModBlocks.GILDED_BLACKSTONE_STAIRS,
                     ModBlocks.GILDED_BLACKSTONE_SLAB,
                     ModBlocks.GILDED_BLACKSTONE_WALL,
                     ModBlocks.GILDED_BLACKSTONE_PRESSURE_PLATE,
                     ModBlocks.GILDED_BLACKSTONE_BUTTON
             );
-            entries.addAfter(Items.POLISHED_BLACKSTONE_BRICK_WALL,
+            entries.addAfter ( Items.POLISHED_BLACKSTONE_BRICK_WALL,
                     ModBlocks.POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.POLISHED_BLACKSTONE_BRICK_BUTTON
             );
-            entries.addAfter(Items.CRACKED_POLISHED_BLACKSTONE_BRICKS,
+            entries.addAfter ( Items.CRACKED_POLISHED_BLACKSTONE_BRICKS,
                     ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS,
                     ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB,
                     ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL,
                     ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_BUTTON
             );
-            entries.addAfter(Items.END_STONE,
+            entries.addAfter ( Items.END_STONE,
                     ModBlocks.END_STONE_STAIRS,
                     ModBlocks.END_STONE_SLAB,
                     ModBlocks.END_STONE_WALL,
                     ModBlocks.END_STONE_PRESSURE_PLATE,
                     ModBlocks.END_STONE_BUTTON
             );
-            entries.addAfter(Items.END_STONE_BRICK_WALL,
+            entries.addAfter ( Items.END_STONE_BRICK_WALL,
                     ModBlocks.END_STONE_BRICK_PRESSURE_PLATE,
                     ModBlocks.END_STONE_BRICK_BUTTON
             );
-            entries.addAfter(Items.PURPUR_SLAB,
+            entries.addAfter ( Items.PURPUR_SLAB,
                     ModBlocks.PURPUR_WALL,
                     ModBlocks.PURPUR_PRESSURE_PLATE,
                     ModBlocks.PURPUR_BUTTON
             );
-            entries.addAfter(Items.IRON_BLOCK,
+            entries.addAfter ( Items.IRON_BLOCK,
                     ModBlocks.IRON_STAIRS,
                     ModBlocks.IRON_SLAB,
                     ModBlocks.IRON_WALL,
                     ModBlocks.IRON_BUTTON
             );
-            entries.addAfter(Items.GOLD_BLOCK,
+            entries.addAfter ( Items.GOLD_BLOCK,
                     ModBlocks.GOLD_STAIRS,
                     ModBlocks.GOLD_SLAB,
                     ModBlocks.GOLD_WALL,
                     ModBlocks.GOLD_BUTTON
             );
-            entries.addAfter(Items.EMERALD_BLOCK,
+            entries.addAfter ( Items.EMERALD_BLOCK,
                     ModBlocks.EMERALD_STAIRS,
                     ModBlocks.EMERALD_SLAB,
                     ModBlocks.EMERALD_WALL,
                     ModBlocks.EMERALD_PRESSURE_PLATE,
                     ModBlocks.EMERALD_BUTTON
             );
-            entries.addAfter(Items.LAPIS_BLOCK,
+            entries.addAfter ( Items.LAPIS_BLOCK,
                     ModBlocks.LAPIS_STAIRS,
                     ModBlocks.LAPIS_SLAB,
                     ModBlocks.LAPIS_WALL,
                     ModBlocks.LAPIS_PRESSURE_PLATE,
                     ModBlocks.LAPIS_BUTTON
             );
-            entries.addAfter(Items.DIAMOND_BLOCK,
+            entries.addAfter ( Items.DIAMOND_BLOCK,
                     ModBlocks.DIAMOND_STAIRS,
                     ModBlocks.DIAMOND_SLAB,
                     ModBlocks.DIAMOND_WALL,
                     ModBlocks.DIAMOND_PRESSURE_PLATE,
                     ModBlocks.DIAMOND_BUTTON
             );
-            entries.addAfter(Items.NETHERITE_BLOCK,
+            entries.addAfter ( Items.NETHERITE_BLOCK,
                     ModBlocks.NETHERITE_STAIRS,
                     ModBlocks.NETHERITE_SLAB,
                     ModBlocks.NETHERITE_WALL,
@@ -1020,7 +1030,7 @@ public class ModItemGroups {
                     ModBlocks.NETHERITE_BUTTON
             );
 
-            entries.addAfter(Items.AMETHYST_BLOCK,
+            entries.addAfter ( Items.AMETHYST_BLOCK,
                     ModBlocks.AMETHYST_STAIRS,
                     ModBlocks.AMETHYST_SLAB,
                     ModBlocks.AMETHYST_WALL,
@@ -1028,12 +1038,12 @@ public class ModItemGroups {
                     ModBlocks.AMETHYST_BUTTON
             );
 
-        });
+        } );
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COLORED_BLOCKS).register(entries -> {
+        ItemGroupEvents.modifyEntriesEvent ( ItemGroups.COLORED_BLOCKS ).register ( entries -> {
 
             // Concrete Blocks
-            entries.addAfter(Blocks.PINK_CONCRETE,
+            entries.addAfter ( Blocks.PINK_CONCRETE,
                     ModBlocks.WHITE_CONCRETE_STAIRS,
                     ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS,
                     ModBlocks.GRAY_CONCRETE_STAIRS,
@@ -1051,7 +1061,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_STAIRS,
                     ModBlocks.PINK_CONCRETE_STAIRS
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_STAIRS,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_STAIRS,
                     ModBlocks.WHITE_CONCRETE_SLAB,
                     ModBlocks.LIGHT_GRAY_CONCRETE_SLAB,
                     ModBlocks.GRAY_CONCRETE_SLAB,
@@ -1069,7 +1079,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_SLAB,
                     ModBlocks.PINK_CONCRETE_SLAB
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_SLAB,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_SLAB,
                     ModBlocks.WHITE_CONCRETE_WALL,
                     ModBlocks.LIGHT_GRAY_CONCRETE_WALL,
                     ModBlocks.GRAY_CONCRETE_WALL,
@@ -1087,7 +1097,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_WALL,
                     ModBlocks.PINK_CONCRETE_WALL
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_WALL,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_WALL,
                     ModBlocks.WHITE_CONCRETE_PRESSURE_PLATE,
                     ModBlocks.LIGHT_GRAY_CONCRETE_PRESSURE_PLATE,
                     ModBlocks.GRAY_CONCRETE_PRESSURE_PLATE,
@@ -1105,7 +1115,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE,
                     ModBlocks.PINK_CONCRETE_PRESSURE_PLATE
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_PRESSURE_PLATE,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_PRESSURE_PLATE,
                     ModBlocks.WHITE_CONCRETE_BUTTON,
                     ModBlocks.LIGHT_GRAY_CONCRETE_BUTTON,
                     ModBlocks.GRAY_CONCRETE_BUTTON,
@@ -1124,7 +1134,7 @@ public class ModItemGroups {
                     ModBlocks.PINK_CONCRETE_BUTTON
             );
 
-            entries.addAfter(ModBlocks.PINK_CONCRETE_BUTTON,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_BUTTON,
                     ModBlocks.WHITE_CONCRETE_TILES,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILES,
                     ModBlocks.GRAY_CONCRETE_TILES,
@@ -1143,7 +1153,7 @@ public class ModItemGroups {
                     ModBlocks.PINK_CONCRETE_TILES
             );
 
-            entries.addAfter(ModBlocks.PINK_CONCRETE_TILES,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_TILES,
                     ModBlocks.WHITE_CONCRETE_TILE_STAIRS,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILE_STAIRS,
                     ModBlocks.GRAY_CONCRETE_TILE_STAIRS,
@@ -1161,7 +1171,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_TILE_STAIRS,
                     ModBlocks.PINK_CONCRETE_TILE_STAIRS
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_TILE_STAIRS,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_TILE_STAIRS,
                     ModBlocks.WHITE_CONCRETE_TILE_SLAB,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILE_SLAB,
                     ModBlocks.GRAY_CONCRETE_TILE_SLAB,
@@ -1179,7 +1189,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_TILE_SLAB,
                     ModBlocks.PINK_CONCRETE_TILE_SLAB
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_TILE_SLAB,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_TILE_SLAB,
                     ModBlocks.WHITE_CONCRETE_TILE_WALL,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL,
                     ModBlocks.GRAY_CONCRETE_TILE_WALL,
@@ -1197,7 +1207,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_TILE_WALL,
                     ModBlocks.PINK_CONCRETE_TILE_WALL
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_TILE_WALL,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_TILE_WALL,
                     ModBlocks.WHITE_CONCRETE_TILE_PRESSURE_PLATE,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILE_PRESSURE_PLATE,
                     ModBlocks.GRAY_CONCRETE_TILE_PRESSURE_PLATE,
@@ -1215,7 +1225,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_CONCRETE_TILE_PRESSURE_PLATE,
                     ModBlocks.PINK_CONCRETE_TILE_PRESSURE_PLATE
             );
-            entries.addAfter(ModBlocks.PINK_CONCRETE_TILE_PRESSURE_PLATE,
+            entries.addAfter ( ModBlocks.PINK_CONCRETE_TILE_PRESSURE_PLATE,
                     ModBlocks.WHITE_CONCRETE_TILE_BUTTON,
                     ModBlocks.LIGHT_GRAY_CONCRETE_TILE_BUTTON,
                     ModBlocks.GRAY_CONCRETE_TILE_BUTTON,
@@ -1235,7 +1245,7 @@ public class ModItemGroups {
             );
 
             // Terracotta Blocks
-            entries.addAfter(Items.PINK_TERRACOTTA,
+            entries.addAfter ( Items.PINK_TERRACOTTA,
                     ModBlocks.TERRACOTTA_STAIRS,
                     ModBlocks.WHITE_TERRACOTTA_STAIRS,
                     ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS,
@@ -1254,7 +1264,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_TERRACOTTA_STAIRS,
                     ModBlocks.PINK_TERRACOTTA_STAIRS
             );
-            entries.addAfter(ModBlocks.PINK_TERRACOTTA_STAIRS,
+            entries.addAfter ( ModBlocks.PINK_TERRACOTTA_STAIRS,
                     ModBlocks.TERRACOTTA_SLAB,
                     ModBlocks.WHITE_TERRACOTTA_SLAB,
                     ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB,
@@ -1273,7 +1283,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_TERRACOTTA_SLAB,
                     ModBlocks.PINK_TERRACOTTA_SLAB
             );
-            entries.addAfter(ModBlocks.PINK_TERRACOTTA_SLAB,
+            entries.addAfter ( ModBlocks.PINK_TERRACOTTA_SLAB,
                     ModBlocks.TERRACOTTA_WALL,
                     ModBlocks.WHITE_TERRACOTTA_WALL,
                     ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL,
@@ -1292,7 +1302,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_TERRACOTTA_WALL,
                     ModBlocks.PINK_TERRACOTTA_WALL
             );
-            entries.addAfter(ModBlocks.PINK_TERRACOTTA_WALL,
+            entries.addAfter ( ModBlocks.PINK_TERRACOTTA_WALL,
                     ModBlocks.TERRACOTTA_PRESSURE_PLATE,
                     ModBlocks.WHITE_TERRACOTTA_PRESSURE_PLATE,
                     ModBlocks.LIGHT_GRAY_TERRACOTTA_PRESSURE_PLATE,
@@ -1311,7 +1321,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_TERRACOTTA_PRESSURE_PLATE,
                     ModBlocks.PINK_TERRACOTTA_PRESSURE_PLATE
             );
-            entries.addAfter(ModBlocks.PINK_TERRACOTTA_PRESSURE_PLATE,
+            entries.addAfter ( ModBlocks.PINK_TERRACOTTA_PRESSURE_PLATE,
                     ModBlocks.TERRACOTTA_BUTTON,
                     ModBlocks.WHITE_TERRACOTTA_BUTTON,
                     ModBlocks.LIGHT_GRAY_TERRACOTTA_BUTTON,
@@ -1332,7 +1342,7 @@ public class ModItemGroups {
             );
 
             // Wool Blocks
-            entries.addAfter(Items.PINK_WOOL,
+            entries.addAfter ( Items.PINK_WOOL,
                     ModBlocks.WHITE_WOOL_STAIRS,
                     ModBlocks.LIGHT_GRAY_WOOL_STAIRS,
                     ModBlocks.GRAY_WOOL_STAIRS,
@@ -1351,7 +1361,7 @@ public class ModItemGroups {
                     ModBlocks.PINK_WOOL_STAIRS
             );
 
-            entries.addAfter(ModBlocks.PINK_WOOL_STAIRS,
+            entries.addAfter ( ModBlocks.PINK_WOOL_STAIRS,
                     ModBlocks.WHITE_WOOL_SLAB,
                     ModBlocks.LIGHT_GRAY_WOOL_SLAB,
                     ModBlocks.GRAY_WOOL_SLAB,
@@ -1369,7 +1379,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_WOOL_SLAB,
                     ModBlocks.PINK_WOOL_SLAB
             );
-            entries.addAfter(ModBlocks.PINK_WOOL_SLAB,
+            entries.addAfter ( ModBlocks.PINK_WOOL_SLAB,
                     ModBlocks.WHITE_WOOL_WALL,
                     ModBlocks.LIGHT_GRAY_WOOL_WALL,
                     ModBlocks.GRAY_WOOL_WALL,
@@ -1387,7 +1397,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_WOOL_WALL,
                     ModBlocks.PINK_WOOL_WALL
             );
-            entries.addAfter(ModBlocks.PINK_WOOL_WALL,
+            entries.addAfter ( ModBlocks.PINK_WOOL_WALL,
                     ModBlocks.WHITE_WOOL_PRESSURE_PLATE,
                     ModBlocks.LIGHT_GRAY_WOOL_PRESSURE_PLATE,
                     ModBlocks.GRAY_WOOL_PRESSURE_PLATE,
@@ -1405,7 +1415,7 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_WOOL_PRESSURE_PLATE,
                     ModBlocks.PINK_WOOL_PRESSURE_PLATE
             );
-            entries.addAfter(ModBlocks.PINK_WOOL_PRESSURE_PLATE,
+            entries.addAfter ( ModBlocks.PINK_WOOL_PRESSURE_PLATE,
                     ModBlocks.WHITE_WOOL_BUTTON,
                     ModBlocks.LIGHT_GRAY_WOOL_BUTTON,
                     ModBlocks.GRAY_WOOL_BUTTON,
@@ -1423,6 +1433,38 @@ public class ModItemGroups {
                     ModBlocks.MAGENTA_WOOL_BUTTON,
                     ModBlocks.PINK_WOOL_BUTTON
             );
-        });
-        }
+        } );
+
+        ItemGroupEvents.modifyEntriesEvent ( ItemGroups.NATURAL ).register ( entries -> {
+
+            // "Dirt + Grass" Blocks
+            entries.addAfter ( Items.GRASS_BLOCK,
+                    ModBlocks.GRASS_SLAB);
+
+            entries.addAfter ( Items.PODZOL,
+                    ModBlocks.PODZOL_SLAB);
+
+            entries.addAfter ( Items.MYCELIUM,
+                    ModBlocks.MYCELIUM_SLAB);
+
+            entries.addAfter ( Items.DIRT_PATH,
+                    ModBlocks.DIRT_PATH_SLAB);
+
+            entries.addAfter ( Items.DIRT,
+                    ModBlocks.DIRT_SLAB);
+
+            entries.addAfter ( Items.COARSE_DIRT,
+                    ModBlocks.COARSE_DIRT_SLAB);
+
+            entries.addAfter ( Items.ROOTED_DIRT,
+                    ModBlocks.ROOTED_DIRT_SLAB);
+
+            entries.addAfter ( Items.CRIMSON_NYLIUM,
+                    ModBlocks.CRIMSON_NYLIUM_SLAB);
+
+            entries.addAfter ( Items.WARPED_NYLIUM,
+                    ModBlocks.WARPED_NYLIUM_SLAB);
+
+        } );
+    }
 }

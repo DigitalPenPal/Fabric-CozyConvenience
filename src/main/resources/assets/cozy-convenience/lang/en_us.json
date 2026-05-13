@@ -2,6 +2,16 @@
   "itemgroup.cozy-convenience.cozy_items": "Items of Decor",
   "itemgroup.cozy-convenience.cozy_blocks": "Blocks of Decor",
 
+  "block.cozy-convenience.grass_slab": "Grass Slab",
+  "block.cozy-convenience.dirt_slab": "Dirt Slab",
+  "block.cozy-convenience.dirt_path_slab": "Dirt Path Slab",
+  "block.cozy-convenience.coarse_dirt_slab": "Coarse Dirt Slab",
+  "block.cozy-convenience.rooted_dirt_slab": "Rooted Dirt Slab",
+  "block.cozy-convenience.podzol_slab": "Podzol Slab",
+  "block.cozy-convenience.mycelium_slab": "Mycelium Slab",
+  "block.cozy-convenience.crimson_nylium_slab": "Crimson Nylium Slab",
+  "block.cozy-convenience.warped_nylium_slab": "Warped Nylium Slab",
+
   "block.cozy-convenience.oak_wall": "Oak Wall",
   "block.cozy-convenience.spruce_wall": "Spruce Wall",
   "block.cozy-convenience.birch_wall": "Birch Wall",

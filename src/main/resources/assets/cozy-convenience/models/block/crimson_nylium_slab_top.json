@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "particle": "block/netherrack",
+    "bottom": "block/netherrack",
+    "top": "block/crimson_nylium",
+    "side": "block/crimson_nylium_side"
+  }
+}

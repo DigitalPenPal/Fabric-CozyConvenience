@@ -2,7 +2,17 @@ package pencil.cozyconvenience.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.enums.SlabType;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.state.property.Properties;
 import pencil.cozyconvenience.block.ModBlocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,6 +26,248 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         // ++ Building Blocks Category ++
 
+        addDrop(ModBlocks.GRASS_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)                                              // silk touch + not double → slab
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.GRASS_BLOCK)                             // silk touch + double → grass block
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                        .with(ItemEntry.builder(ModBlocks.DIRT_SLAB)
+                                                .conditionally(this.createSilkTouchCondition().invert())
+                                                .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                        .properties(StatePredicate.Builder.create()
+                                                                .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                        .invert()))                                                  // not double → dirt slab
+                                        .with(ItemEntry.builder(Blocks.DIRT)
+                                                .conditionally(this.createSilkTouchCondition().invert())
+                                                .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                        .properties(StatePredicate.Builder.create()
+                                                                .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));   // double → dirt block
+
+        addDrop(ModBlocks.DIRT_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)                                              // silk touch + not double → slab
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.DIRT)                             // silk touch + double → dirt block
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))                                                  // not double → dirt slab
+                                .with(ItemEntry.builder(Blocks.DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));   // double → dirt block
+
+        addDrop(ModBlocks.DIRT_PATH_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.DIRT_PATH)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.COARSE_DIRT_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.COARSE_DIRT)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.COARSE_DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.COARSE_DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.ROOTED_DIRT_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.ROOTED_DIRT)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.ROOTED_DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.ROOTED_DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.PODZOL_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.PODZOL)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.MYCELIUM_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.MYCELIUM)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.DIRT_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.DIRT)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.CRIMSON_NYLIUM_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.CRIMSON_NYLIUM)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.NETHERRACK_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.NETHERRACK)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
+
+        addDrop(ModBlocks.WARPED_NYLIUM_SLAB, block ->
+                LootTable.builder()
+                        .pool(LootPool.builder()
+                                .rolls(ConstantLootNumberProvider.create(1.0F))
+                                .with(ItemEntry.builder(block)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.WARPED_NYLIUM)
+                                        .conditionally(this.createSilkTouchCondition())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))
+                                .with(ItemEntry.builder(ModBlocks.NETHERRACK_SLAB)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))
+                                                .invert()))
+                                .with(ItemEntry.builder(Blocks.NETHERRACK)
+                                        .conditionally(this.createSilkTouchCondition().invert())
+                                        .conditionally(BlockStatePropertyLootCondition.builder(block)
+                                                .properties(StatePredicate.Builder.create()
+                                                        .exactMatch(Properties.SLAB_TYPE, SlabType.DOUBLE))))));
 
         // Wood Blocks
         addDrop(ModBlocks.OAK_WALL);
