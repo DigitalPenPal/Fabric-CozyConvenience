@@ -4,7 +4,9 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.BuildingBlocks;
+import pencil.cozyconvenience.block.ColoredBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -15,877 +17,694 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        getOrCreateTagBuilder (BlockTags.SHOVEL_MINEABLE)
+                .add(NaturalBlocks.GRASS_SLAB)
+                .add(NaturalBlocks.DIRT_SLAB)
+                .add(NaturalBlocks.COARSE_DIRT_SLAB)
+                .add(NaturalBlocks.ROOTED_DIRT_SLAB)
+                .add(NaturalBlocks.PODZOL_SLAB)
+                .add(NaturalBlocks.MYCELIUM_SLAB);
 
-        getOrCreateTagBuilder ( BlockTags.SHOVEL_MINEABLE )
-
-                // "Dirt + Grass" Blocks
-                .add ( ModBlocks.GRASS_SLAB )
-                .add ( ModBlocks.DIRT_SLAB )
-                .add ( ModBlocks.COARSE_DIRT_SLAB )
-                .add ( ModBlocks.ROOTED_DIRT_SLAB )
-                .add ( ModBlocks.PODZOL_SLAB )
-                .add ( ModBlocks.MYCELIUM_SLAB );
-
+        getOrCreateTagBuilder(BlockTags.NYLIUM)
+                .add(NaturalBlocks.CRIMSON_NYLIUM_SLAB)
+                .add(NaturalBlocks.WARPED_NYLIUM_SLAB);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
-            // Wood Blocks
-            .add(ModBlocks.OAK_WALL)
-            .add(ModBlocks.SPRUCE_WALL)
-            .add(ModBlocks.BIRCH_WALL)
-            .add(ModBlocks.JUNGLE_WALL)
-            .add(ModBlocks.ACACIA_WALL)
-            .add(ModBlocks.DARK_OAK_WALL)
-            .add(ModBlocks.MANGROVE_WALL)
-            .add(ModBlocks.CHERRY_WALL)
-            .add(ModBlocks.BAMBOO_WALL)
-            .add(ModBlocks.BAMBOO_MOSAIC_WALL)
-            .add(ModBlocks.CRIMSON_WALL)
-            .add(ModBlocks.WARPED_WALL);
+            .add(BuildingBlocks.OAK_WALL)
+            .add(BuildingBlocks.SPRUCE_WALL)
+            .add(BuildingBlocks.BIRCH_WALL)
+            .add(BuildingBlocks.JUNGLE_WALL)
+            .add(BuildingBlocks.ACACIA_WALL)
+            .add(BuildingBlocks.DARK_OAK_WALL)
+            .add(BuildingBlocks.MANGROVE_WALL)
+            .add(BuildingBlocks.CHERRY_WALL)
+            .add(BuildingBlocks.BAMBOO_WALL)
+            .add(BuildingBlocks.BAMBOO_MOSAIC_WALL)
+            .add(BuildingBlocks.CRIMSON_WALL)
+            .add(BuildingBlocks.WARPED_WALL);
 
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
             // Stone Blocks
-            .add(ModBlocks.STONE_WALL)
-            .add(ModBlocks.COBBLESTONE_PRESSURE_PLATE)
-            .add(ModBlocks.MOSSY_COBBLESTONE_PRESSURE_PLATE)
-            .add(ModBlocks.SMOOTH_STONE_STAIRS)
-            .add(ModBlocks.SMOOTH_STONE_WALL)
-            .add(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE)
-            .add(ModBlocks.STONE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.CRACKED_STONE_BRICK_STAIRS)
-            .add(ModBlocks.CRACKED_STONE_BRICK_SLAB)
-            .add(ModBlocks.CRACKED_STONE_BRICK_WALL)
-            .add(ModBlocks.CRACKED_STONE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.MOSSY_STONE_BRICK_PRESSURE_PLATE)
-
-            .add(ModBlocks.STONE_COLUMN)
-            .add(ModBlocks.MOSSY_STONE_COLUMN)
-            .add(ModBlocks.CRACKED_STONE_COLUMN)
-
-
-            // Granite Blocks
-            .add(ModBlocks.GRANITE_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_GRANITE_WALL)
-            .add(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE)
-
-
-            // Diorite Blocks
-            .add(ModBlocks.DIORITE_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_DIORITE_WALL)
-            .add(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE)
-
-
-            // Andesite Blocks
-            .add(ModBlocks.ANDESITE_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_ANDESITE_WALL)
-            .add(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE)
-
-
-            // Deepslate Blocks
-            .add(ModBlocks.DEEPSLATE_STAIRS)
-            .add(ModBlocks.DEEPSLATE_SLAB)
-            .add(ModBlocks.DEEPSLATE_WALL)
-            .add(ModBlocks.DEEPSLATE_PRESSURE_PLATE)
-            .add(ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE)
-            .add(ModBlocks.DEEPSLATE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS)
-            .add(ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB)
-            .add(ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL)
-            .add(ModBlocks.CRACKED_DEEPSLATE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.DEEPSLATE_TILE_PRESSURE_PLATE)
-            .add(ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS)
-            .add(ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB)
-            .add(ModBlocks.CRACKED_DEEPSLATE_TILE_WALL)
-            .add(ModBlocks.CRACKED_DEEPSLATE_TILE_PRESSURE_PLATE)
-
-
-            // Tuff Blocks
-            .add(ModBlocks.TUFF_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_TUFF_PRESSURE_PLATE)
-            .add(ModBlocks.TUFF_BRICK_PRESSURE_PLATE)
-
-
-            // Brick Blocks
-            .add(ModBlocks.BRICK_PRESSURE_PLATE)
-
-
-            // Mud Blocks
-            .add(ModBlocks.PACKED_MUD_STAIRS)
-            .add(ModBlocks.PACKED_MUD_SLAB)
-            .add(ModBlocks.PACKED_MUD_WALL)
-            .add(ModBlocks.PACKED_MUD_PRESSURE_PLATE)
-            .add(ModBlocks.MUD_BRICK_PRESSURE_PLATE)
-
-
-            // Sandstone Blocks -- [ Here be Broken Blocks ]
-            .add(ModBlocks.SANDSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.SMOOTH_SANDSTONE_WALL)
-            .add(ModBlocks.SMOOTH_SANDSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.CUT_SANDSTONE_STAIRS)
-            .add(ModBlocks.CUT_SANDSTONE_WALL)
-            .add(ModBlocks.CUT_SANDSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.RED_SANDSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.SMOOTH_RED_SANDSTONE_WALL)
-            .add(ModBlocks.SMOOTH_RED_SANDSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.CUT_RED_SANDSTONE_STAIRS)
-            .add(ModBlocks.CUT_RED_SANDSTONE_WALL)
-            .add(ModBlocks.CUT_RED_SANDSTONE_PRESSURE_PLATE)
-
-
-            // Prismarine Blocks
-            .add(ModBlocks.PRISMARINE_PRESSURE_PLATE)
-            .add(ModBlocks.PRISMARINE_BRICK_WALL)
-            .add(ModBlocks.PRISMARINE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.DARK_PRISMARINE_WALL)
-            .add(ModBlocks.DARK_PRISMARINE_PRESSURE_PLATE)
-
-
-            // Netherrack Blocks
-            .add(ModBlocks.NETHERRACK_STAIRS)
-            .add(ModBlocks.NETHERRACK_SLAB)
-            .add(ModBlocks.NETHERRACK_WALL)
-            .add(ModBlocks.NETHERRACK_PRESSURE_PLATE)
-            .add(ModBlocks.NETHER_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.CRACKED_NETHER_BRICK_STAIRS)
-            .add(ModBlocks.CRACKED_NETHER_BRICK_SLAB)
-            .add(ModBlocks.CRACKED_NETHER_BRICK_WALL)
-            .add(ModBlocks.CRACKED_NETHER_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.RED_NETHER_BRICK_PRESSURE_PLATE)
-
-            .add(ModBlocks.CRIMSON_NYLIUM_SLAB)
-            .add(ModBlocks.WARPED_NYLIUM_SLAB)
-
-
-            // Basalt Blocks -- [ Here be Broken Blocks ]
-            .add(ModBlocks.BASALT_STAIRS)
-            .add(ModBlocks.BASALT_SLAB)
-            .add(ModBlocks.BASALT_WALL)
-            .add(ModBlocks.BASALT_PRESSURE_PLATE)
-            .add(ModBlocks.SMOOTH_BASALT_STAIRS)
-            .add(ModBlocks.SMOOTH_BASALT_SLAB)
-            .add(ModBlocks.SMOOTH_BASALT_WALL)
-            .add(ModBlocks.SMOOTH_BASALT_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_BASALT_STAIRS)
-            .add(ModBlocks.POLISHED_BASALT_SLAB)
-            .add(ModBlocks.POLISHED_BASALT_WALL)
-            .add(ModBlocks.POLISHED_BASALT_PRESSURE_PLATE)
-
-
-            // Blackstone Blocks
-            .add(ModBlocks.BLACKSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.GILDED_BLACKSTONE_STAIRS)
-            .add(ModBlocks.GILDED_BLACKSTONE_SLAB)
-            .add(ModBlocks.GILDED_BLACKSTONE_WALL)
-            .add(ModBlocks.GILDED_BLACKSTONE_PRESSURE_PLATE)
-            .add(ModBlocks.POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS)
-            .add(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB)
-            .add(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL)
-            .add(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE)
-
-
-            // Endstone Blocks
-            .add(ModBlocks.END_STONE_STAIRS)
-            .add(ModBlocks.END_STONE_SLAB)
-            .add(ModBlocks.END_STONE_WALL)
-            .add(ModBlocks.END_STONE_PRESSURE_PLATE)
-            .add(ModBlocks.END_STONE_BRICK_PRESSURE_PLATE)
-
-
-            // Purpur Blocks
-            .add(ModBlocks.PURPUR_WALL)
-            .add(ModBlocks.PURPUR_PRESSURE_PLATE)
-
-
-            // Iron Blocks
-            .add(ModBlocks.IRON_STAIRS)
-            .add(ModBlocks.IRON_SLAB)
-            .add(ModBlocks.IRON_WALL)
-
-            .add(ModBlocks.IRON_BAR_GATE)
-
-
-            // Gold Blocks
-            .add(ModBlocks.GOLD_STAIRS)
-            .add(ModBlocks.GOLD_SLAB)
-            .add(ModBlocks.GOLD_WALL)
-
-
-            // Emerald Blocks
-            .add(ModBlocks.EMERALD_STAIRS)
-            .add(ModBlocks.EMERALD_SLAB)
-            .add(ModBlocks.EMERALD_WALL)
-            .add(ModBlocks.EMERALD_PRESSURE_PLATE)
-
-
-            // Lapis Lazuli Blocks
-            .add(ModBlocks.LAPIS_STAIRS)
-            .add(ModBlocks.LAPIS_SLAB)
-            .add(ModBlocks.LAPIS_WALL)
-            .add(ModBlocks.LAPIS_PRESSURE_PLATE)
-
-
-            // Diamond Blocks
-            .add(ModBlocks.DIAMOND_STAIRS)
-            .add(ModBlocks.DIAMOND_SLAB)
-            .add(ModBlocks.DIAMOND_WALL)
-            .add(ModBlocks.DIAMOND_PRESSURE_PLATE)
-
-
-            // Netherite Blocks
-            .add(ModBlocks.NETHERITE_STAIRS)
-            .add(ModBlocks.NETHERITE_SLAB)
-            .add(ModBlocks.NETHERITE_WALL)
-            .add(ModBlocks.NETHERITE_PRESSURE_PLATE)
-
-
-            // Quartz Blocks -- [ Here be Broken Blocks ]
-            .add(ModBlocks.QUARTZ_WALL)
-            .add(ModBlocks.QUARTZ_PRESSURE_PLATE)
-            .add(ModBlocks.QUARTZ_BRICK_STAIRS)
-            .add(ModBlocks.QUARTZ_BRICK_SLAB)
-            .add(ModBlocks.QUARTZ_BRICK_WALL)
-            .add(ModBlocks.QUARTZ_BRICK_PRESSURE_PLATE)
-            .add(ModBlocks.SMOOTH_QUARTZ_WALL)
-            .add(ModBlocks.SMOOTH_QUARTZ_PRESSURE_PLATE)
-
-
-            // Amethyst Blocks
-            .add(ModBlocks.AMETHYST_STAIRS)
-            .add(ModBlocks.AMETHYST_SLAB)
-            .add(ModBlocks.AMETHYST_WALL)
-            .add(ModBlocks.AMETHYST_PRESSURE_PLATE)
-
-
-            // Concrete Blocks
-            .add(ModBlocks.WHITE_CONCRETE_STAIRS)
-            .add(ModBlocks.WHITE_CONCRETE_SLAB)
-            .add(ModBlocks.WHITE_CONCRETE_WALL)
-            .add(ModBlocks.WHITE_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_WALL)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.GRAY_CONCRETE_STAIRS)
-            .add(ModBlocks.GRAY_CONCRETE_SLAB)
-            .add(ModBlocks.GRAY_CONCRETE_WALL)
-            .add(ModBlocks.GRAY_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLACK_CONCRETE_STAIRS)
-            .add(ModBlocks.BLACK_CONCRETE_SLAB)
-            .add(ModBlocks.BLACK_CONCRETE_WALL)
-            .add(ModBlocks.BLACK_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BROWN_CONCRETE_STAIRS)
-            .add(ModBlocks.BROWN_CONCRETE_SLAB)
-            .add(ModBlocks.BROWN_CONCRETE_WALL)
-            .add(ModBlocks.BROWN_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.RED_CONCRETE_STAIRS)
-            .add(ModBlocks.RED_CONCRETE_SLAB)
-            .add(ModBlocks.RED_CONCRETE_WALL)
-            .add(ModBlocks.RED_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.ORANGE_CONCRETE_STAIRS)
-            .add(ModBlocks.ORANGE_CONCRETE_SLAB)
-            .add(ModBlocks.ORANGE_CONCRETE_WALL)
-            .add(ModBlocks.ORANGE_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.YELLOW_CONCRETE_STAIRS)
-            .add(ModBlocks.YELLOW_CONCRETE_SLAB)
-            .add(ModBlocks.YELLOW_CONCRETE_WALL)
-            .add(ModBlocks.YELLOW_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIME_CONCRETE_STAIRS)
-            .add(ModBlocks.LIME_CONCRETE_SLAB)
-            .add(ModBlocks.LIME_CONCRETE_WALL)
-            .add(ModBlocks.LIME_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.GREEN_CONCRETE_STAIRS)
-            .add(ModBlocks.GREEN_CONCRETE_SLAB)
-            .add(ModBlocks.GREEN_CONCRETE_WALL)
-            .add(ModBlocks.GREEN_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.CYAN_CONCRETE_STAIRS)
-            .add(ModBlocks.CYAN_CONCRETE_SLAB)
-            .add(ModBlocks.CYAN_CONCRETE_WALL)
-            .add(ModBlocks.CYAN_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_WALL)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLUE_CONCRETE_STAIRS)
-            .add(ModBlocks.BLUE_CONCRETE_SLAB)
-            .add(ModBlocks.BLUE_CONCRETE_WALL)
-            .add(ModBlocks.BLUE_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.PURPLE_CONCRETE_STAIRS)
-            .add(ModBlocks.PURPLE_CONCRETE_SLAB)
-            .add(ModBlocks.PURPLE_CONCRETE_WALL)
-            .add(ModBlocks.PURPLE_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.MAGENTA_CONCRETE_STAIRS)
-            .add(ModBlocks.MAGENTA_CONCRETE_SLAB)
-            .add(ModBlocks.MAGENTA_CONCRETE_WALL)
-            .add(ModBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.PINK_CONCRETE_STAIRS)
-            .add(ModBlocks.PINK_CONCRETE_SLAB)
-            .add(ModBlocks.PINK_CONCRETE_WALL)
-            .add(ModBlocks.PINK_CONCRETE_PRESSURE_PLATE)
-
-            .add(ModBlocks.WHITE_CONCRETE_TILES)
-            .add(ModBlocks.WHITE_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.WHITE_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.WHITE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.WHITE_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILES)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.GRAY_CONCRETE_TILES)
-            .add(ModBlocks.GRAY_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.GRAY_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.GRAY_CONCRETE_TILE_WALL)
-            .add(ModBlocks.GRAY_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLACK_CONCRETE_TILES)
-            .add(ModBlocks.BLACK_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.BLACK_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.BLACK_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BLACK_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BROWN_CONCRETE_TILES)
-            .add(ModBlocks.BROWN_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.BROWN_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.BROWN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BROWN_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.RED_CONCRETE_TILES)
-            .add(ModBlocks.RED_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.RED_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.RED_CONCRETE_TILE_WALL)
-            .add(ModBlocks.RED_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.ORANGE_CONCRETE_TILES)
-            .add(ModBlocks.ORANGE_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.ORANGE_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.ORANGE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.ORANGE_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.YELLOW_CONCRETE_TILES)
-            .add(ModBlocks.YELLOW_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.YELLOW_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.YELLOW_CONCRETE_TILE_WALL)
-            .add(ModBlocks.YELLOW_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIME_CONCRETE_TILES)
-            .add(ModBlocks.LIME_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.LIME_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.LIME_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIME_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.GREEN_CONCRETE_TILES)
-            .add(ModBlocks.GREEN_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.GREEN_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.GREEN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.GREEN_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.CYAN_CONCRETE_TILES)
-            .add(ModBlocks.CYAN_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.CYAN_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.CYAN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.CYAN_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILES)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLUE_CONCRETE_TILES)
-            .add(ModBlocks.BLUE_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.BLUE_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.BLUE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BLUE_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.PURPLE_CONCRETE_TILES)
-            .add(ModBlocks.PURPLE_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.PURPLE_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.PURPLE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.PURPLE_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.MAGENTA_CONCRETE_TILES)
-            .add(ModBlocks.MAGENTA_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.MAGENTA_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.MAGENTA_CONCRETE_TILE_WALL)
-            .add(ModBlocks.MAGENTA_CONCRETE_TILE_PRESSURE_PLATE)
-
-            .add(ModBlocks.PINK_CONCRETE_TILES)
-            .add(ModBlocks.PINK_CONCRETE_TILE_STAIRS)
-            .add(ModBlocks.PINK_CONCRETE_TILE_SLAB)
-            .add(ModBlocks.PINK_CONCRETE_TILE_WALL)
-            .add(ModBlocks.PINK_CONCRETE_TILE_PRESSURE_PLATE)
-
-
-            // Terracotta Blocks
-            .add(ModBlocks.TERRACOTTA_STAIRS)
-            .add(ModBlocks.TERRACOTTA_SLAB)
-            .add(ModBlocks.TERRACOTTA_WALL)
-            .add(ModBlocks.TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.WHITE_TERRACOTTA_STAIRS)
-            .add(ModBlocks.WHITE_TERRACOTTA_SLAB)
-            .add(ModBlocks.WHITE_TERRACOTTA_WALL)
-            .add(ModBlocks.WHITE_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS)
-            .add(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB)
-            .add(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL)
-            .add(ModBlocks.LIGHT_GRAY_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.GRAY_TERRACOTTA_STAIRS)
-            .add(ModBlocks.GRAY_TERRACOTTA_SLAB)
-            .add(ModBlocks.GRAY_TERRACOTTA_WALL)
-            .add(ModBlocks.GRAY_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLACK_TERRACOTTA_STAIRS)
-            .add(ModBlocks.BLACK_TERRACOTTA_SLAB)
-            .add(ModBlocks.BLACK_TERRACOTTA_WALL)
-            .add(ModBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.BROWN_TERRACOTTA_STAIRS)
-            .add(ModBlocks.BROWN_TERRACOTTA_SLAB)
-            .add(ModBlocks.BROWN_TERRACOTTA_WALL)
-            .add(ModBlocks.BROWN_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.RED_TERRACOTTA_STAIRS)
-            .add(ModBlocks.RED_TERRACOTTA_SLAB)
-            .add(ModBlocks.RED_TERRACOTTA_WALL)
-            .add(ModBlocks.RED_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.ORANGE_TERRACOTTA_STAIRS)
-            .add(ModBlocks.ORANGE_TERRACOTTA_SLAB)
-            .add(ModBlocks.ORANGE_TERRACOTTA_WALL)
-            .add(ModBlocks.ORANGE_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.YELLOW_TERRACOTTA_STAIRS)
-            .add(ModBlocks.YELLOW_TERRACOTTA_SLAB)
-            .add(ModBlocks.YELLOW_TERRACOTTA_WALL)
-            .add(ModBlocks.YELLOW_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIME_TERRACOTTA_STAIRS)
-            .add(ModBlocks.LIME_TERRACOTTA_SLAB)
-            .add(ModBlocks.LIME_TERRACOTTA_WALL)
-            .add(ModBlocks.LIME_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.GREEN_TERRACOTTA_STAIRS)
-            .add(ModBlocks.GREEN_TERRACOTTA_SLAB)
-            .add(ModBlocks.GREEN_TERRACOTTA_WALL)
-            .add(ModBlocks.GREEN_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.CYAN_TERRACOTTA_STAIRS)
-            .add(ModBlocks.CYAN_TERRACOTTA_SLAB)
-            .add(ModBlocks.CYAN_TERRACOTTA_WALL)
-            .add(ModBlocks.CYAN_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS)
-            .add(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB)
-            .add(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL)
-            .add(ModBlocks.LIGHT_BLUE_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.BLUE_TERRACOTTA_STAIRS)
-            .add(ModBlocks.BLUE_TERRACOTTA_SLAB)
-            .add(ModBlocks.BLUE_TERRACOTTA_WALL)
-            .add(ModBlocks.BLUE_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.PURPLE_TERRACOTTA_STAIRS)
-            .add(ModBlocks.PURPLE_TERRACOTTA_SLAB)
-            .add(ModBlocks.PURPLE_TERRACOTTA_WALL)
-            .add(ModBlocks.PURPLE_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.MAGENTA_TERRACOTTA_STAIRS)
-            .add(ModBlocks.MAGENTA_TERRACOTTA_SLAB)
-            .add(ModBlocks.MAGENTA_TERRACOTTA_WALL)
-            .add(ModBlocks.MAGENTA_TERRACOTTA_PRESSURE_PLATE)
-
-            .add(ModBlocks.PINK_TERRACOTTA_STAIRS)
-            .add(ModBlocks.PINK_TERRACOTTA_SLAB)
-            .add(ModBlocks.PINK_TERRACOTTA_WALL)
-            .add(ModBlocks.PINK_TERRACOTTA_PRESSURE_PLATE);
+            .add(BuildingBlocks.STONE_WALL)
 
+            .add(BuildingBlocks.SMOOTH_STONE_STAIRS)
+            .add(BuildingBlocks.SMOOTH_STONE_WALL)
+
+            .add(BuildingBlocks.CRACKED_STONE_BRICK_STAIRS)
+            .add(BuildingBlocks.CRACKED_STONE_BRICK_SLAB)
+            .add(BuildingBlocks.CRACKED_STONE_BRICK_WALL)
+
+
+            .add(BuildingBlocks.STONE_COLUMN)
+            .add(BuildingBlocks.MOSSY_STONE_COLUMN)
+            .add(BuildingBlocks.CRACKED_STONE_COLUMN)
+
+
+            .add(BuildingBlocks.POLISHED_GRANITE_WALL)
+
+
+            .add(BuildingBlocks.POLISHED_DIORITE_WALL)
+
+
+            .add(BuildingBlocks.POLISHED_ANDESITE_WALL)
+
+
+            .add(BuildingBlocks.DEEPSLATE_STAIRS)
+            .add(BuildingBlocks.DEEPSLATE_SLAB)
+            .add(BuildingBlocks.DEEPSLATE_WALL)
+
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL)
+
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL)
+
+
+            .add(BuildingBlocks.PACKED_MUD_STAIRS)
+            .add(BuildingBlocks.PACKED_MUD_SLAB)
+            .add(BuildingBlocks.PACKED_MUD_WALL)
+
+
+            .add(BuildingBlocks.SMOOTH_SANDSTONE_WALL)
+            .add(BuildingBlocks.CUT_SANDSTONE_STAIRS)
+            .add(BuildingBlocks.CUT_SANDSTONE_WALL)
+            .add(BuildingBlocks.SMOOTH_RED_SANDSTONE_WALL)
+            .add(BuildingBlocks.CUT_RED_SANDSTONE_STAIRS)
+            .add(BuildingBlocks.CUT_RED_SANDSTONE_WALL)
+
+
+            .add(BuildingBlocks.PRISMARINE_BRICK_WALL)
+            .add(BuildingBlocks.DARK_PRISMARINE_WALL)
+
+
+            .add(NaturalBlocks.NETHERRACK_STAIRS)
+            .add(NaturalBlocks.NETHERRACK_SLAB)
+            .add(NaturalBlocks.NETHERRACK_WALL)
+
+            .add(BuildingBlocks.CRACKED_NETHER_BRICK_STAIRS)
+            .add(BuildingBlocks.CRACKED_NETHER_BRICK_SLAB)
+            .add(BuildingBlocks.CRACKED_NETHER_BRICK_WALL)
+
+
+            .add(NaturalBlocks.CRIMSON_NYLIUM_SLAB)
+            .add(NaturalBlocks.WARPED_NYLIUM_SLAB)
+
+
+            .add(BuildingBlocks.BASALT_STAIRS)
+            .add(BuildingBlocks.BASALT_SLAB)
+            .add(BuildingBlocks.BASALT_WALL)
+            .add(BuildingBlocks.SMOOTH_BASALT_STAIRS)
+            .add(BuildingBlocks.SMOOTH_BASALT_SLAB)
+            .add(BuildingBlocks.SMOOTH_BASALT_WALL)
+            .add(BuildingBlocks.POLISHED_BASALT_STAIRS)
+            .add(BuildingBlocks.POLISHED_BASALT_SLAB)
+            .add(BuildingBlocks.POLISHED_BASALT_WALL)
+
+
+            .add(BuildingBlocks.GILDED_BLACKSTONE_STAIRS)
+            .add(BuildingBlocks.GILDED_BLACKSTONE_SLAB)
+            .add(BuildingBlocks.GILDED_BLACKSTONE_WALL)
+            .add(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS)
+            .add(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB)
+            .add(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL)
+
+
+            .add(BuildingBlocks.END_STONE_STAIRS)
+            .add(BuildingBlocks.END_STONE_SLAB)
+            .add(BuildingBlocks.END_STONE_WALL)
+
+
+            .add(BuildingBlocks.PURPUR_WALL)
+
+
+            .add(BuildingBlocks.IRON_STAIRS)
+            .add(BuildingBlocks.IRON_SLAB)
+            .add(BuildingBlocks.IRON_WALL)
+            .add(BuildingBlocks.IRON_BAR_GATE)
+
+
+            .add(BuildingBlocks.GOLD_STAIRS)
+            .add(BuildingBlocks.GOLD_SLAB)
+            .add(BuildingBlocks.GOLD_WALL)
+
+
+            .add(BuildingBlocks.EMERALD_STAIRS)
+            .add(BuildingBlocks.EMERALD_SLAB)
+            .add(BuildingBlocks.EMERALD_WALL)
+
+
+            .add(BuildingBlocks.LAPIS_STAIRS)
+            .add(BuildingBlocks.LAPIS_SLAB)
+            .add(BuildingBlocks.LAPIS_WALL)
+
+
+            .add(BuildingBlocks.DIAMOND_STAIRS)
+            .add(BuildingBlocks.DIAMOND_SLAB)
+            .add(BuildingBlocks.DIAMOND_WALL)
+
+
+            .add(BuildingBlocks.NETHERITE_STAIRS)
+            .add(BuildingBlocks.NETHERITE_SLAB)
+            .add(BuildingBlocks.NETHERITE_WALL)
+
+
+            .add(BuildingBlocks.QUARTZ_WALL)
+            .add(BuildingBlocks.QUARTZ_BRICK_STAIRS)
+            .add(BuildingBlocks.QUARTZ_BRICK_SLAB)
+            .add(BuildingBlocks.QUARTZ_BRICK_WALL)
+            .add(BuildingBlocks.SMOOTH_QUARTZ_WALL)
+
+
+            .add(BuildingBlocks.AMETHYST_STAIRS)
+            .add(BuildingBlocks.AMETHYST_SLAB)
+            .add(BuildingBlocks.AMETHYST_WALL)
+
+
+            .add(ColoredBlocks.WHITE_CONCRETE_STAIRS)
+            .add(ColoredBlocks.WHITE_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_STAIRS)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.GRAY_CONCRETE_STAIRS)
+            .add(ColoredBlocks.GRAY_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.BLACK_CONCRETE_STAIRS)
+            .add(ColoredBlocks.BLACK_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.BROWN_CONCRETE_STAIRS)
+            .add(ColoredBlocks.BROWN_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.RED_CONCRETE_STAIRS)
+            .add(ColoredBlocks.RED_CONCRETE_SLAB)
+
+
+            .add(ColoredBlocks.ORANGE_CONCRETE_STAIRS)
+            .add(ColoredBlocks.ORANGE_CONCRETE_SLAB)
+            .add(ColoredBlocks.ORANGE_CONCRETE_WALL)
+
+            .add(ColoredBlocks.YELLOW_CONCRETE_STAIRS)
+            .add(ColoredBlocks.YELLOW_CONCRETE_SLAB)
+            .add(ColoredBlocks.YELLOW_CONCRETE_WALL)
+
+            .add(ColoredBlocks.LIME_CONCRETE_STAIRS)
+            .add(ColoredBlocks.LIME_CONCRETE_SLAB)
+            .add(ColoredBlocks.LIME_CONCRETE_WALL)
+
+            .add(ColoredBlocks.GREEN_CONCRETE_STAIRS)
+            .add(ColoredBlocks.GREEN_CONCRETE_SLAB)
+            .add(ColoredBlocks.GREEN_CONCRETE_WALL)
+
+            .add(ColoredBlocks.CYAN_CONCRETE_STAIRS)
+            .add(ColoredBlocks.CYAN_CONCRETE_SLAB)
+            .add(ColoredBlocks.CYAN_CONCRETE_WALL)
+
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_STAIRS)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_SLAB)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_WALL)
+
+            .add(ColoredBlocks.BLUE_CONCRETE_STAIRS)
+            .add(ColoredBlocks.BLUE_CONCRETE_SLAB)
+            .add(ColoredBlocks.BLUE_CONCRETE_WALL)
+
+            .add(ColoredBlocks.PURPLE_CONCRETE_STAIRS)
+            .add(ColoredBlocks.PURPLE_CONCRETE_SLAB)
+            .add(ColoredBlocks.PURPLE_CONCRETE_WALL)
+
+            .add(ColoredBlocks.MAGENTA_CONCRETE_STAIRS)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_SLAB)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_WALL)
+
+            .add(ColoredBlocks.PINK_CONCRETE_STAIRS)
+            .add(ColoredBlocks.PINK_CONCRETE_SLAB)
+            .add(ColoredBlocks.PINK_CONCRETE_WALL)
+
+            .add(ColoredBlocks.WHITE_CONCRETE_TILES)
+            .add(ColoredBlocks.WHITE_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.WHITE_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.WHITE_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILES)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.GRAY_CONCRETE_TILES)
+            .add(ColoredBlocks.GRAY_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.GRAY_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.GRAY_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.BLACK_CONCRETE_TILES)
+            .add(ColoredBlocks.BLACK_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.BLACK_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.BLACK_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.BROWN_CONCRETE_TILES)
+            .add(ColoredBlocks.BROWN_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.BROWN_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.BROWN_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.RED_CONCRETE_TILES)
+            .add(ColoredBlocks.RED_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.RED_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.RED_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.ORANGE_CONCRETE_TILES)
+            .add(ColoredBlocks.ORANGE_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.ORANGE_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.ORANGE_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.YELLOW_CONCRETE_TILES)
+            .add(ColoredBlocks.YELLOW_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.YELLOW_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.YELLOW_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.LIME_CONCRETE_TILES)
+            .add(ColoredBlocks.LIME_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.LIME_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.LIME_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.GREEN_CONCRETE_TILES)
+            .add(ColoredBlocks.GREEN_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.GREEN_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.GREEN_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.CYAN_CONCRETE_TILES)
+            .add(ColoredBlocks.CYAN_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.CYAN_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.CYAN_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILES)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.BLUE_CONCRETE_TILES)
+            .add(ColoredBlocks.BLUE_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.BLUE_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.BLUE_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.PURPLE_CONCRETE_TILES)
+            .add(ColoredBlocks.PURPLE_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.PURPLE_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.PURPLE_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.MAGENTA_CONCRETE_TILES)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_TILE_WALL)
+
+            .add(ColoredBlocks.PINK_CONCRETE_TILES)
+            .add(ColoredBlocks.PINK_CONCRETE_TILE_STAIRS)
+            .add(ColoredBlocks.PINK_CONCRETE_TILE_SLAB)
+            .add(ColoredBlocks.PINK_CONCRETE_TILE_WALL)
+
+
+            .add(ColoredBlocks.TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.TERRACOTTA_SLAB)
+            .add(ColoredBlocks.TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.WHITE_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.WHITE_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.WHITE_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.GRAY_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.GRAY_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.GRAY_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.BLACK_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.BLACK_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.BLACK_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.BROWN_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.BROWN_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.BROWN_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.RED_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.RED_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.RED_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.ORANGE_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.ORANGE_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.ORANGE_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.YELLOW_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.YELLOW_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.YELLOW_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.LIME_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.LIME_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.LIME_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.GREEN_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.GREEN_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.GREEN_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.CYAN_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.CYAN_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.CYAN_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.BLUE_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.BLUE_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.BLUE_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.PURPLE_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.PURPLE_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.PURPLE_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.MAGENTA_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.MAGENTA_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.MAGENTA_TERRACOTTA_WALL)
+
+            .add(ColoredBlocks.PINK_TERRACOTTA_STAIRS)
+            .add(ColoredBlocks.PINK_TERRACOTTA_SLAB)
+            .add(ColoredBlocks.PINK_TERRACOTTA_WALL);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
-            .add(ModBlocks.OAK_WALL)
-            .add(ModBlocks.SPRUCE_WALL)
-            .add(ModBlocks.BIRCH_WALL)
-            .add(ModBlocks.JUNGLE_WALL)
-            .add(ModBlocks.ACACIA_WALL)
-            .add(ModBlocks.DARK_OAK_WALL)
-            .add(ModBlocks.MANGROVE_WALL)
-            .add(ModBlocks.CHERRY_WALL)
-            .add(ModBlocks.BAMBOO_WALL)
-            .add(ModBlocks.BAMBOO_MOSAIC_WALL)
-            .add(ModBlocks.CRIMSON_WALL)
-            .add(ModBlocks.WARPED_WALL)
-            .add(ModBlocks.STONE_WALL)
-            .add(ModBlocks.SMOOTH_STONE_WALL)
-            .add(ModBlocks.CRACKED_STONE_BRICK_WALL)
-            .add(ModBlocks.POLISHED_GRANITE_WALL)
-            .add(ModBlocks.POLISHED_DIORITE_WALL)
-            .add(ModBlocks.POLISHED_ANDESITE_WALL)
-            .add(ModBlocks.DEEPSLATE_WALL)
-            .add(ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL)
-            .add(ModBlocks.CRACKED_DEEPSLATE_TILE_WALL)
-            .add(ModBlocks.PACKED_MUD_WALL)
-            .add(ModBlocks.SMOOTH_SANDSTONE_WALL)
-            .add(ModBlocks.CUT_SANDSTONE_WALL)
-            .add(ModBlocks.SMOOTH_RED_SANDSTONE_WALL)
-            .add(ModBlocks.CUT_RED_SANDSTONE_WALL)
-            .add(ModBlocks.PRISMARINE_BRICK_WALL)
-            .add(ModBlocks.DARK_PRISMARINE_WALL)
-            .add(ModBlocks.NETHERRACK_WALL)
-            .add(ModBlocks.CRACKED_NETHER_BRICK_WALL)
-            .add(ModBlocks.BASALT_WALL)
-            .add(ModBlocks.SMOOTH_BASALT_WALL)
-            .add(ModBlocks.POLISHED_BASALT_WALL)
-            .add(ModBlocks.GILDED_BLACKSTONE_WALL)
-            .add(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL)
-            .add(ModBlocks.END_STONE_WALL)
-            .add(ModBlocks.PURPUR_WALL)
-            .add(ModBlocks.IRON_WALL)
-            .add(ModBlocks.GOLD_WALL)
-            .add(ModBlocks.EMERALD_WALL)
-            .add(ModBlocks.LAPIS_WALL)
-            .add(ModBlocks.DIAMOND_WALL)
-            .add(ModBlocks.NETHERITE_WALL)
-            .add(ModBlocks.QUARTZ_WALL)
-            .add(ModBlocks.QUARTZ_BRICK_WALL)
-            .add(ModBlocks.SMOOTH_QUARTZ_WALL)
-            .add(ModBlocks.AMETHYST_WALL)
-            .add(ModBlocks.WHITE_CONCRETE_WALL)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_WALL)
-            .add(ModBlocks.GRAY_CONCRETE_WALL)
-            .add(ModBlocks.BLACK_CONCRETE_WALL)
-            .add(ModBlocks.BROWN_CONCRETE_WALL)
-            .add(ModBlocks.RED_CONCRETE_WALL)
-            .add(ModBlocks.ORANGE_CONCRETE_WALL)
-            .add(ModBlocks.YELLOW_CONCRETE_WALL)
-            .add(ModBlocks.LIME_CONCRETE_WALL)
-            .add(ModBlocks.GREEN_CONCRETE_WALL)
-            .add(ModBlocks.CYAN_CONCRETE_WALL)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_WALL)
-            .add(ModBlocks.BLUE_CONCRETE_WALL)
-            .add(ModBlocks.PURPLE_CONCRETE_WALL)
-            .add(ModBlocks.MAGENTA_CONCRETE_WALL)
-            .add(ModBlocks.PINK_CONCRETE_WALL)
-            .add(ModBlocks.WHITE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL)
-            .add(ModBlocks.GRAY_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BLACK_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BROWN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.RED_CONCRETE_TILE_WALL)
-            .add(ModBlocks.ORANGE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.YELLOW_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIME_CONCRETE_TILE_WALL)
-            .add(ModBlocks.GREEN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.CYAN_CONCRETE_TILE_WALL)
-            .add(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.BLUE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.PURPLE_CONCRETE_TILE_WALL)
-            .add(ModBlocks.MAGENTA_CONCRETE_TILE_WALL)
-            .add(ModBlocks.PINK_CONCRETE_TILE_WALL)
-            .add(ModBlocks.TERRACOTTA_WALL)
-            .add(ModBlocks.WHITE_TERRACOTTA_WALL)
-            .add(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL)
-            .add(ModBlocks.GRAY_TERRACOTTA_WALL)
-            .add(ModBlocks.BLACK_TERRACOTTA_WALL)
-            .add(ModBlocks.BROWN_TERRACOTTA_WALL)
-            .add(ModBlocks.RED_TERRACOTTA_WALL)
-            .add(ModBlocks.ORANGE_TERRACOTTA_WALL)
-            .add(ModBlocks.YELLOW_TERRACOTTA_WALL)
-            .add(ModBlocks.LIME_TERRACOTTA_WALL)
-            .add(ModBlocks.GREEN_TERRACOTTA_WALL)
-            .add(ModBlocks.CYAN_TERRACOTTA_WALL)
-            .add(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL)
-            .add(ModBlocks.BLUE_TERRACOTTA_WALL)
-            .add(ModBlocks.PURPLE_TERRACOTTA_WALL)
-            .add(ModBlocks.MAGENTA_TERRACOTTA_WALL)
-            .add(ModBlocks.PINK_TERRACOTTA_WALL)
-            .add(ModBlocks.WHITE_WOOL_WALL)
-            .add(ModBlocks.LIGHT_GRAY_WOOL_WALL)
-            .add(ModBlocks.GRAY_WOOL_WALL)
-            .add(ModBlocks.BLACK_WOOL_WALL)
-            .add(ModBlocks.BROWN_WOOL_WALL)
-            .add(ModBlocks.RED_WOOL_WALL)
-            .add(ModBlocks.ORANGE_WOOL_WALL)
-            .add(ModBlocks.YELLOW_WOOL_WALL)
-            .add(ModBlocks.LIME_WOOL_WALL)
-            .add(ModBlocks.GREEN_WOOL_WALL)
-            .add(ModBlocks.CYAN_WOOL_WALL)
-            .add(ModBlocks.LIGHT_BLUE_WOOL_WALL)
-            .add(ModBlocks.BLUE_WOOL_WALL)
-            .add(ModBlocks.PURPLE_WOOL_WALL)
-            .add(ModBlocks.MAGENTA_WOOL_WALL)
-            .add(ModBlocks.PINK_WOOL_WALL);
+            .add(BuildingBlocks.OAK_WALL)
+            .add(BuildingBlocks.SPRUCE_WALL)
+            .add(BuildingBlocks.BIRCH_WALL)
+            .add(BuildingBlocks.JUNGLE_WALL)
+            .add(BuildingBlocks.ACACIA_WALL)
+            .add(BuildingBlocks.DARK_OAK_WALL)
+            .add(BuildingBlocks.MANGROVE_WALL)
+            .add(BuildingBlocks.CHERRY_WALL)
+            .add(BuildingBlocks.BAMBOO_WALL)
+            .add(BuildingBlocks.BAMBOO_MOSAIC_WALL)
+            .add(BuildingBlocks.CRIMSON_WALL)
+            .add(BuildingBlocks.WARPED_WALL)
+            .add(BuildingBlocks.STONE_WALL)
+            .add(BuildingBlocks.SMOOTH_STONE_WALL)
+            .add(BuildingBlocks.CRACKED_STONE_BRICK_WALL)
+            .add(BuildingBlocks.POLISHED_GRANITE_WALL)
+            .add(BuildingBlocks.POLISHED_DIORITE_WALL)
+            .add(BuildingBlocks.POLISHED_ANDESITE_WALL)
+            .add(BuildingBlocks.DEEPSLATE_WALL)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL)
+            .add(BuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL)
+            .add(BuildingBlocks.PACKED_MUD_WALL)
+            .add(BuildingBlocks.SMOOTH_SANDSTONE_WALL)
+            .add(BuildingBlocks.CUT_SANDSTONE_WALL)
+            .add(BuildingBlocks.SMOOTH_RED_SANDSTONE_WALL)
+            .add(BuildingBlocks.CUT_RED_SANDSTONE_WALL)
+            .add(BuildingBlocks.PRISMARINE_BRICK_WALL)
+            .add(BuildingBlocks.DARK_PRISMARINE_WALL)
+            .add(NaturalBlocks.NETHERRACK_WALL)
+            .add(BuildingBlocks.CRACKED_NETHER_BRICK_WALL)
+            .add(BuildingBlocks.BASALT_WALL)
+            .add(BuildingBlocks.SMOOTH_BASALT_WALL)
+            .add(BuildingBlocks.POLISHED_BASALT_WALL)
+            .add(BuildingBlocks.GILDED_BLACKSTONE_WALL)
+            .add(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL)
+            .add(BuildingBlocks.END_STONE_WALL)
+            .add(BuildingBlocks.PURPUR_WALL)
+            .add(BuildingBlocks.IRON_WALL)
+            .add(BuildingBlocks.GOLD_WALL)
+            .add(BuildingBlocks.EMERALD_WALL)
+            .add(BuildingBlocks.LAPIS_WALL)
+            .add(BuildingBlocks.DIAMOND_WALL)
+            .add(BuildingBlocks.NETHERITE_WALL)
+            .add(BuildingBlocks.QUARTZ_WALL)
+            .add(BuildingBlocks.QUARTZ_BRICK_WALL)
+            .add(BuildingBlocks.SMOOTH_QUARTZ_WALL)
+            .add(BuildingBlocks.AMETHYST_WALL)
+            .add(ColoredBlocks.WHITE_CONCRETE_WALL)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_WALL)
+            .add(ColoredBlocks.GRAY_CONCRETE_WALL)
+            .add(ColoredBlocks.BLACK_CONCRETE_WALL)
+            .add(ColoredBlocks.BROWN_CONCRETE_WALL)
+            .add(ColoredBlocks.RED_CONCRETE_WALL)
+            .add(ColoredBlocks.ORANGE_CONCRETE_WALL)
+            .add(ColoredBlocks.YELLOW_CONCRETE_WALL)
+            .add(ColoredBlocks.LIME_CONCRETE_WALL)
+            .add(ColoredBlocks.GREEN_CONCRETE_WALL)
+            .add(ColoredBlocks.CYAN_CONCRETE_WALL)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_WALL)
+            .add(ColoredBlocks.BLUE_CONCRETE_WALL)
+            .add(ColoredBlocks.PURPLE_CONCRETE_WALL)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_WALL)
+            .add(ColoredBlocks.PINK_CONCRETE_WALL)
+            .add(ColoredBlocks.WHITE_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.GRAY_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.BLACK_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.BROWN_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.RED_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.ORANGE_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.YELLOW_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.LIME_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.GREEN_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.CYAN_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.BLUE_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.PURPLE_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.MAGENTA_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.PINK_CONCRETE_TILE_WALL)
+            .add(ColoredBlocks.TERRACOTTA_WALL)
+            .add(ColoredBlocks.WHITE_TERRACOTTA_WALL)
+            .add(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL)
+            .add(ColoredBlocks.GRAY_TERRACOTTA_WALL)
+            .add(ColoredBlocks.BLACK_TERRACOTTA_WALL)
+            .add(ColoredBlocks.BROWN_TERRACOTTA_WALL)
+            .add(ColoredBlocks.RED_TERRACOTTA_WALL)
+            .add(ColoredBlocks.ORANGE_TERRACOTTA_WALL)
+            .add(ColoredBlocks.YELLOW_TERRACOTTA_WALL)
+            .add(ColoredBlocks.LIME_TERRACOTTA_WALL)
+            .add(ColoredBlocks.GREEN_TERRACOTTA_WALL)
+            .add(ColoredBlocks.CYAN_TERRACOTTA_WALL)
+            .add(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL)
+            .add(ColoredBlocks.BLUE_TERRACOTTA_WALL)
+            .add(ColoredBlocks.PURPLE_TERRACOTTA_WALL)
+            .add(ColoredBlocks.MAGENTA_TERRACOTTA_WALL)
+            .add(ColoredBlocks.PINK_TERRACOTTA_WALL)
+            .add(ColoredBlocks.WHITE_WOOL_WALL)
+            .add(ColoredBlocks.LIGHT_GRAY_WOOL_WALL)
+            .add(ColoredBlocks.GRAY_WOOL_WALL)
+            .add(ColoredBlocks.BLACK_WOOL_WALL)
+            .add(ColoredBlocks.BROWN_WOOL_WALL)
+            .add(ColoredBlocks.RED_WOOL_WALL)
+            .add(ColoredBlocks.ORANGE_WOOL_WALL)
+            .add(ColoredBlocks.YELLOW_WOOL_WALL)
+            .add(ColoredBlocks.LIME_WOOL_WALL)
+            .add(ColoredBlocks.GREEN_WOOL_WALL)
+            .add(ColoredBlocks.CYAN_WOOL_WALL)
+            .add(ColoredBlocks.LIGHT_BLUE_WOOL_WALL)
+            .add(ColoredBlocks.BLUE_WOOL_WALL)
+            .add(ColoredBlocks.PURPLE_WOOL_WALL)
+            .add(ColoredBlocks.MAGENTA_WOOL_WALL)
+            .add(ColoredBlocks.PINK_WOOL_WALL);
 
 
         getOrCreateTagBuilder(BlockTags.WOOL)
-                .add(ModBlocks.WHITE_WOOL_STAIRS)
-                .add(ModBlocks.WHITE_WOOL_SLAB)
-                .add(ModBlocks.WHITE_WOOL_WALL)
-                .add(ModBlocks.WHITE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.WHITE_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_WALL)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_BUTTON)
-                .add(ModBlocks.GRAY_WOOL_STAIRS)
-                .add(ModBlocks.GRAY_WOOL_SLAB)
-                .add(ModBlocks.GRAY_WOOL_WALL)
-                .add(ModBlocks.GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GRAY_WOOL_BUTTON)
-                .add(ModBlocks.BLACK_WOOL_STAIRS)
-                .add(ModBlocks.BLACK_WOOL_SLAB)
-                .add(ModBlocks.BLACK_WOOL_WALL)
-                .add(ModBlocks.BLACK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLACK_WOOL_BUTTON)
-                .add(ModBlocks.BROWN_WOOL_STAIRS)
-                .add(ModBlocks.BROWN_WOOL_SLAB)
-                .add(ModBlocks.BROWN_WOOL_WALL)
-                .add(ModBlocks.BROWN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BROWN_WOOL_BUTTON)
-                .add(ModBlocks.RED_WOOL_STAIRS)
-                .add(ModBlocks.RED_WOOL_SLAB)
-                .add(ModBlocks.RED_WOOL_WALL)
-                .add(ModBlocks.RED_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.RED_WOOL_BUTTON)
-                .add(ModBlocks.ORANGE_WOOL_STAIRS)
-                .add(ModBlocks.ORANGE_WOOL_SLAB)
-                .add(ModBlocks.ORANGE_WOOL_WALL)
-                .add(ModBlocks.ORANGE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.ORANGE_WOOL_BUTTON)
-                .add(ModBlocks.YELLOW_WOOL_STAIRS)
-                .add(ModBlocks.YELLOW_WOOL_SLAB)
-                .add(ModBlocks.YELLOW_WOOL_WALL)
-                .add(ModBlocks.YELLOW_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.YELLOW_WOOL_BUTTON)
-                .add(ModBlocks.LIME_WOOL_STAIRS)
-                .add(ModBlocks.LIME_WOOL_SLAB)
-                .add(ModBlocks.LIME_WOOL_WALL)
-                .add(ModBlocks.LIME_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIME_WOOL_BUTTON)
-                .add(ModBlocks.GREEN_WOOL_STAIRS)
-                .add(ModBlocks.GREEN_WOOL_SLAB)
-                .add(ModBlocks.GREEN_WOOL_WALL)
-                .add(ModBlocks.GREEN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GREEN_WOOL_BUTTON)
-                .add(ModBlocks.CYAN_WOOL_STAIRS)
-                .add(ModBlocks.CYAN_WOOL_SLAB)
-                .add(ModBlocks.CYAN_WOOL_WALL)
-                .add(ModBlocks.CYAN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.CYAN_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_WALL)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_BUTTON)
-                .add(ModBlocks.BLUE_WOOL_STAIRS)
-                .add(ModBlocks.BLUE_WOOL_SLAB)
-                .add(ModBlocks.BLUE_WOOL_WALL)
-                .add(ModBlocks.BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLUE_WOOL_BUTTON)
-                .add(ModBlocks.PURPLE_WOOL_STAIRS)
-                .add(ModBlocks.PURPLE_WOOL_SLAB)
-                .add(ModBlocks.PURPLE_WOOL_WALL)
-                .add(ModBlocks.PURPLE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PURPLE_WOOL_BUTTON)
-                .add(ModBlocks.MAGENTA_WOOL_STAIRS)
-                .add(ModBlocks.MAGENTA_WOOL_SLAB)
-                .add(ModBlocks.MAGENTA_WOOL_WALL)
-                .add(ModBlocks.MAGENTA_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.MAGENTA_WOOL_BUTTON)
-                .add(ModBlocks.PINK_WOOL_STAIRS)
-                .add(ModBlocks.PINK_WOOL_SLAB)
-                .add(ModBlocks.PINK_WOOL_WALL)
-                .add(ModBlocks.PINK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PINK_WOOL_BUTTON);
+                .add(ColoredBlocks.WHITE_WOOL_STAIRS)
+                .add(ColoredBlocks.WHITE_WOOL_SLAB)
+                .add(ColoredBlocks.WHITE_WOOL_WALL)
+
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.BLACK_WOOL_STAIRS)
+                .add(ColoredBlocks.BLACK_WOOL_SLAB)
+                .add(ColoredBlocks.BLACK_WOOL_WALL)
+
+                .add(ColoredBlocks.BROWN_WOOL_STAIRS)
+                .add(ColoredBlocks.BROWN_WOOL_SLAB)
+                .add(ColoredBlocks.BROWN_WOOL_WALL)
+
+                .add(ColoredBlocks.RED_WOOL_STAIRS)
+                .add(ColoredBlocks.RED_WOOL_SLAB)
+                .add(ColoredBlocks.RED_WOOL_WALL)
+
+                .add(ColoredBlocks.ORANGE_WOOL_STAIRS)
+                .add(ColoredBlocks.ORANGE_WOOL_SLAB)
+                .add(ColoredBlocks.ORANGE_WOOL_WALL)
+
+                .add(ColoredBlocks.YELLOW_WOOL_STAIRS)
+                .add(ColoredBlocks.YELLOW_WOOL_SLAB)
+                .add(ColoredBlocks.YELLOW_WOOL_WALL)
+
+                .add(ColoredBlocks.LIME_WOOL_STAIRS)
+                .add(ColoredBlocks.LIME_WOOL_SLAB)
+                .add(ColoredBlocks.LIME_WOOL_WALL)
+
+                .add(ColoredBlocks.GREEN_WOOL_STAIRS)
+                .add(ColoredBlocks.GREEN_WOOL_SLAB)
+                .add(ColoredBlocks.GREEN_WOOL_WALL)
+
+                .add(ColoredBlocks.CYAN_WOOL_STAIRS)
+                .add(ColoredBlocks.CYAN_WOOL_SLAB)
+                .add(ColoredBlocks.CYAN_WOOL_WALL)
+
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.PURPLE_WOOL_STAIRS)
+                .add(ColoredBlocks.PURPLE_WOOL_SLAB)
+                .add(ColoredBlocks.PURPLE_WOOL_WALL)
+
+                .add(ColoredBlocks.MAGENTA_WOOL_STAIRS)
+                .add(ColoredBlocks.MAGENTA_WOOL_SLAB)
+                .add(ColoredBlocks.MAGENTA_WOOL_WALL)
+
+                .add(ColoredBlocks.PINK_WOOL_STAIRS)
+                .add(ColoredBlocks.PINK_WOOL_SLAB)
+                .add(ColoredBlocks.PINK_WOOL_WALL);
+
 
         getOrCreateTagBuilder(BlockTags.OCCLUDES_VIBRATION_SIGNALS)
-                .add(ModBlocks.WHITE_WOOL_STAIRS)
-                .add(ModBlocks.WHITE_WOOL_SLAB)
-                .add(ModBlocks.WHITE_WOOL_WALL)
-                .add(ModBlocks.WHITE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.WHITE_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_WALL)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_BUTTON)
-                .add(ModBlocks.GRAY_WOOL_STAIRS)
-                .add(ModBlocks.GRAY_WOOL_SLAB)
-                .add(ModBlocks.GRAY_WOOL_WALL)
-                .add(ModBlocks.GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GRAY_WOOL_BUTTON)
-                .add(ModBlocks.BLACK_WOOL_STAIRS)
-                .add(ModBlocks.BLACK_WOOL_SLAB)
-                .add(ModBlocks.BLACK_WOOL_WALL)
-                .add(ModBlocks.BLACK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLACK_WOOL_BUTTON)
-                .add(ModBlocks.BROWN_WOOL_STAIRS)
-                .add(ModBlocks.BROWN_WOOL_SLAB)
-                .add(ModBlocks.BROWN_WOOL_WALL)
-                .add(ModBlocks.BROWN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BROWN_WOOL_BUTTON)
-                .add(ModBlocks.RED_WOOL_STAIRS)
-                .add(ModBlocks.RED_WOOL_SLAB)
-                .add(ModBlocks.RED_WOOL_WALL)
-                .add(ModBlocks.RED_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.RED_WOOL_BUTTON)
-                .add(ModBlocks.ORANGE_WOOL_STAIRS)
-                .add(ModBlocks.ORANGE_WOOL_SLAB)
-                .add(ModBlocks.ORANGE_WOOL_WALL)
-                .add(ModBlocks.ORANGE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.ORANGE_WOOL_BUTTON)
-                .add(ModBlocks.YELLOW_WOOL_STAIRS)
-                .add(ModBlocks.YELLOW_WOOL_SLAB)
-                .add(ModBlocks.YELLOW_WOOL_WALL)
-                .add(ModBlocks.YELLOW_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.YELLOW_WOOL_BUTTON)
-                .add(ModBlocks.LIME_WOOL_STAIRS)
-                .add(ModBlocks.LIME_WOOL_SLAB)
-                .add(ModBlocks.LIME_WOOL_WALL)
-                .add(ModBlocks.LIME_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIME_WOOL_BUTTON)
-                .add(ModBlocks.GREEN_WOOL_STAIRS)
-                .add(ModBlocks.GREEN_WOOL_SLAB)
-                .add(ModBlocks.GREEN_WOOL_WALL)
-                .add(ModBlocks.GREEN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GREEN_WOOL_BUTTON)
-                .add(ModBlocks.CYAN_WOOL_STAIRS)
-                .add(ModBlocks.CYAN_WOOL_SLAB)
-                .add(ModBlocks.CYAN_WOOL_WALL)
-                .add(ModBlocks.CYAN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.CYAN_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_WALL)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_BUTTON)
-                .add(ModBlocks.BLUE_WOOL_STAIRS)
-                .add(ModBlocks.BLUE_WOOL_SLAB)
-                .add(ModBlocks.BLUE_WOOL_WALL)
-                .add(ModBlocks.BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLUE_WOOL_BUTTON)
-                .add(ModBlocks.PURPLE_WOOL_STAIRS)
-                .add(ModBlocks.PURPLE_WOOL_SLAB)
-                .add(ModBlocks.PURPLE_WOOL_WALL)
-                .add(ModBlocks.PURPLE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PURPLE_WOOL_BUTTON)
-                .add(ModBlocks.MAGENTA_WOOL_STAIRS)
-                .add(ModBlocks.MAGENTA_WOOL_SLAB)
-                .add(ModBlocks.MAGENTA_WOOL_WALL)
-                .add(ModBlocks.MAGENTA_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.MAGENTA_WOOL_BUTTON)
-                .add(ModBlocks.PINK_WOOL_STAIRS)
-                .add(ModBlocks.PINK_WOOL_SLAB)
-                .add(ModBlocks.PINK_WOOL_WALL)
-                .add(ModBlocks.PINK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PINK_WOOL_BUTTON);
+                .add(ColoredBlocks.WHITE_WOOL_STAIRS)
+                .add(ColoredBlocks.WHITE_WOOL_SLAB)
+                .add(ColoredBlocks.WHITE_WOOL_WALL)
+
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.BLACK_WOOL_STAIRS)
+                .add(ColoredBlocks.BLACK_WOOL_SLAB)
+                .add(ColoredBlocks.BLACK_WOOL_WALL)
+
+                .add(ColoredBlocks.BROWN_WOOL_STAIRS)
+                .add(ColoredBlocks.BROWN_WOOL_SLAB)
+                .add(ColoredBlocks.BROWN_WOOL_WALL)
+
+                .add(ColoredBlocks.RED_WOOL_STAIRS)
+                .add(ColoredBlocks.RED_WOOL_SLAB)
+                .add(ColoredBlocks.RED_WOOL_WALL)
+
+                .add(ColoredBlocks.ORANGE_WOOL_STAIRS)
+                .add(ColoredBlocks.ORANGE_WOOL_SLAB)
+                .add(ColoredBlocks.ORANGE_WOOL_WALL)
+
+                .add(ColoredBlocks.YELLOW_WOOL_STAIRS)
+                .add(ColoredBlocks.YELLOW_WOOL_SLAB)
+                .add(ColoredBlocks.YELLOW_WOOL_WALL)
+
+                .add(ColoredBlocks.LIME_WOOL_STAIRS)
+                .add(ColoredBlocks.LIME_WOOL_SLAB)
+                .add(ColoredBlocks.LIME_WOOL_WALL)
+
+                .add(ColoredBlocks.GREEN_WOOL_STAIRS)
+                .add(ColoredBlocks.GREEN_WOOL_SLAB)
+                .add(ColoredBlocks.GREEN_WOOL_WALL)
+
+                .add(ColoredBlocks.CYAN_WOOL_STAIRS)
+                .add(ColoredBlocks.CYAN_WOOL_SLAB)
+                .add(ColoredBlocks.CYAN_WOOL_WALL)
+
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.PURPLE_WOOL_STAIRS)
+                .add(ColoredBlocks.PURPLE_WOOL_SLAB)
+                .add(ColoredBlocks.PURPLE_WOOL_WALL)
+
+                .add(ColoredBlocks.MAGENTA_WOOL_STAIRS)
+                .add(ColoredBlocks.MAGENTA_WOOL_SLAB)
+                .add(ColoredBlocks.MAGENTA_WOOL_WALL)
+
+                .add(ColoredBlocks.PINK_WOOL_STAIRS)
+                .add(ColoredBlocks.PINK_WOOL_SLAB)
+                .add(ColoredBlocks.PINK_WOOL_WALL);
 
         getOrCreateTagBuilder(BlockTags.DAMPENS_VIBRATIONS)
-                .add(ModBlocks.WHITE_WOOL_STAIRS)
-                .add(ModBlocks.WHITE_WOOL_SLAB)
-                .add(ModBlocks.WHITE_WOOL_WALL)
-                .add(ModBlocks.WHITE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.WHITE_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_WALL)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_GRAY_WOOL_BUTTON)
-                .add(ModBlocks.GRAY_WOOL_STAIRS)
-                .add(ModBlocks.GRAY_WOOL_SLAB)
-                .add(ModBlocks.GRAY_WOOL_WALL)
-                .add(ModBlocks.GRAY_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GRAY_WOOL_BUTTON)
-                .add(ModBlocks.BLACK_WOOL_STAIRS)
-                .add(ModBlocks.BLACK_WOOL_SLAB)
-                .add(ModBlocks.BLACK_WOOL_WALL)
-                .add(ModBlocks.BLACK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLACK_WOOL_BUTTON)
-                .add(ModBlocks.BROWN_WOOL_STAIRS)
-                .add(ModBlocks.BROWN_WOOL_SLAB)
-                .add(ModBlocks.BROWN_WOOL_WALL)
-                .add(ModBlocks.BROWN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BROWN_WOOL_BUTTON)
-                .add(ModBlocks.RED_WOOL_STAIRS)
-                .add(ModBlocks.RED_WOOL_SLAB)
-                .add(ModBlocks.RED_WOOL_WALL)
-                .add(ModBlocks.RED_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.RED_WOOL_BUTTON)
-                .add(ModBlocks.ORANGE_WOOL_STAIRS)
-                .add(ModBlocks.ORANGE_WOOL_SLAB)
-                .add(ModBlocks.ORANGE_WOOL_WALL)
-                .add(ModBlocks.ORANGE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.ORANGE_WOOL_BUTTON)
-                .add(ModBlocks.YELLOW_WOOL_STAIRS)
-                .add(ModBlocks.YELLOW_WOOL_SLAB)
-                .add(ModBlocks.YELLOW_WOOL_WALL)
-                .add(ModBlocks.YELLOW_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.YELLOW_WOOL_BUTTON)
-                .add(ModBlocks.LIME_WOOL_STAIRS)
-                .add(ModBlocks.LIME_WOOL_SLAB)
-                .add(ModBlocks.LIME_WOOL_WALL)
-                .add(ModBlocks.LIME_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIME_WOOL_BUTTON)
-                .add(ModBlocks.GREEN_WOOL_STAIRS)
-                .add(ModBlocks.GREEN_WOOL_SLAB)
-                .add(ModBlocks.GREEN_WOOL_WALL)
-                .add(ModBlocks.GREEN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.GREEN_WOOL_BUTTON)
-                .add(ModBlocks.CYAN_WOOL_STAIRS)
-                .add(ModBlocks.CYAN_WOOL_SLAB)
-                .add(ModBlocks.CYAN_WOOL_WALL)
-                .add(ModBlocks.CYAN_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.CYAN_WOOL_BUTTON)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_STAIRS)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_SLAB)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_WALL)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.LIGHT_BLUE_WOOL_BUTTON)
-                .add(ModBlocks.BLUE_WOOL_STAIRS)
-                .add(ModBlocks.BLUE_WOOL_SLAB)
-                .add(ModBlocks.BLUE_WOOL_WALL)
-                .add(ModBlocks.BLUE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.BLUE_WOOL_BUTTON)
-                .add(ModBlocks.PURPLE_WOOL_STAIRS)
-                .add(ModBlocks.PURPLE_WOOL_SLAB)
-                .add(ModBlocks.PURPLE_WOOL_WALL)
-                .add(ModBlocks.PURPLE_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PURPLE_WOOL_BUTTON)
-                .add(ModBlocks.MAGENTA_WOOL_STAIRS)
-                .add(ModBlocks.MAGENTA_WOOL_SLAB)
-                .add(ModBlocks.MAGENTA_WOOL_WALL)
-                .add(ModBlocks.MAGENTA_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.MAGENTA_WOOL_BUTTON)
-                .add(ModBlocks.PINK_WOOL_STAIRS)
-                .add(ModBlocks.PINK_WOOL_SLAB)
-                .add(ModBlocks.PINK_WOOL_WALL)
-                .add(ModBlocks.PINK_WOOL_PRESSURE_PLATE)
-                .add(ModBlocks.PINK_WOOL_BUTTON);
+                .add(ColoredBlocks.WHITE_WOOL_STAIRS)
+                .add(ColoredBlocks.WHITE_WOOL_SLAB)
+                .add(ColoredBlocks.WHITE_WOOL_WALL)
 
-        getOrCreateTagBuilder(BlockTags.NYLIUM)
-                .add ( ModBlocks.CRIMSON_NYLIUM_SLAB )
-                .add ( ModBlocks.WARPED_NYLIUM_SLAB );
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.GRAY_WOOL_STAIRS)
+                .add(ColoredBlocks.GRAY_WOOL_SLAB)
+                .add(ColoredBlocks.GRAY_WOOL_WALL)
+
+                .add(ColoredBlocks.BLACK_WOOL_STAIRS)
+                .add(ColoredBlocks.BLACK_WOOL_SLAB)
+                .add(ColoredBlocks.BLACK_WOOL_WALL)
+
+                .add(ColoredBlocks.BROWN_WOOL_STAIRS)
+                .add(ColoredBlocks.BROWN_WOOL_SLAB)
+                .add(ColoredBlocks.BROWN_WOOL_WALL)
+
+                .add(ColoredBlocks.RED_WOOL_STAIRS)
+                .add(ColoredBlocks.RED_WOOL_SLAB)
+                .add(ColoredBlocks.RED_WOOL_WALL)
+
+                .add(ColoredBlocks.ORANGE_WOOL_STAIRS)
+                .add(ColoredBlocks.ORANGE_WOOL_SLAB)
+                .add(ColoredBlocks.ORANGE_WOOL_WALL)
+
+                .add(ColoredBlocks.YELLOW_WOOL_STAIRS)
+                .add(ColoredBlocks.YELLOW_WOOL_SLAB)
+                .add(ColoredBlocks.YELLOW_WOOL_WALL)
+
+                .add(ColoredBlocks.LIME_WOOL_STAIRS)
+                .add(ColoredBlocks.LIME_WOOL_SLAB)
+                .add(ColoredBlocks.LIME_WOOL_WALL)
+
+                .add(ColoredBlocks.GREEN_WOOL_STAIRS)
+                .add(ColoredBlocks.GREEN_WOOL_SLAB)
+                .add(ColoredBlocks.GREEN_WOOL_WALL)
+
+                .add(ColoredBlocks.CYAN_WOOL_STAIRS)
+                .add(ColoredBlocks.CYAN_WOOL_SLAB)
+                .add(ColoredBlocks.CYAN_WOOL_WALL)
+
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.LIGHT_BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.BLUE_WOOL_STAIRS)
+                .add(ColoredBlocks.BLUE_WOOL_SLAB)
+                .add(ColoredBlocks.BLUE_WOOL_WALL)
+
+                .add(ColoredBlocks.PURPLE_WOOL_STAIRS)
+                .add(ColoredBlocks.PURPLE_WOOL_SLAB)
+                .add(ColoredBlocks.PURPLE_WOOL_WALL)
+
+                .add(ColoredBlocks.MAGENTA_WOOL_STAIRS)
+                .add(ColoredBlocks.MAGENTA_WOOL_SLAB)
+                .add(ColoredBlocks.MAGENTA_WOOL_WALL)
+
+                .add(ColoredBlocks.PINK_WOOL_STAIRS)
+                .add(ColoredBlocks.PINK_WOOL_SLAB)
+                .add(ColoredBlocks.PINK_WOOL_WALL);
     }
 }

@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 import static net.minecraft.block.SlabBlock.TYPE;
 
@@ -34,18 +34,18 @@ public class ShovelItemMixin {
         if (context.getSide() == Direction.DOWN) return;
         if (!world.getBlockState(blockPos.up()).isAir()) return;
 
-        boolean isGrassSlab = blockState.isOf(ModBlocks.GRASS_SLAB);
-        boolean isDirtSlab = blockState.isOf(ModBlocks.DIRT_SLAB);
-        boolean isCoarseDirtSlab = blockState.isOf(ModBlocks.COARSE_DIRT_SLAB);
-        boolean isPodzolSlab = blockState.isOf(ModBlocks.PODZOL_SLAB);
-        boolean isRootedDirtSlab = blockState.isOf(ModBlocks.ROOTED_DIRT_SLAB);
-        boolean isMyceliumSlab = blockState.isOf(ModBlocks.MYCELIUM_SLAB);
+        boolean isGrassSlab = blockState.isOf(NaturalBlocks.GRASS_SLAB);
+        boolean isDirtSlab = blockState.isOf(NaturalBlocks.DIRT_SLAB);
+        boolean isCoarseDirtSlab = blockState.isOf(NaturalBlocks.COARSE_DIRT_SLAB);
+        boolean isPodzolSlab = blockState.isOf(NaturalBlocks.PODZOL_SLAB);
+        boolean isRootedDirtSlab = blockState.isOf(NaturalBlocks.ROOTED_DIRT_SLAB);
+        boolean isMyceliumSlab = blockState.isOf(NaturalBlocks.MYCELIUM_SLAB);
 
         if (isGrassSlab || isDirtSlab || isCoarseDirtSlab || isPodzolSlab || isRootedDirtSlab || isMyceliumSlab) {
             world.playSound(playerEntity, blockPos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
             if (!world.isClient) {
-                BlockState newState = ModBlocks.DIRT_PATH_SLAB.getDefaultState()
+                BlockState newState = NaturalBlocks.DIRT_PATH_SLAB.getDefaultState()
                         .with(TYPE, blockState.get(TYPE));
                 world.setBlockState(blockPos, newState, Block.NOTIFY_ALL_AND_REDRAW);
                 world.emitGameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Emitter.of(playerEntity, newState));

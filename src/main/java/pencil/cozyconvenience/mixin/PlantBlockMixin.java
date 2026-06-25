@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 import static net.minecraft.block.SlabBlock.TYPE;
 
@@ -18,10 +18,10 @@ public class PlantBlockMixin {
 
     @Inject(method = "canPlantOnTop", at = @At("RETURN"), cancellable = true)
     private void allowPlantingOnDirtSlab(BlockState floor, BlockView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (floor.isOf(ModBlocks.DIRT_SLAB) && floor.get(TYPE) == SlabType.DOUBLE || floor.isOf(ModBlocks.DIRT_SLAB) && floor.get(TYPE) == SlabType.TOP) {
+        if (floor.isOf(NaturalBlocks.DIRT_SLAB) && floor.get(TYPE) == SlabType.DOUBLE || floor.isOf(NaturalBlocks.DIRT_SLAB) && floor.get(TYPE) == SlabType.TOP) {
 
             cir.setReturnValue(true);
-        } else if (floor.isOf(ModBlocks.GRASS_SLAB) && floor.get(TYPE) == SlabType.DOUBLE || floor.isOf(ModBlocks.GRASS_SLAB) && floor.get(TYPE) == SlabType.TOP) {
+        } else if (floor.isOf(NaturalBlocks.GRASS_SLAB) && floor.get(TYPE) == SlabType.DOUBLE || floor.isOf(NaturalBlocks.GRASS_SLAB) && floor.get(TYPE) == SlabType.TOP) {
 
             cir.setReturnValue(true);
         }

@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +29,7 @@ public class AzaleaBlockMixin {
 
         for (BlockPos checkPos : BlockPos.iterate(pos.add(-4, -1, -4), pos.add(4, -1, 4))) {
             BlockState checkState = world.getBlockState(checkPos);
-            if (checkState.isOf(ModBlocks.DIRT_SLAB) || checkState.isOf(ModBlocks.GRASS_SLAB)) {
+            if (checkState.isOf(NaturalBlocks.DIRT_SLAB) || checkState.isOf(NaturalBlocks.GRASS_SLAB)) {
                 slabPositions.put(checkPos.toImmutable(), checkState.get(TYPE));
             }
         }
@@ -41,7 +41,7 @@ public class AzaleaBlockMixin {
             BlockState current = world.getBlockState(entry.getKey());
 
             if (current.isOf(Blocks.ROOTED_DIRT)) {
-                world.setBlockState(entry.getKey(), ModBlocks.ROOTED_DIRT_SLAB.getDefaultState()
+                world.setBlockState(entry.getKey(), NaturalBlocks.ROOTED_DIRT_SLAB.getDefaultState()
                         .with(TYPE, entry.getValue()), 3);
             }
         }

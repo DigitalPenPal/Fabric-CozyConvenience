@@ -1,12 +1,10 @@
 package pencil.cozyconvenience.block.custom;
 
 import net.minecraft.block.*;
-import net.minecraft.block.enums.SlabType;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -16,25 +14,16 @@ import net.minecraft.world.chunk.light.ChunkLightProvider;
 import net.minecraft.world.gen.chunk.ChunkGenerator;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.NetherConfiguredFeatures;
-import pencil.cozyconvenience.block.ModBlocks;
 
-import static net.minecraft.block.SlabBlock.TYPE;
+public class NyliumStairs extends StairsBlock implements Fertilizable{
 
-public class NyliumSlabBlock extends SlabBlock implements Fertilizable {
-
-    public NyliumSlabBlock(Settings settings) {
-        super(settings);
+    public NyliumStairs(BlockState baseBlockState, Settings settings) {
+        super(baseBlockState, settings);
     }
 
     private static boolean stayAlive(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.up();
         BlockState blockState = world.getBlockState(blockPos);
-
-        // top slabs are always exposed
-        if (state.contains(TYPE) && state.get(TYPE) == SlabType.TOP) {
-            return true;
-        }
-
         int i = ChunkLightProvider.getRealisticOpacity(world, state, pos, blockState, blockPos, Direction.UP, blockState.getOpacity(world, blockPos));
         return i < world.getMaxLightLevel();
     }
@@ -62,10 +51,9 @@ public class NyliumSlabBlock extends SlabBlock implements Fertilizable {
         BlockPos blockPos = pos.up();
         ChunkGenerator chunkGenerator = world.getChunkManager().getChunkGenerator();
         Registry<ConfiguredFeature<?, ?>> registry = world.getRegistryManager().get(RegistryKeys.CONFIGURED_FEATURE);
-
-        if (blockState.isOf(ModBlocks.CRIMSON_NYLIUM_SLAB)) {
+        if (blockState.isOf(Blocks.CRIMSON_NYLIUM)) {
             this.generate(registry, NetherConfiguredFeatures.CRIMSON_FOREST_VEGETATION_BONEMEAL, world, chunkGenerator, random, blockPos);
-        } else if (blockState.isOf(ModBlocks.WARPED_NYLIUM_SLAB)) {
+        } else if (blockState.isOf(Blocks.WARPED_NYLIUM)) {
             this.generate(registry, NetherConfiguredFeatures.WARPED_FOREST_VEGETATION_BONEMEAL, world, chunkGenerator, random, blockPos);
             this.generate(registry, NetherConfiguredFeatures.NETHER_SPROUTS_BONEMEAL, world, chunkGenerator, random, blockPos);
             if (random.nextInt(8) == 0) {
@@ -82,7 +70,7 @@ public class NyliumSlabBlock extends SlabBlock implements Fertilizable {
             Random random,
             BlockPos pos
     ) {
-        registry.getEntry(key).ifPresent(entry -> ((ConfiguredFeature) entry.value()).generate(world, chunkGenerator, random, pos));
+        registry.getEntry(key).ifPresent(entry -> ((ConfiguredFeature)entry.value()).generate(world, chunkGenerator, random, pos));
     }
 
     @Override

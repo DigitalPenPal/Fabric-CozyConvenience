@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -41,9 +41,9 @@ public class MegaSpruceTreeTrunkPlacerMixin {
         for (int y = -2; y <= 1; y++) {
             for (BlockPos blockPos : BlockPos.iterate(startPos.add(-4, y, -4), startPos.add(4, y, 4))) {
                 BlockState state = worldAccess.getBlockState(blockPos);
-                if (state.isOf(ModBlocks.DIRT_SLAB) || state.isOf(ModBlocks.GRASS_SLAB)) {
+                if (state.isOf(NaturalBlocks.DIRT_SLAB) || state.isOf(NaturalBlocks.GRASS_SLAB)) {
                     worldAccess.setBlockState(blockPos,
-                            ModBlocks.PODZOL_SLAB.getDefaultState()
+                            NaturalBlocks.PODZOL_SLAB.getDefaultState()
                                     .with(TYPE, state.get(TYPE)),
                             3);
                 }

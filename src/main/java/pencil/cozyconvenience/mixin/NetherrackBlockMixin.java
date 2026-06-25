@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 @Mixin(NetherrackBlock.class)
 public class NetherrackBlockMixin {
@@ -24,7 +24,7 @@ public class NetherrackBlockMixin {
 
         for (BlockPos blockPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             BlockState blockState = world.getBlockState(blockPos);
-            if (blockState.isOf(ModBlocks.CRIMSON_NYLIUM_SLAB) || blockState.isOf(ModBlocks.WARPED_NYLIUM_SLAB)) {
+            if (blockState.isOf(NaturalBlocks.CRIMSON_NYLIUM_SLAB) || blockState.isOf(NaturalBlocks.WARPED_NYLIUM_SLAB)) {
                 cir.setReturnValue(true);
                 return;
             }
@@ -38,10 +38,10 @@ public class NetherrackBlockMixin {
 
         for (BlockPos blockPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             BlockState blockState = world.getBlockState(blockPos);
-            if (blockState.isOf(Blocks.WARPED_NYLIUM) || blockState.isOf(ModBlocks.WARPED_NYLIUM_SLAB)) {
+            if (blockState.isOf(Blocks.WARPED_NYLIUM) || blockState.isOf(NaturalBlocks.WARPED_NYLIUM_SLAB)) {
                 isWarpedNearby = true;
             }
-            if (blockState.isOf(Blocks.CRIMSON_NYLIUM) || blockState.isOf(ModBlocks.CRIMSON_NYLIUM_SLAB)) {
+            if (blockState.isOf(Blocks.CRIMSON_NYLIUM) || blockState.isOf(NaturalBlocks.CRIMSON_NYLIUM_SLAB)) {
                 isCrimsonNearby = true;
             }
             if (isWarpedNearby && isCrimsonNearby) break;

@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.BuildingBlocks;
+import pencil.cozyconvenience.block.ColoredBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -14,792 +16,652 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        // ++ Building Blocks Category ++
+        BlockStateModelGenerator.BlockTexturePool DirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DIRT);
+        DirtPool.stairs(NaturalBlocks.DIRT_STAIRS);
+        DirtPool.slab(NaturalBlocks.DIRT_SLAB);
 
+        BlockStateModelGenerator.BlockTexturePool CoarseDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.COARSE_DIRT);
+        CoarseDirtPool.stairs(NaturalBlocks.COARSE_DIRT_STAIRS);
+        CoarseDirtPool.slab(NaturalBlocks.COARSE_DIRT_SLAB);
 
-        BlockStateModelGenerator.BlockTexturePool DirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.DIRT );
-        BlockStateModelGenerator.BlockTexturePool CoarseDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.COARSE_DIRT );
-        BlockStateModelGenerator.BlockTexturePool RootedDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool ( Blocks.ROOTED_DIRT );
+        BlockStateModelGenerator.BlockTexturePool RootedDirtPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ROOTED_DIRT);
+        RootedDirtPool.stairs(NaturalBlocks.ROOTED_DIRT_STAIRS);
+        RootedDirtPool.slab(NaturalBlocks.ROOTED_DIRT_SLAB);
 
-        DirtPool.slab ( ModBlocks.DIRT_SLAB );
-        CoarseDirtPool.slab ( ModBlocks.COARSE_DIRT_SLAB );
-        RootedDirtPool.slab ( ModBlocks.ROOTED_DIRT_SLAB );
-
-
-        // Wood Blocks
-        BlockStateModelGenerator.BlockTexturePool OakPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.OAK_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool SprucePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.SPRUCE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool BirchPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BIRCH_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool JunglePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.JUNGLE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool AcaciaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ACACIA_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool DarkOakPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DARK_OAK_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool MangrovePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MANGROVE_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool CherryPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CHERRY_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool BambooPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BAMBOO_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool BambooMosaicPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BAMBOO_MOSAIC);
-        BlockStateModelGenerator.BlockTexturePool CrimsonPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRIMSON_PLANKS);
-        BlockStateModelGenerator.BlockTexturePool WarpedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WARPED_PLANKS);
-
-        OakPool.wall(ModBlocks.OAK_WALL);
-        SprucePool.wall(ModBlocks.SPRUCE_WALL);
-        BirchPool.wall(ModBlocks.BIRCH_WALL);
-        JunglePool.wall(ModBlocks.JUNGLE_WALL);
-        AcaciaPool.wall(ModBlocks.ACACIA_WALL);
-        DarkOakPool.wall(ModBlocks.DARK_OAK_WALL);
-        MangrovePool.wall(ModBlocks.MANGROVE_WALL);
-        CherryPool.wall(ModBlocks.CHERRY_WALL);
-        BambooPool.wall(ModBlocks.BAMBOO_WALL);
-        BambooMosaicPool.wall(ModBlocks.BAMBOO_MOSAIC_WALL);
-        CrimsonPool.wall(ModBlocks.CRIMSON_WALL);
-        WarpedPool.wall(ModBlocks.WARPED_WALL);
-
-
-        // Stone Blocks
-        BlockStateModelGenerator.BlockTexturePool StonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.STONE);
-        BlockStateModelGenerator.BlockTexturePool CobblestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.COBBLESTONE);
-        BlockStateModelGenerator.BlockTexturePool MossyCobblestonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MOSSY_COBBLESTONE);
-        BlockStateModelGenerator.BlockTexturePool SmoothStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.SMOOTH_STONE);
-        BlockStateModelGenerator.BlockTexturePool StoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.STONE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool CrackedStoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_STONE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool MossyStoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MOSSY_STONE_BRICKS);
-
-        StonePool.wall(ModBlocks.STONE_WALL);
-        CobblestonePool.pressurePlate(ModBlocks.COBBLESTONE_PRESSURE_PLATE);
-        CobblestonePool.button(ModBlocks.COBBLESTONE_BUTTON);
-        MossyCobblestonePool.pressurePlate(ModBlocks.MOSSY_COBBLESTONE_PRESSURE_PLATE);
-        MossyCobblestonePool.button(ModBlocks.MOSSY_COBBLESTONE_BUTTON);
-        SmoothStonePool.stairs(ModBlocks.SMOOTH_STONE_STAIRS);
-        SmoothStonePool.wall(ModBlocks.SMOOTH_STONE_WALL);
-        SmoothStonePool.pressurePlate(ModBlocks.SMOOTH_STONE_PRESSURE_PLATE);
-        SmoothStonePool.button(ModBlocks.SMOOTH_STONE_BUTTON);
-        StoneBrickPool.pressurePlate(ModBlocks.STONE_BRICK_PRESSURE_PLATE);
-        StoneBrickPool.button(ModBlocks.STONE_BRICK_BUTTON);
-        CrackedStoneBrickPool.stairs(ModBlocks.CRACKED_STONE_BRICK_STAIRS);
-        CrackedStoneBrickPool.slab(ModBlocks.CRACKED_STONE_BRICK_SLAB);
-        CrackedStoneBrickPool.wall(ModBlocks.CRACKED_STONE_BRICK_WALL);
-        CrackedStoneBrickPool.pressurePlate(ModBlocks.CRACKED_STONE_BRICK_PRESSURE_PLATE);
-        CrackedStoneBrickPool.button(ModBlocks.CRACKED_STONE_BRICK_BUTTON);
-        MossyStoneBrickPool.pressurePlate(ModBlocks.MOSSY_STONE_BRICK_PRESSURE_PLATE);
-        MossyStoneBrickPool.button(ModBlocks.MOSSY_STONE_BRICK_BUTTON);
-
-        blockStateModelGenerator.registerLog(ModBlocks.STONE_COLUMN).log(ModBlocks.STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.MOSSY_STONE_COLUMN).log(ModBlocks.MOSSY_STONE_COLUMN);
-        blockStateModelGenerator.registerLog(ModBlocks.CRACKED_STONE_COLUMN).log(ModBlocks.CRACKED_STONE_COLUMN);
-
-
-        // Granite Blocks
-        BlockStateModelGenerator.BlockTexturePool GranitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRANITE);
-        BlockStateModelGenerator.BlockTexturePool PolishedGranitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_GRANITE);
-
-        GranitePool.pressurePlate(ModBlocks.GRANITE_PRESSURE_PLATE);
-        GranitePool.button(ModBlocks.GRANITE_BUTTON);
-        PolishedGranitePool.wall(ModBlocks.POLISHED_GRANITE_WALL);
-        PolishedGranitePool.pressurePlate(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE);
-        PolishedGranitePool.button(ModBlocks.POLISHED_GRANITE_BUTTON);
-
-
-        // Diorite Blocks
-        BlockStateModelGenerator.BlockTexturePool DioritePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DIORITE);
-        BlockStateModelGenerator.BlockTexturePool PolishedDioritePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_DIORITE);
-
-        DioritePool.pressurePlate(ModBlocks.DIORITE_PRESSURE_PLATE);
-        DioritePool.button(ModBlocks.DIORITE_BUTTON);
-        PolishedDioritePool.wall(ModBlocks.POLISHED_DIORITE_WALL);
-        PolishedDioritePool.pressurePlate(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE);
-        PolishedDioritePool.button(ModBlocks.POLISHED_DIORITE_BUTTON);
-
-
-        // Andesite Blocks
-        BlockStateModelGenerator.BlockTexturePool AndesitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ANDESITE);
-        BlockStateModelGenerator.BlockTexturePool PolishedAndesitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_ANDESITE);
-
-        AndesitePool.pressurePlate(ModBlocks.ANDESITE_PRESSURE_PLATE);
-        AndesitePool.button(ModBlocks.ANDESITE_BUTTON);
-        PolishedAndesitePool.wall(ModBlocks.POLISHED_ANDESITE_WALL);
-        PolishedAndesitePool.pressurePlate(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE);
-        PolishedAndesitePool.button(ModBlocks.POLISHED_ANDESITE_BUTTON);
-
-
-        // Deepslate Blocks
-        BlockStateModelGenerator.BlockTexturePool DeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DEEPSLATE);
-        BlockStateModelGenerator.BlockTexturePool CobbledDeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.COBBLED_DEEPSLATE);
-        BlockStateModelGenerator.BlockTexturePool PolishedDeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_DEEPSLATE);
-        BlockStateModelGenerator.BlockTexturePool DeepslateBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DEEPSLATE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool CrackedDeepslateBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_DEEPSLATE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool DeepslateTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DEEPSLATE_TILES);
-        BlockStateModelGenerator.BlockTexturePool CrackedDeepslateTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_DEEPSLATE_TILES);
-
-        DeepslatePool.stairs(ModBlocks.DEEPSLATE_STAIRS);
-        DeepslatePool.slab(ModBlocks.DEEPSLATE_SLAB);
-        DeepslatePool.wall(ModBlocks.DEEPSLATE_WALL);
-        DeepslatePool.pressurePlate(ModBlocks.DEEPSLATE_PRESSURE_PLATE);
-        DeepslatePool.button(ModBlocks.DEEPSLATE_BUTTON);
-        CobbledDeepslatePool.pressurePlate(ModBlocks.COBBLED_DEEPSLATE_PRESSURE_PLATE);
-        CobbledDeepslatePool.button(ModBlocks.COBBLED_DEEPSLATE_BUTTON);
-        PolishedDeepslatePool.pressurePlate(ModBlocks.POLISHED_DEEPSLATE_PRESSURE_PLATE);
-        PolishedDeepslatePool.button(ModBlocks.POLISHED_DEEPSLATE_BUTTON);
-        DeepslateBrickPool.pressurePlate(ModBlocks.DEEPSLATE_BRICK_PRESSURE_PLATE);
-        DeepslateBrickPool.button(ModBlocks.DEEPSLATE_BRICK_BUTTON);
-        CrackedDeepslateBrickPool.stairs(ModBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);
-        CrackedDeepslateBrickPool.slab(ModBlocks.CRACKED_DEEPSLATE_BRICK_SLAB);
-        CrackedDeepslateBrickPool.wall(ModBlocks.CRACKED_DEEPSLATE_BRICK_WALL);
-        CrackedDeepslateBrickPool.pressurePlate(ModBlocks.CRACKED_DEEPSLATE_BRICK_PRESSURE_PLATE);
-        CrackedDeepslateBrickPool.button(ModBlocks.CRACKED_DEEPSLATE_BRICK_BUTTON);
-        DeepslateTilePool.pressurePlate(ModBlocks.DEEPSLATE_TILE_PRESSURE_PLATE);
-        DeepslateTilePool.button(ModBlocks.DEEPSLATE_TILE_BUTTON);
-        CrackedDeepslateTilePool.stairs(ModBlocks.CRACKED_DEEPSLATE_TILE_STAIRS);
-        CrackedDeepslateTilePool.slab(ModBlocks.CRACKED_DEEPSLATE_TILE_SLAB);
-        CrackedDeepslateTilePool.wall(ModBlocks.CRACKED_DEEPSLATE_TILE_WALL);
-        CrackedDeepslateTilePool.pressurePlate(ModBlocks.CRACKED_DEEPSLATE_TILE_PRESSURE_PLATE);
-        CrackedDeepslateTilePool.button(ModBlocks.CRACKED_DEEPSLATE_TILE_BUTTON);
-
-
-        // Tuff Blocks
-        BlockStateModelGenerator.BlockTexturePool TuffPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TUFF);
-        BlockStateModelGenerator.BlockTexturePool PolishedTuffPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_TUFF);
-        BlockStateModelGenerator.BlockTexturePool TuffBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TUFF_BRICKS);
-
-        TuffPool.pressurePlate(ModBlocks.TUFF_PRESSURE_PLATE);
-        TuffPool.button(ModBlocks.TUFF_BUTTON);
-        PolishedTuffPool.pressurePlate(ModBlocks.POLISHED_TUFF_PRESSURE_PLATE);
-        PolishedTuffPool.button(ModBlocks.POLISHED_TUFF_BUTTON);
-        TuffBrickPool.pressurePlate(ModBlocks.TUFF_BRICK_PRESSURE_PLATE);
-        TuffBrickPool.button(ModBlocks.TUFF_BRICK_BUTTON);
-
-
-        // Brick Blocks
-        BlockStateModelGenerator.BlockTexturePool BrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BRICKS);
-        BrickPool.pressurePlate(ModBlocks.BRICK_PRESSURE_PLATE);
-        BrickPool.button(ModBlocks.BRICK_BUTTON);
-
-
-        // Mud Blocks
-        BlockStateModelGenerator.BlockTexturePool PackedMudPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
-        BlockStateModelGenerator.BlockTexturePool MudBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MUD_BRICKS);
-
-        PackedMudPool.stairs(ModBlocks.PACKED_MUD_STAIRS);
-        PackedMudPool.slab(ModBlocks.PACKED_MUD_SLAB);
-        PackedMudPool.wall(ModBlocks.PACKED_MUD_WALL);
-        PackedMudPool.pressurePlate(ModBlocks.PACKED_MUD_PRESSURE_PLATE);
-        PackedMudPool.button(ModBlocks.PACKED_MUD_BUTTON);
-        MudBrickPool.pressurePlate(ModBlocks.MUD_BRICK_PRESSURE_PLATE);
-        MudBrickPool.button(ModBlocks.MUD_BRICK_BUTTON);
-
-
-        // Sandstone Blocks -- [ Here be Broken Blocks ]
-
-
-        // Prismarine Blocks
-        BlockStateModelGenerator.BlockTexturePool PrismarinePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PRISMARINE);
-        BlockStateModelGenerator.BlockTexturePool PrismarineBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PRISMARINE_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool DarkPrismarinePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DARK_PRISMARINE);
-
-        PrismarinePool.pressurePlate(ModBlocks.PRISMARINE_PRESSURE_PLATE);
-        PrismarinePool.button(ModBlocks.PRISMARINE_BUTTON);
-        PrismarineBrickPool.wall(ModBlocks.PRISMARINE_BRICK_WALL);
-        PrismarineBrickPool.pressurePlate(ModBlocks.PRISMARINE_BRICK_PRESSURE_PLATE);
-        PrismarineBrickPool.button(ModBlocks.PRISMARINE_BRICK_BUTTON);
-        DarkPrismarinePool.wall(ModBlocks.DARK_PRISMARINE_WALL);
-        DarkPrismarinePool.pressurePlate(ModBlocks.DARK_PRISMARINE_PRESSURE_PLATE);
-        DarkPrismarinePool.button(ModBlocks.DARK_PRISMARINE_BUTTON);
-
-
-        // Netherrack Blocks
         BlockStateModelGenerator.BlockTexturePool NetherrackPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.NETHERRACK);
-        BlockStateModelGenerator.BlockTexturePool NetherBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.NETHER_BRICKS);
+        NetherrackPool.stairs(NaturalBlocks.NETHERRACK_STAIRS);
+        NetherrackPool.slab(NaturalBlocks.NETHERRACK_SLAB);
+        NetherrackPool.wall(NaturalBlocks.NETHERRACK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool OakPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.OAK_PLANKS);
+        OakPool.wall(BuildingBlocks.OAK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool SprucePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.SPRUCE_PLANKS);
+        SprucePool.wall(BuildingBlocks.SPRUCE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BirchPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BIRCH_PLANKS);
+        BirchPool.wall(BuildingBlocks.BIRCH_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool JunglePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.JUNGLE_PLANKS);
+        JunglePool.wall(BuildingBlocks.JUNGLE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool AcaciaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ACACIA_PLANKS);
+        AcaciaPool.wall(BuildingBlocks.ACACIA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool DarkOakPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DARK_OAK_PLANKS);
+        DarkOakPool.wall(BuildingBlocks.DARK_OAK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool MangrovePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MANGROVE_PLANKS);
+        MangrovePool.wall(BuildingBlocks.MANGROVE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CherryPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CHERRY_PLANKS);
+        CherryPool.wall(BuildingBlocks.CHERRY_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BambooPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BAMBOO_PLANKS);
+        BambooPool.wall(BuildingBlocks.BAMBOO_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BambooMosaicPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BAMBOO_MOSAIC);
+        BambooMosaicPool.wall(BuildingBlocks.BAMBOO_MOSAIC_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CrimsonPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRIMSON_PLANKS);
+        CrimsonPool.wall(BuildingBlocks.CRIMSON_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool WarpedPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WARPED_PLANKS);
+        WarpedPool.wall(BuildingBlocks.WARPED_WALL);
+
+
+        BlockStateModelGenerator.BlockTexturePool StonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.STONE);
+        StonePool.wall(BuildingBlocks.STONE_WALL);
+
+        blockStateModelGenerator.registerLog(BuildingBlocks.STONE_COLUMN).log(BuildingBlocks.STONE_COLUMN);
+        blockStateModelGenerator.registerLog(BuildingBlocks.MOSSY_STONE_COLUMN).log(BuildingBlocks.MOSSY_STONE_COLUMN);
+        blockStateModelGenerator.registerLog(BuildingBlocks.CRACKED_STONE_COLUMN).log(BuildingBlocks.CRACKED_STONE_COLUMN);
+
+        BlockStateModelGenerator.BlockTexturePool SmoothStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.SMOOTH_STONE);
+        SmoothStonePool.stairs(BuildingBlocks.SMOOTH_STONE_STAIRS);
+        SmoothStonePool.wall(BuildingBlocks.SMOOTH_STONE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CrackedStoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_STONE_BRICKS);
+        CrackedStoneBrickPool.stairs(BuildingBlocks.CRACKED_STONE_BRICK_STAIRS);
+        CrackedStoneBrickPool.slab(BuildingBlocks.CRACKED_STONE_BRICK_SLAB);
+        CrackedStoneBrickPool.wall(BuildingBlocks.CRACKED_STONE_BRICK_WALL);
+
+
+        BlockStateModelGenerator.BlockTexturePool PolishedGranitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_GRANITE);
+        PolishedGranitePool.wall(BuildingBlocks.POLISHED_GRANITE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PolishedDioritePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_DIORITE);
+        PolishedDioritePool.wall(BuildingBlocks.POLISHED_DIORITE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PolishedAndesitePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_ANDESITE);
+        PolishedAndesitePool.wall(BuildingBlocks.POLISHED_ANDESITE_WALL);
+
+
+        BlockStateModelGenerator.BlockTexturePool DeepslatePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DEEPSLATE);
+        DeepslatePool.stairs(BuildingBlocks.DEEPSLATE_STAIRS);
+        DeepslatePool.slab(BuildingBlocks.DEEPSLATE_SLAB);
+        DeepslatePool.wall(BuildingBlocks.DEEPSLATE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CrackedDeepslateBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_DEEPSLATE_BRICKS);
+        CrackedDeepslateBrickPool.stairs(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_STAIRS);
+        CrackedDeepslateBrickPool.slab(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_SLAB);
+        CrackedDeepslateBrickPool.wall(BuildingBlocks.CRACKED_DEEPSLATE_BRICK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CrackedDeepslateTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_DEEPSLATE_TILES);
+        CrackedDeepslateTilePool.stairs(BuildingBlocks.CRACKED_DEEPSLATE_TILE_STAIRS);
+        CrackedDeepslateTilePool.slab(BuildingBlocks.CRACKED_DEEPSLATE_TILE_SLAB);
+        CrackedDeepslateTilePool.wall(BuildingBlocks.CRACKED_DEEPSLATE_TILE_WALL);
+
+
+        BlockStateModelGenerator.BlockTexturePool PackedMudPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
+        PackedMudPool.stairs(BuildingBlocks.PACKED_MUD_STAIRS);
+        PackedMudPool.slab(BuildingBlocks.PACKED_MUD_SLAB);
+        PackedMudPool.wall(BuildingBlocks.PACKED_MUD_WALL);
+
+
+        BlockStateModelGenerator.BlockTexturePool PrismarineBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PRISMARINE_BRICKS);
+        PrismarineBrickPool.wall(BuildingBlocks.PRISMARINE_BRICK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool DarkPrismarinePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DARK_PRISMARINE);
+        DarkPrismarinePool.wall(BuildingBlocks.DARK_PRISMARINE_WALL);
+
+
         BlockStateModelGenerator.BlockTexturePool CrackedNetherBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_NETHER_BRICKS);
-        BlockStateModelGenerator.BlockTexturePool RedNetherBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_NETHER_BRICKS);
-
-        NetherrackPool.stairs(ModBlocks.NETHERRACK_STAIRS);
-        NetherrackPool.slab(ModBlocks.NETHERRACK_SLAB);
-        NetherrackPool.wall(ModBlocks.NETHERRACK_WALL);
-        NetherrackPool.pressurePlate(ModBlocks.NETHERRACK_PRESSURE_PLATE);
-        NetherrackPool.button(ModBlocks.NETHERRACK_BUTTON);
-        NetherBrickPool.pressurePlate(ModBlocks.NETHER_BRICK_PRESSURE_PLATE);
-        NetherBrickPool.button(ModBlocks.NETHER_BRICK_BUTTON);
-        CrackedNetherBrickPool.stairs(ModBlocks.CRACKED_NETHER_BRICK_STAIRS);
-        CrackedNetherBrickPool.slab(ModBlocks.CRACKED_NETHER_BRICK_SLAB);
-        CrackedNetherBrickPool.wall(ModBlocks.CRACKED_NETHER_BRICK_WALL);
-        CrackedNetherBrickPool.pressurePlate(ModBlocks.CRACKED_NETHER_BRICK_PRESSURE_PLATE);
-        CrackedNetherBrickPool.button(ModBlocks.CRACKED_NETHER_BRICK_BUTTON);
-        RedNetherBrickPool.pressurePlate(ModBlocks.RED_NETHER_BRICK_PRESSURE_PLATE);
-        RedNetherBrickPool.button(ModBlocks.RED_NETHER_BRICK_BUTTON);
-
+        CrackedNetherBrickPool.stairs(BuildingBlocks.CRACKED_NETHER_BRICK_STAIRS);
+        CrackedNetherBrickPool.slab(BuildingBlocks.CRACKED_NETHER_BRICK_SLAB);
+        CrackedNetherBrickPool.wall(BuildingBlocks.CRACKED_NETHER_BRICK_WALL);
 
         // Basalt Blocks -- [ Here be Broken Blocks ]
+        BlockStateModelGenerator.BlockTexturePool BasaltTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.BASALT_TILES);
+        BasaltTilePool.stairs(BuildingBlocks.BASALT_TILE_STAIRS);
+        BasaltTilePool.slab(BuildingBlocks.BASALT_TILE_SLAB);
+        BasaltTilePool.wall(BuildingBlocks.BASALT_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool ChiseledBasaltTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.CHISELED_BASALT_TILES);
+        ChiseledBasaltTilePool.stairs(BuildingBlocks.CHISELED_BASALT_TILE_STAIRS);
+        ChiseledBasaltTilePool.slab(BuildingBlocks.CHISELED_BASALT_TILE_SLAB);
+        ChiseledBasaltTilePool.wall(BuildingBlocks.CHISELED_BASALT_TILE_WALL);
 
 
-        // Blackstone Blocks
-        BlockStateModelGenerator.BlockTexturePool BlackstonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACKSTONE);
         BlockStateModelGenerator.BlockTexturePool GildedBlackstonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GILDED_BLACKSTONE);
-        BlockStateModelGenerator.BlockTexturePool PolishedBlackstoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.POLISHED_BLACKSTONE_BRICKS);
+        GildedBlackstonePool.stairs(BuildingBlocks.GILDED_BLACKSTONE_STAIRS);
+        GildedBlackstonePool.slab(BuildingBlocks.GILDED_BLACKSTONE_SLAB);
+        GildedBlackstonePool.wall(BuildingBlocks.GILDED_BLACKSTONE_WALL);
+
         BlockStateModelGenerator.BlockTexturePool CrackedPolishedBlackstoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS);
-
-        BlackstonePool.pressurePlate(ModBlocks.BLACKSTONE_PRESSURE_PLATE);
-        BlackstonePool.button(ModBlocks.BLACKSTONE_BUTTON);
-        GildedBlackstonePool.stairs(ModBlocks.GILDED_BLACKSTONE_STAIRS);
-        GildedBlackstonePool.slab(ModBlocks.GILDED_BLACKSTONE_SLAB);
-        GildedBlackstonePool.wall(ModBlocks.GILDED_BLACKSTONE_WALL);
-        GildedBlackstonePool.pressurePlate(ModBlocks.GILDED_BLACKSTONE_PRESSURE_PLATE);
-        GildedBlackstonePool.button(ModBlocks.GILDED_BLACKSTONE_BUTTON);
-        PolishedBlackstoneBrickPool.pressurePlate(ModBlocks.POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE);
-        PolishedBlackstoneBrickPool.button(ModBlocks.POLISHED_BLACKSTONE_BRICK_BUTTON);
-        CrackedPolishedBlackstoneBrickPool.stairs(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS);
-        CrackedPolishedBlackstoneBrickPool.slab(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB);
-        CrackedPolishedBlackstoneBrickPool.wall(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL);
-        CrackedPolishedBlackstoneBrickPool.pressurePlate(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_PRESSURE_PLATE);
-        CrackedPolishedBlackstoneBrickPool.button(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_BUTTON);
+        CrackedPolishedBlackstoneBrickPool.stairs(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS);
+        CrackedPolishedBlackstoneBrickPool.slab(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB);
+        CrackedPolishedBlackstoneBrickPool.wall(BuildingBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL);
 
 
-        // Endstone Blocks
         BlockStateModelGenerator.BlockTexturePool EndStonePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.END_STONE);
-        BlockStateModelGenerator.BlockTexturePool EndStoneBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.END_STONE_BRICKS);
-
-        EndStonePool.stairs(ModBlocks.END_STONE_STAIRS);
-        EndStonePool.slab(ModBlocks.END_STONE_SLAB);
-        EndStonePool.wall(ModBlocks.END_STONE_WALL);
-        EndStonePool.pressurePlate(ModBlocks.END_STONE_PRESSURE_PLATE);
-        EndStonePool.button(ModBlocks.END_STONE_BUTTON);
-        EndStoneBrickPool.pressurePlate(ModBlocks.END_STONE_BRICK_PRESSURE_PLATE);
-        EndStoneBrickPool.button(ModBlocks.END_STONE_BRICK_BUTTON);
+        EndStonePool.stairs(BuildingBlocks.END_STONE_STAIRS);
+        EndStonePool.slab(BuildingBlocks.END_STONE_SLAB);
+        EndStonePool.wall(BuildingBlocks.END_STONE_WALL);
 
 
-        // Purpur Blocks
         BlockStateModelGenerator.BlockTexturePool PurpurPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPUR_BLOCK);
-        PurpurPool.wall(ModBlocks.PURPUR_WALL);
-        PurpurPool.pressurePlate(ModBlocks.PURPUR_PRESSURE_PLATE);
-        PurpurPool.button(ModBlocks.PURPUR_BUTTON);
+        PurpurPool.wall(BuildingBlocks.PURPUR_WALL);
 
 
-        // Iron Blocks
         BlockStateModelGenerator.BlockTexturePool IronPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.IRON_BLOCK);
-        IronPool.stairs(ModBlocks.IRON_STAIRS);
-        IronPool.slab(ModBlocks.IRON_SLAB);
-        IronPool.wall(ModBlocks.IRON_WALL);
-        IronPool.button(ModBlocks.IRON_BUTTON);
+        IronPool.stairs(BuildingBlocks.IRON_STAIRS);
+        IronPool.slab(BuildingBlocks.IRON_SLAB);
+        IronPool.wall(BuildingBlocks.IRON_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CutIronPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.CUT_IRON_BLOCK);
+        CutIronPool.stairs(BuildingBlocks.CUT_IRON_STAIRS);
+        CutIronPool.slab(BuildingBlocks.CUT_IRON_SLAB);
+        CutIronPool.wall(BuildingBlocks.CUT_IRON_WALL);
 
 
-        // Gold Blocks
         BlockStateModelGenerator.BlockTexturePool GoldPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GOLD_BLOCK);
-        GoldPool.stairs(ModBlocks.GOLD_STAIRS);
-        GoldPool.slab(ModBlocks.GOLD_SLAB);
-        GoldPool.wall(ModBlocks.GOLD_WALL);
-        GoldPool.button(ModBlocks.GOLD_BUTTON);
+        GoldPool.stairs(BuildingBlocks.GOLD_STAIRS);
+        GoldPool.slab(BuildingBlocks.GOLD_SLAB);
+        GoldPool.wall(BuildingBlocks.GOLD_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GoldBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.GOLD_BRICKS);
+        GoldBricksPool.stairs(BuildingBlocks.GOLD_BRICK_STAIRS);
+        GoldBricksPool.slab(BuildingBlocks.GOLD_BRICK_SLAB);
+        GoldBricksPool.wall(BuildingBlocks.GOLD_BRICK_WALL);
 
 
-        // Emerald Blocks
         BlockStateModelGenerator.BlockTexturePool EmeraldPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.EMERALD_BLOCK);
-        EmeraldPool.stairs(ModBlocks.EMERALD_STAIRS);
-        EmeraldPool.slab(ModBlocks.EMERALD_SLAB);
-        EmeraldPool.wall(ModBlocks.EMERALD_WALL);
-        EmeraldPool.pressurePlate(ModBlocks.EMERALD_PRESSURE_PLATE);
-        EmeraldPool.button(ModBlocks.EMERALD_BUTTON);
+        EmeraldPool.stairs(BuildingBlocks.EMERALD_STAIRS);
+        EmeraldPool.slab(BuildingBlocks.EMERALD_SLAB);
+        EmeraldPool.wall(BuildingBlocks.EMERALD_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool EmeraldBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.EMERALD_BRICKS);
+        EmeraldBricksPool.stairs(BuildingBlocks.EMERALD_BRICK_STAIRS);
+        EmeraldBricksPool.slab(BuildingBlocks.EMERALD_BRICK_SLAB);
+        EmeraldBricksPool.wall(BuildingBlocks.EMERALD_BRICK_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CutEmeraldPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.CUT_EMERALD);
+        CutEmeraldPool.stairs(BuildingBlocks.CUT_EMERALD_STAIRS);
+        CutEmeraldPool.slab(BuildingBlocks.CUT_EMERALD_SLAB);
+        CutEmeraldPool.wall(BuildingBlocks.CUT_EMERALD_WALL);
 
 
-        // Lapis Lazuli Blocks
         BlockStateModelGenerator.BlockTexturePool LapisPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LAPIS_BLOCK);
-        LapisPool.stairs(ModBlocks.LAPIS_STAIRS);
-        LapisPool.slab(ModBlocks.LAPIS_SLAB);
-        LapisPool.wall(ModBlocks.LAPIS_WALL);
-        LapisPool.pressurePlate(ModBlocks.LAPIS_PRESSURE_PLATE);
-        LapisPool.button(ModBlocks.LAPIS_BUTTON);
+        LapisPool.stairs(BuildingBlocks.LAPIS_STAIRS);
+        LapisPool.slab(BuildingBlocks.LAPIS_SLAB);
+        LapisPool.wall(BuildingBlocks.LAPIS_WALL);
 
 
-        // Diamond Blocks
-        BlockStateModelGenerator.BlockTexturePool DiamondPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DIAMOND_BLOCK);
-        DiamondPool.stairs(ModBlocks.DIAMOND_STAIRS);
-        DiamondPool.slab(ModBlocks.DIAMOND_SLAB);
-        DiamondPool.wall(ModBlocks.DIAMOND_WALL);
-        DiamondPool.pressurePlate(ModBlocks.DIAMOND_PRESSURE_PLATE);
-        DiamondPool.button(ModBlocks.DIAMOND_BUTTON);
-
-
-        // Netherite Blocks
         BlockStateModelGenerator.BlockTexturePool NetheritePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.NETHERITE_BLOCK);
-        NetheritePool.stairs(ModBlocks.NETHERITE_STAIRS);
-        NetheritePool.slab(ModBlocks.NETHERITE_SLAB);
-        NetheritePool.wall(ModBlocks.NETHERITE_WALL);
-        NetheritePool.pressurePlate(ModBlocks.NETHERITE_PRESSURE_PLATE);
-        NetheritePool.button(ModBlocks.NETHERITE_BUTTON);
+        NetheritePool.stairs(BuildingBlocks.NETHERITE_STAIRS);
+        NetheritePool.slab(BuildingBlocks.NETHERITE_SLAB);
+        NetheritePool.wall(BuildingBlocks.NETHERITE_WALL);
 
+        BlockStateModelGenerator.BlockTexturePool NetheriteBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.NETHERITE_BRICKS);
+        NetheriteBricksPool.stairs(BuildingBlocks.NETHERITE_BRICK_STAIRS);
+        NetheriteBricksPool.slab(BuildingBlocks.NETHERITE_BRICK_SLAB);
+        NetheriteBricksPool.wall(BuildingBlocks.NETHERITE_BRICK_WALL);
 
-        // Quartz Blocks -- [ Here be Broken Blocks ]
+        // Gems
+        BlockStateModelGenerator.BlockTexturePool DiamondPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.DIAMOND_BLOCK);
+        DiamondPool.stairs(BuildingBlocks.DIAMOND_STAIRS);
+        DiamondPool.slab(BuildingBlocks.DIAMOND_SLAB);
+        DiamondPool.wall(BuildingBlocks.DIAMOND_WALL);
 
+        BlockStateModelGenerator.BlockTexturePool CutDiamondBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.DIAMOND_BRICKS);
+        CutDiamondBricksPool.stairs(BuildingBlocks.DIAMOND_BRICK_STAIRS);
+        CutDiamondBricksPool.slab(BuildingBlocks.DIAMOND_BRICK_SLAB);
+        CutDiamondBricksPool.wall(BuildingBlocks.DIAMOND_BRICK_WALL);
 
-        // Amethyst Blocks
         BlockStateModelGenerator.BlockTexturePool AmethystPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.AMETHYST_BLOCK);
-        AmethystPool.stairs(ModBlocks.AMETHYST_STAIRS);
-        AmethystPool.slab(ModBlocks.AMETHYST_SLAB);
-        AmethystPool.wall(ModBlocks.AMETHYST_WALL);
-        AmethystPool.pressurePlate(ModBlocks.AMETHYST_PRESSURE_PLATE);
-        AmethystPool.button(ModBlocks.AMETHYST_BUTTON);
+        AmethystPool.stairs(BuildingBlocks.AMETHYST_STAIRS);
+        AmethystPool.slab(BuildingBlocks.AMETHYST_SLAB);
+        AmethystPool.wall(BuildingBlocks.AMETHYST_WALL);
 
-        // ++ Colored Blocks Category ++
+        BlockStateModelGenerator.BlockTexturePool AmethystBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(BuildingBlocks.AMETHYST_BRICKS);
+        AmethystBrickPool.stairs(BuildingBlocks.AMETHYST_BRICK_STAIRS);
+        AmethystBrickPool.slab(BuildingBlocks.AMETHYST_BRICK_SLAB);
+        AmethystBrickPool.wall(BuildingBlocks.AMETHYST_BRICK_WALL);
 
+        // Quartz
+        BlockStateModelGenerator.BlockTexturePool QuartzPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.QUARTZ_BLOCK);
+        //QuartzPool.wall(BuildingBlocks.QUARTZ_WALL);
 
-        // Concrete Blocks
-        BlockStateModelGenerator.BlockTexturePool WhiteConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool LightGrayConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool GrayConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool BlackConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool BrownConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool RedConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool OrangeConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool YellowConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool LimeConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool GreenConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool CyanConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool LightBlueConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool BlueConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool PurpleConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool MagentaConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_CONCRETE);
-        BlockStateModelGenerator.BlockTexturePool PinkConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_CONCRETE);
+        BlockStateModelGenerator.BlockTexturePool QuartzBrickPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.QUARTZ_BRICKS);
+        QuartzBrickPool.stairs(BuildingBlocks.QUARTZ_BRICK_STAIRS);
+        QuartzBrickPool.slab(BuildingBlocks.QUARTZ_BRICK_SLAB);
+        QuartzBrickPool.wall(BuildingBlocks.QUARTZ_BRICK_WALL);
 
-        BlockStateModelGenerator.BlockTexturePool WhiteConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.WHITE_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool LightGrayConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIGHT_GRAY_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool GrayConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.GRAY_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool BlackConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.BLACK_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool BrownConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.BROWN_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool RedConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.RED_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool OrangeConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ORANGE_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool YellowConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.YELLOW_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool LimeConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIME_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool GreenConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.GREEN_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool CyanConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.CYAN_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool LightBlueConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.LIGHT_BLUE_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool BlueConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.BLUE_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool PurpleConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PURPLE_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool MagentaConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MAGENTA_CONCRETE_TILES);
-        BlockStateModelGenerator.BlockTexturePool PinkConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PINK_CONCRETE_TILES);
+        BlockStateModelGenerator.LogTexturePool QuartzPillarPool = blockStateModelGenerator.registerLog(Blocks.QUARTZ_PILLAR);
+        //QuartzPool.wall(BuildingBlocks.QUARTZ_WALL);
 
-        WhiteConcretePool.stairs(ModBlocks.WHITE_CONCRETE_STAIRS);
-        WhiteConcretePool.slab(ModBlocks.WHITE_CONCRETE_SLAB);
-        WhiteConcretePool.wall(ModBlocks.WHITE_CONCRETE_WALL);
-        WhiteConcretePool.pressurePlate(ModBlocks.WHITE_CONCRETE_PRESSURE_PLATE);
-        WhiteConcretePool.button(ModBlocks.WHITE_CONCRETE_BUTTON);
-
-        LightGrayConcretePool.stairs(ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
-        LightGrayConcretePool.slab(ModBlocks.LIGHT_GRAY_CONCRETE_SLAB);
-        LightGrayConcretePool.wall(ModBlocks.LIGHT_GRAY_CONCRETE_WALL);
-        LightGrayConcretePool.pressurePlate(ModBlocks.LIGHT_GRAY_CONCRETE_PRESSURE_PLATE);
-        LightGrayConcretePool.button(ModBlocks.LIGHT_GRAY_CONCRETE_BUTTON);
-
-        GrayConcretePool.stairs(ModBlocks.GRAY_CONCRETE_STAIRS);
-        GrayConcretePool.slab(ModBlocks.GRAY_CONCRETE_SLAB);
-        GrayConcretePool.wall(ModBlocks.GRAY_CONCRETE_WALL);
-        GrayConcretePool.pressurePlate(ModBlocks.GRAY_CONCRETE_PRESSURE_PLATE);
-        GrayConcretePool.button(ModBlocks.GRAY_CONCRETE_BUTTON);
-
-        BlackConcretePool.stairs(ModBlocks.BLACK_CONCRETE_STAIRS);
-        BlackConcretePool.slab(ModBlocks.BLACK_CONCRETE_SLAB);
-        BlackConcretePool.wall(ModBlocks.BLACK_CONCRETE_WALL);
-        BlackConcretePool.pressurePlate(ModBlocks.BLACK_CONCRETE_PRESSURE_PLATE);
-        BlackConcretePool.button(ModBlocks.BLACK_CONCRETE_BUTTON);
-
-        BrownConcretePool.stairs(ModBlocks.BROWN_CONCRETE_STAIRS);
-        BrownConcretePool.slab(ModBlocks.BROWN_CONCRETE_SLAB);
-        BrownConcretePool.wall(ModBlocks.BROWN_CONCRETE_WALL);
-        BrownConcretePool.pressurePlate(ModBlocks.BROWN_CONCRETE_PRESSURE_PLATE);
-        BrownConcretePool.button(ModBlocks.BROWN_CONCRETE_BUTTON);
-
-        RedConcretePool.stairs(ModBlocks.RED_CONCRETE_STAIRS);
-        RedConcretePool.slab(ModBlocks.RED_CONCRETE_SLAB);
-        RedConcretePool.wall(ModBlocks.RED_CONCRETE_WALL);
-        RedConcretePool.pressurePlate(ModBlocks.RED_CONCRETE_PRESSURE_PLATE);
-        RedConcretePool.button(ModBlocks.RED_CONCRETE_BUTTON);
-
-        OrangeConcretePool.stairs(ModBlocks.ORANGE_CONCRETE_STAIRS);
-        OrangeConcretePool.slab(ModBlocks.ORANGE_CONCRETE_SLAB);
-        OrangeConcretePool.wall(ModBlocks.ORANGE_CONCRETE_WALL);
-        OrangeConcretePool.pressurePlate(ModBlocks.ORANGE_CONCRETE_PRESSURE_PLATE);
-        OrangeConcretePool.button(ModBlocks.ORANGE_CONCRETE_BUTTON);
-
-        YellowConcretePool.stairs(ModBlocks.YELLOW_CONCRETE_STAIRS);
-        YellowConcretePool.slab(ModBlocks.YELLOW_CONCRETE_SLAB);
-        YellowConcretePool.wall(ModBlocks.YELLOW_CONCRETE_WALL);
-        YellowConcretePool.pressurePlate(ModBlocks.YELLOW_CONCRETE_PRESSURE_PLATE);
-        YellowConcretePool.button(ModBlocks.YELLOW_CONCRETE_BUTTON);
-
-        LimeConcretePool.stairs(ModBlocks.LIME_CONCRETE_STAIRS);
-        LimeConcretePool.slab(ModBlocks.LIME_CONCRETE_SLAB);
-        LimeConcretePool.wall(ModBlocks.LIME_CONCRETE_WALL);
-        LimeConcretePool.pressurePlate(ModBlocks.LIME_CONCRETE_PRESSURE_PLATE);
-        LimeConcretePool.button(ModBlocks.LIME_CONCRETE_BUTTON);
-
-        GreenConcretePool.stairs(ModBlocks.GREEN_CONCRETE_STAIRS);
-        GreenConcretePool.slab(ModBlocks.GREEN_CONCRETE_SLAB);
-        GreenConcretePool.wall(ModBlocks.GREEN_CONCRETE_WALL);
-        GreenConcretePool.pressurePlate(ModBlocks.GREEN_CONCRETE_PRESSURE_PLATE);
-        GreenConcretePool.button(ModBlocks.GREEN_CONCRETE_BUTTON);
-
-        CyanConcretePool.stairs(ModBlocks.CYAN_CONCRETE_STAIRS);
-        CyanConcretePool.slab(ModBlocks.CYAN_CONCRETE_SLAB);
-        CyanConcretePool.wall(ModBlocks.CYAN_CONCRETE_WALL);
-        CyanConcretePool.pressurePlate(ModBlocks.CYAN_CONCRETE_PRESSURE_PLATE);
-        CyanConcretePool.button(ModBlocks.CYAN_CONCRETE_BUTTON);
-
-        LightBlueConcretePool.stairs(ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
-        LightBlueConcretePool.slab(ModBlocks.LIGHT_BLUE_CONCRETE_SLAB);
-        LightBlueConcretePool.wall(ModBlocks.LIGHT_BLUE_CONCRETE_WALL);
-        LightBlueConcretePool.pressurePlate(ModBlocks.LIGHT_BLUE_CONCRETE_PRESSURE_PLATE);
-        LightBlueConcretePool.button(ModBlocks.LIGHT_BLUE_CONCRETE_BUTTON);
-
-        BlueConcretePool.stairs(ModBlocks.BLUE_CONCRETE_STAIRS);
-        BlueConcretePool.slab(ModBlocks.BLUE_CONCRETE_SLAB);
-        BlueConcretePool.wall(ModBlocks.BLUE_CONCRETE_WALL);
-        BlueConcretePool.pressurePlate(ModBlocks.BLUE_CONCRETE_PRESSURE_PLATE);
-        BlueConcretePool.button(ModBlocks.BLUE_CONCRETE_BUTTON);
-
-        PurpleConcretePool.stairs(ModBlocks.PURPLE_CONCRETE_STAIRS);
-        PurpleConcretePool.slab(ModBlocks.PURPLE_CONCRETE_SLAB);
-        PurpleConcretePool.wall(ModBlocks.PURPLE_CONCRETE_WALL);
-        PurpleConcretePool.pressurePlate(ModBlocks.PURPLE_CONCRETE_PRESSURE_PLATE);
-        PurpleConcretePool.button(ModBlocks.PURPLE_CONCRETE_BUTTON);
-
-        MagentaConcretePool.stairs(ModBlocks.MAGENTA_CONCRETE_STAIRS);
-        MagentaConcretePool.slab(ModBlocks.MAGENTA_CONCRETE_SLAB);
-        MagentaConcretePool.wall(ModBlocks.MAGENTA_CONCRETE_WALL);
-        MagentaConcretePool.pressurePlate(ModBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE);
-        MagentaConcretePool.button(ModBlocks.MAGENTA_CONCRETE_BUTTON);
-
-        PinkConcretePool.stairs(ModBlocks.PINK_CONCRETE_STAIRS);
-        PinkConcretePool.slab(ModBlocks.PINK_CONCRETE_SLAB);
-        PinkConcretePool.wall(ModBlocks.PINK_CONCRETE_WALL);
-        PinkConcretePool.pressurePlate(ModBlocks.PINK_CONCRETE_PRESSURE_PLATE);
-        PinkConcretePool.button(ModBlocks.PINK_CONCRETE_BUTTON);
-
-        WhiteConcreteTilePool.stairs(ModBlocks.WHITE_CONCRETE_TILE_STAIRS);
-        WhiteConcreteTilePool.slab(ModBlocks.WHITE_CONCRETE_TILE_SLAB);
-        WhiteConcreteTilePool.wall(ModBlocks.WHITE_CONCRETE_TILE_WALL);
-        WhiteConcreteTilePool.pressurePlate(ModBlocks.WHITE_CONCRETE_TILE_PRESSURE_PLATE);
-        WhiteConcreteTilePool.button(ModBlocks.WHITE_CONCRETE_TILE_BUTTON);
-
-        LightGrayConcreteTilePool.stairs(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_STAIRS);
-        LightGrayConcreteTilePool.slab(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_SLAB);
-        LightGrayConcreteTilePool.wall(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL);
-        LightGrayConcreteTilePool.pressurePlate(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_PRESSURE_PLATE);
-        LightGrayConcreteTilePool.button(ModBlocks.LIGHT_GRAY_CONCRETE_TILE_BUTTON);
-
-        GrayConcreteTilePool.stairs(ModBlocks.GRAY_CONCRETE_TILE_STAIRS);
-        GrayConcreteTilePool.slab(ModBlocks.GRAY_CONCRETE_TILE_SLAB);
-        GrayConcreteTilePool.wall(ModBlocks.GRAY_CONCRETE_TILE_WALL);
-        GrayConcreteTilePool.pressurePlate(ModBlocks.GRAY_CONCRETE_TILE_PRESSURE_PLATE);
-        GrayConcreteTilePool.button(ModBlocks.GRAY_CONCRETE_TILE_BUTTON);
-
-        BlackConcreteTilePool.stairs(ModBlocks.BLACK_CONCRETE_TILE_STAIRS);
-        BlackConcreteTilePool.slab(ModBlocks.BLACK_CONCRETE_TILE_SLAB);
-        BlackConcreteTilePool.wall(ModBlocks.BLACK_CONCRETE_TILE_WALL);
-        BlackConcreteTilePool.pressurePlate(ModBlocks.BLACK_CONCRETE_TILE_PRESSURE_PLATE);
-        BlackConcreteTilePool.button(ModBlocks.BLACK_CONCRETE_TILE_BUTTON);
-
-        BrownConcreteTilePool.stairs(ModBlocks.BROWN_CONCRETE_TILE_STAIRS);
-        BrownConcreteTilePool.slab(ModBlocks.BROWN_CONCRETE_TILE_SLAB);
-        BrownConcreteTilePool.wall(ModBlocks.BROWN_CONCRETE_TILE_WALL);
-        BrownConcreteTilePool.pressurePlate(ModBlocks.BROWN_CONCRETE_TILE_PRESSURE_PLATE);
-        BrownConcreteTilePool.button(ModBlocks.BROWN_CONCRETE_TILE_BUTTON);
-
-        RedConcreteTilePool.stairs(ModBlocks.RED_CONCRETE_TILE_STAIRS);
-        RedConcreteTilePool.slab(ModBlocks.RED_CONCRETE_TILE_SLAB);
-        RedConcreteTilePool.wall(ModBlocks.RED_CONCRETE_TILE_WALL);
-        RedConcreteTilePool.pressurePlate(ModBlocks.RED_CONCRETE_TILE_PRESSURE_PLATE);
-        RedConcreteTilePool.button(ModBlocks.RED_CONCRETE_TILE_BUTTON);
-
-        OrangeConcreteTilePool.stairs(ModBlocks.ORANGE_CONCRETE_TILE_STAIRS);
-        OrangeConcreteTilePool.slab(ModBlocks.ORANGE_CONCRETE_TILE_SLAB);
-        OrangeConcreteTilePool.wall(ModBlocks.ORANGE_CONCRETE_TILE_WALL);
-        OrangeConcreteTilePool.pressurePlate(ModBlocks.ORANGE_CONCRETE_TILE_PRESSURE_PLATE);
-        OrangeConcreteTilePool.button(ModBlocks.ORANGE_CONCRETE_TILE_BUTTON);
-
-        YellowConcreteTilePool.stairs(ModBlocks.YELLOW_CONCRETE_TILE_STAIRS);
-        YellowConcreteTilePool.slab(ModBlocks.YELLOW_CONCRETE_TILE_SLAB);
-        YellowConcreteTilePool.wall(ModBlocks.YELLOW_CONCRETE_TILE_WALL);
-        YellowConcreteTilePool.pressurePlate(ModBlocks.YELLOW_CONCRETE_TILE_PRESSURE_PLATE);
-        YellowConcreteTilePool.button(ModBlocks.YELLOW_CONCRETE_TILE_BUTTON);
-
-        LimeConcreteTilePool.stairs(ModBlocks.LIME_CONCRETE_TILE_STAIRS);
-        LimeConcreteTilePool.slab(ModBlocks.LIME_CONCRETE_TILE_SLAB);
-        LimeConcreteTilePool.wall(ModBlocks.LIME_CONCRETE_TILE_WALL);
-        LimeConcreteTilePool.pressurePlate(ModBlocks.LIME_CONCRETE_TILE_PRESSURE_PLATE);
-        LimeConcreteTilePool.button(ModBlocks.LIME_CONCRETE_TILE_BUTTON);
-
-        GreenConcreteTilePool.stairs(ModBlocks.GREEN_CONCRETE_TILE_STAIRS);
-        GreenConcreteTilePool.slab(ModBlocks.GREEN_CONCRETE_TILE_SLAB);
-        GreenConcreteTilePool.wall(ModBlocks.GREEN_CONCRETE_TILE_WALL);
-        GreenConcreteTilePool.pressurePlate(ModBlocks.GREEN_CONCRETE_TILE_PRESSURE_PLATE);
-        GreenConcreteTilePool.button(ModBlocks.GREEN_CONCRETE_TILE_BUTTON);
-
-        CyanConcreteTilePool.stairs(ModBlocks.CYAN_CONCRETE_TILE_STAIRS);
-        CyanConcreteTilePool.slab(ModBlocks.CYAN_CONCRETE_TILE_SLAB);
-        CyanConcreteTilePool.wall(ModBlocks.CYAN_CONCRETE_TILE_WALL);
-        CyanConcreteTilePool.pressurePlate(ModBlocks.CYAN_CONCRETE_TILE_PRESSURE_PLATE);
-        CyanConcreteTilePool.button(ModBlocks.CYAN_CONCRETE_TILE_BUTTON);
-
-        LightBlueConcreteTilePool.stairs(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_STAIRS);
-        LightBlueConcreteTilePool.slab(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_SLAB);
-        LightBlueConcreteTilePool.wall(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL);
-        LightBlueConcreteTilePool.pressurePlate(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_PRESSURE_PLATE);
-        LightBlueConcreteTilePool.button(ModBlocks.LIGHT_BLUE_CONCRETE_TILE_BUTTON);
-
-        BlueConcreteTilePool.stairs(ModBlocks.BLUE_CONCRETE_TILE_STAIRS);
-        BlueConcreteTilePool.slab(ModBlocks.BLUE_CONCRETE_TILE_SLAB);
-        BlueConcreteTilePool.wall(ModBlocks.BLUE_CONCRETE_TILE_WALL);
-        BlueConcreteTilePool.pressurePlate(ModBlocks.BLUE_CONCRETE_TILE_PRESSURE_PLATE);
-        BlueConcreteTilePool.button(ModBlocks.BLUE_CONCRETE_TILE_BUTTON);
-
-        PurpleConcreteTilePool.stairs(ModBlocks.PURPLE_CONCRETE_TILE_STAIRS);
-        PurpleConcreteTilePool.slab(ModBlocks.PURPLE_CONCRETE_TILE_SLAB);
-        PurpleConcreteTilePool.wall(ModBlocks.PURPLE_CONCRETE_TILE_WALL);
-        PurpleConcreteTilePool.pressurePlate(ModBlocks.PURPLE_CONCRETE_TILE_PRESSURE_PLATE);
-        PurpleConcreteTilePool.button(ModBlocks.PURPLE_CONCRETE_TILE_BUTTON);
-
-        MagentaConcreteTilePool.stairs(ModBlocks.MAGENTA_CONCRETE_TILE_STAIRS);
-        MagentaConcreteTilePool.slab(ModBlocks.MAGENTA_CONCRETE_TILE_SLAB);
-        MagentaConcreteTilePool.wall(ModBlocks.MAGENTA_CONCRETE_TILE_WALL);
-        MagentaConcreteTilePool.pressurePlate(ModBlocks.MAGENTA_CONCRETE_TILE_PRESSURE_PLATE);
-        MagentaConcreteTilePool.button(ModBlocks.MAGENTA_CONCRETE_TILE_BUTTON);
-
-        PinkConcreteTilePool.stairs(ModBlocks.PINK_CONCRETE_TILE_STAIRS);
-        PinkConcreteTilePool.slab(ModBlocks.PINK_CONCRETE_TILE_SLAB);
-        PinkConcreteTilePool.wall(ModBlocks.PINK_CONCRETE_TILE_WALL);
-        PinkConcreteTilePool.pressurePlate(ModBlocks.PINK_CONCRETE_TILE_PRESSURE_PLATE);
-        PinkConcreteTilePool.button(ModBlocks.PINK_CONCRETE_TILE_BUTTON);
-
-
-        // Terracotta Blocks
-        BlockStateModelGenerator.BlockTexturePool TerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool WhiteTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool LightGrayTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool GrayTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool BlackTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool BrownTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool RedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool OrangeTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool YellowTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool LimeTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool GreenTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool CyanTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool LightBlueTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool BlueTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool PurpleTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool MagentaTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_TERRACOTTA);
-        BlockStateModelGenerator.BlockTexturePool PinkTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_TERRACOTTA);
-
-        TerracottaPool.stairs(ModBlocks.TERRACOTTA_STAIRS);
-        TerracottaPool.slab(ModBlocks.TERRACOTTA_SLAB);
-        TerracottaPool.wall(ModBlocks.TERRACOTTA_WALL);
-        TerracottaPool.pressurePlate(ModBlocks.TERRACOTTA_PRESSURE_PLATE);
-        TerracottaPool.button(ModBlocks.TERRACOTTA_BUTTON);
-
-        WhiteTerracottaPool.stairs(ModBlocks.WHITE_TERRACOTTA_STAIRS);
-        WhiteTerracottaPool.slab(ModBlocks.WHITE_TERRACOTTA_SLAB);
-        WhiteTerracottaPool.wall(ModBlocks.WHITE_TERRACOTTA_WALL);
-        WhiteTerracottaPool.pressurePlate(ModBlocks.WHITE_TERRACOTTA_PRESSURE_PLATE);
-        WhiteTerracottaPool.button(ModBlocks.WHITE_TERRACOTTA_BUTTON);
-
-        LightGrayTerracottaPool.stairs(ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS);
-        LightGrayTerracottaPool.slab(ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB);
-        LightGrayTerracottaPool.wall(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL);
-        LightGrayTerracottaPool.pressurePlate(ModBlocks.LIGHT_GRAY_TERRACOTTA_PRESSURE_PLATE);
-        LightGrayTerracottaPool.button(ModBlocks.LIGHT_GRAY_TERRACOTTA_BUTTON);
-
-        GrayTerracottaPool.stairs(ModBlocks.GRAY_TERRACOTTA_STAIRS);
-        GrayTerracottaPool.slab(ModBlocks.GRAY_TERRACOTTA_SLAB);
-        GrayTerracottaPool.wall(ModBlocks.GRAY_TERRACOTTA_WALL);
-        GrayTerracottaPool.pressurePlate(ModBlocks.GRAY_TERRACOTTA_PRESSURE_PLATE);
-        GrayTerracottaPool.button(ModBlocks.GRAY_TERRACOTTA_BUTTON);
-
-        BlackTerracottaPool.stairs(ModBlocks.BLACK_TERRACOTTA_STAIRS);
-        BlackTerracottaPool.slab(ModBlocks.BLACK_TERRACOTTA_SLAB);
-        BlackTerracottaPool.wall(ModBlocks.BLACK_TERRACOTTA_WALL);
-        BlackTerracottaPool.pressurePlate(ModBlocks.BLACK_TERRACOTTA_PRESSURE_PLATE);
-        BlackTerracottaPool.button(ModBlocks.BLACK_TERRACOTTA_BUTTON);
-
-        BrownTerracottaPool.stairs(ModBlocks.BROWN_TERRACOTTA_STAIRS);
-        BrownTerracottaPool.slab(ModBlocks.BROWN_TERRACOTTA_SLAB);
-        BrownTerracottaPool.wall(ModBlocks.BROWN_TERRACOTTA_WALL);
-        BrownTerracottaPool.pressurePlate(ModBlocks.BROWN_TERRACOTTA_PRESSURE_PLATE);
-        BrownTerracottaPool.button(ModBlocks.BROWN_TERRACOTTA_BUTTON);
-
-        RedTerracottaPool.stairs(ModBlocks.RED_TERRACOTTA_STAIRS);
-        RedTerracottaPool.slab(ModBlocks.RED_TERRACOTTA_SLAB);
-        RedTerracottaPool.wall(ModBlocks.RED_TERRACOTTA_WALL);
-        RedTerracottaPool.pressurePlate(ModBlocks.RED_TERRACOTTA_PRESSURE_PLATE);
-        RedTerracottaPool.button(ModBlocks.RED_TERRACOTTA_BUTTON);
-
-        OrangeTerracottaPool.stairs(ModBlocks.ORANGE_TERRACOTTA_STAIRS);
-        OrangeTerracottaPool.slab(ModBlocks.ORANGE_TERRACOTTA_SLAB);
-        OrangeTerracottaPool.wall(ModBlocks.ORANGE_TERRACOTTA_WALL);
-        OrangeTerracottaPool.pressurePlate(ModBlocks.ORANGE_TERRACOTTA_PRESSURE_PLATE);
-        OrangeTerracottaPool.button(ModBlocks.ORANGE_TERRACOTTA_BUTTON);
-
-        YellowTerracottaPool.stairs(ModBlocks.YELLOW_TERRACOTTA_STAIRS);
-        YellowTerracottaPool.slab(ModBlocks.YELLOW_TERRACOTTA_SLAB);
-        YellowTerracottaPool.wall(ModBlocks.YELLOW_TERRACOTTA_WALL);
-        YellowTerracottaPool.pressurePlate(ModBlocks.YELLOW_TERRACOTTA_PRESSURE_PLATE);
-        YellowTerracottaPool.button(ModBlocks.YELLOW_TERRACOTTA_BUTTON);
-
-        LimeTerracottaPool.stairs(ModBlocks.LIME_TERRACOTTA_STAIRS);
-        LimeTerracottaPool.slab(ModBlocks.LIME_TERRACOTTA_SLAB);
-        LimeTerracottaPool.wall(ModBlocks.LIME_TERRACOTTA_WALL);
-        LimeTerracottaPool.pressurePlate(ModBlocks.LIME_TERRACOTTA_PRESSURE_PLATE);
-        LimeTerracottaPool.button(ModBlocks.LIME_TERRACOTTA_BUTTON);
-
-        GreenTerracottaPool.stairs(ModBlocks.GREEN_TERRACOTTA_STAIRS);
-        GreenTerracottaPool.slab(ModBlocks.GREEN_TERRACOTTA_SLAB);
-        GreenTerracottaPool.wall(ModBlocks.GREEN_TERRACOTTA_WALL);
-        GreenTerracottaPool.pressurePlate(ModBlocks.GREEN_TERRACOTTA_PRESSURE_PLATE);
-        GreenTerracottaPool.button(ModBlocks.GREEN_TERRACOTTA_BUTTON);
-
-        CyanTerracottaPool.stairs(ModBlocks.CYAN_TERRACOTTA_STAIRS);
-        CyanTerracottaPool.slab(ModBlocks.CYAN_TERRACOTTA_SLAB);
-        CyanTerracottaPool.wall(ModBlocks.CYAN_TERRACOTTA_WALL);
-        CyanTerracottaPool.pressurePlate(ModBlocks.CYAN_TERRACOTTA_PRESSURE_PLATE);
-        CyanTerracottaPool.button(ModBlocks.CYAN_TERRACOTTA_BUTTON);
-
-        LightBlueTerracottaPool.stairs(ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS);
-        LightBlueTerracottaPool.slab(ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB);
-        LightBlueTerracottaPool.wall(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL);
-        LightBlueTerracottaPool.pressurePlate(ModBlocks.LIGHT_BLUE_TERRACOTTA_PRESSURE_PLATE);
-        LightBlueTerracottaPool.button(ModBlocks.LIGHT_BLUE_TERRACOTTA_BUTTON);
-
-        BlueTerracottaPool.stairs(ModBlocks.BLUE_TERRACOTTA_STAIRS);
-        BlueTerracottaPool.slab(ModBlocks.BLUE_TERRACOTTA_SLAB);
-        BlueTerracottaPool.wall(ModBlocks.BLUE_TERRACOTTA_WALL);
-        BlueTerracottaPool.pressurePlate(ModBlocks.BLUE_TERRACOTTA_PRESSURE_PLATE);
-        BlueTerracottaPool.button(ModBlocks.BLUE_TERRACOTTA_BUTTON);
-
-        PurpleTerracottaPool.stairs(ModBlocks.PURPLE_TERRACOTTA_STAIRS);
-        PurpleTerracottaPool.slab(ModBlocks.PURPLE_TERRACOTTA_SLAB);
-        PurpleTerracottaPool.wall(ModBlocks.PURPLE_TERRACOTTA_WALL);
-        PurpleTerracottaPool.pressurePlate(ModBlocks.PURPLE_TERRACOTTA_PRESSURE_PLATE);
-        PurpleTerracottaPool.button(ModBlocks.PURPLE_TERRACOTTA_BUTTON);
-
-        MagentaTerracottaPool.stairs(ModBlocks.MAGENTA_TERRACOTTA_STAIRS);
-        MagentaTerracottaPool.slab(ModBlocks.MAGENTA_TERRACOTTA_SLAB);
-        MagentaTerracottaPool.wall(ModBlocks.MAGENTA_TERRACOTTA_WALL);
-        MagentaTerracottaPool.pressurePlate(ModBlocks.MAGENTA_TERRACOTTA_PRESSURE_PLATE);
-        MagentaTerracottaPool.button(ModBlocks.MAGENTA_TERRACOTTA_BUTTON);
-
-        PinkTerracottaPool.stairs(ModBlocks.PINK_TERRACOTTA_STAIRS);
-        PinkTerracottaPool.slab(ModBlocks.PINK_TERRACOTTA_SLAB);
-        PinkTerracottaPool.wall(ModBlocks.PINK_TERRACOTTA_WALL);
-        PinkTerracottaPool.pressurePlate(ModBlocks.PINK_TERRACOTTA_PRESSURE_PLATE);
-        PinkTerracottaPool.button(ModBlocks.PINK_TERRACOTTA_BUTTON);
-
-
-        // Wool Blocks
+        // Wool
         BlockStateModelGenerator.BlockTexturePool WhiteWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_WOOL);
+        WhiteWoolPool.stairs(ColoredBlocks.WHITE_WOOL_STAIRS);
+        WhiteWoolPool.slab(ColoredBlocks.WHITE_WOOL_SLAB);
+        WhiteWoolPool.wall(ColoredBlocks.WHITE_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool LightGrayWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_WOOL);
+        LightGrayWoolPool.stairs(ColoredBlocks.LIGHT_GRAY_WOOL_STAIRS);
+        LightGrayWoolPool.slab(ColoredBlocks.LIGHT_GRAY_WOOL_SLAB);
+        LightGrayWoolPool.wall(ColoredBlocks.LIGHT_GRAY_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool GrayWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_WOOL);
+        GrayWoolPool.stairs(ColoredBlocks.GRAY_WOOL_STAIRS);
+        GrayWoolPool.slab(ColoredBlocks.GRAY_WOOL_SLAB);
+        GrayWoolPool.wall(ColoredBlocks.GRAY_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool BlackWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_WOOL);
+        BlackWoolPool.stairs(ColoredBlocks.BLACK_WOOL_STAIRS);
+        BlackWoolPool.slab(ColoredBlocks.BLACK_WOOL_SLAB);
+        BlackWoolPool.wall(ColoredBlocks.BLACK_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool BrownWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_WOOL);
+        BrownWoolPool.stairs(ColoredBlocks.BROWN_WOOL_STAIRS);
+        BrownWoolPool.slab(ColoredBlocks.BROWN_WOOL_SLAB);
+        BrownWoolPool.wall(ColoredBlocks.BROWN_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool RedWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_WOOL);
+        RedWoolPool.stairs(ColoredBlocks.RED_WOOL_STAIRS);
+        RedWoolPool.slab(ColoredBlocks.RED_WOOL_SLAB);
+        RedWoolPool.wall(ColoredBlocks.RED_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool OrangeWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_WOOL);
+        OrangeWoolPool.stairs(ColoredBlocks.ORANGE_WOOL_STAIRS);
+        OrangeWoolPool.slab(ColoredBlocks.ORANGE_WOOL_SLAB);
+        OrangeWoolPool.wall(ColoredBlocks.ORANGE_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool YellowWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_WOOL);
+        YellowWoolPool.stairs(ColoredBlocks.YELLOW_WOOL_STAIRS);
+        YellowWoolPool.slab(ColoredBlocks.YELLOW_WOOL_SLAB);
+        YellowWoolPool.wall(ColoredBlocks.YELLOW_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool LimeWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_WOOL);
+        LimeWoolPool.stairs(ColoredBlocks.LIME_WOOL_STAIRS);
+        LimeWoolPool.slab(ColoredBlocks.LIME_WOOL_SLAB);
+        LimeWoolPool.wall(ColoredBlocks.LIME_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool GreenWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_WOOL);
+        GreenWoolPool.stairs(ColoredBlocks.GREEN_WOOL_STAIRS);
+        GreenWoolPool.slab(ColoredBlocks.GREEN_WOOL_SLAB);
+        GreenWoolPool.wall(ColoredBlocks.GREEN_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool CyanWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_WOOL);
+        CyanWoolPool.stairs(ColoredBlocks.CYAN_WOOL_STAIRS);
+        CyanWoolPool.slab(ColoredBlocks.CYAN_WOOL_SLAB);
+        CyanWoolPool.wall(ColoredBlocks.CYAN_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool LightBlueWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_WOOL);
+        LightBlueWoolPool.stairs(ColoredBlocks.LIGHT_BLUE_WOOL_STAIRS);
+        LightBlueWoolPool.slab(ColoredBlocks.LIGHT_BLUE_WOOL_SLAB);
+        LightBlueWoolPool.wall(ColoredBlocks.LIGHT_BLUE_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool BlueWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_WOOL);
+        BlueWoolPool.stairs(ColoredBlocks.BLUE_WOOL_STAIRS);
+        BlueWoolPool.slab(ColoredBlocks.BLUE_WOOL_SLAB);
+        BlueWoolPool.wall(ColoredBlocks.BLUE_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool PurpleWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_WOOL);
+        PurpleWoolPool.stairs(ColoredBlocks.PURPLE_WOOL_STAIRS);
+        PurpleWoolPool.slab(ColoredBlocks.PURPLE_WOOL_SLAB);
+        PurpleWoolPool.wall(ColoredBlocks.PURPLE_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool MagentaWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_WOOL);
+        MagentaWoolPool.stairs(ColoredBlocks.MAGENTA_WOOL_STAIRS);
+        MagentaWoolPool.slab(ColoredBlocks.MAGENTA_WOOL_SLAB);
+        MagentaWoolPool.wall(ColoredBlocks.MAGENTA_WOOL_WALL);
+
         BlockStateModelGenerator.BlockTexturePool PinkWoolPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_WOOL);
+        PinkWoolPool.stairs(ColoredBlocks.PINK_WOOL_STAIRS);
+        PinkWoolPool.slab(ColoredBlocks.PINK_WOOL_SLAB);
+        PinkWoolPool.wall(ColoredBlocks.PINK_WOOL_WALL);
 
-        WhiteWoolPool.stairs(ModBlocks.WHITE_WOOL_STAIRS);
-        WhiteWoolPool.slab(ModBlocks.WHITE_WOOL_SLAB);
-        WhiteWoolPool.wall(ModBlocks.WHITE_WOOL_WALL);
-        WhiteWoolPool.pressurePlate(ModBlocks.WHITE_WOOL_PRESSURE_PLATE);
-        WhiteWoolPool.button(ModBlocks.WHITE_WOOL_BUTTON);
+        // Terracotta
+        BlockStateModelGenerator.BlockTexturePool TerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.TERRACOTTA);
+        TerracottaPool.stairs(ColoredBlocks.TERRACOTTA_STAIRS);
+        TerracottaPool.slab(ColoredBlocks.TERRACOTTA_SLAB);
+        TerracottaPool.wall(ColoredBlocks.TERRACOTTA_WALL);
 
-        LightGrayWoolPool.stairs(ModBlocks.LIGHT_GRAY_WOOL_STAIRS);
-        LightGrayWoolPool.slab(ModBlocks.LIGHT_GRAY_WOOL_SLAB);
-        LightGrayWoolPool.wall(ModBlocks.LIGHT_GRAY_WOOL_WALL);
-        LightGrayWoolPool.pressurePlate(ModBlocks.LIGHT_GRAY_WOOL_PRESSURE_PLATE);
-        LightGrayWoolPool.button(ModBlocks.LIGHT_GRAY_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool WhiteTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_TERRACOTTA);
+        WhiteTerracottaPool.stairs(ColoredBlocks.WHITE_TERRACOTTA_STAIRS);
+        WhiteTerracottaPool.slab(ColoredBlocks.WHITE_TERRACOTTA_SLAB);
+        WhiteTerracottaPool.wall(ColoredBlocks.WHITE_TERRACOTTA_WALL);
 
-        GrayWoolPool.stairs(ModBlocks.GRAY_WOOL_STAIRS);
-        GrayWoolPool.slab(ModBlocks.GRAY_WOOL_SLAB);
-        GrayWoolPool.wall(ModBlocks.GRAY_WOOL_WALL);
-        GrayWoolPool.pressurePlate(ModBlocks.GRAY_WOOL_PRESSURE_PLATE);
-        GrayWoolPool.button(ModBlocks.GRAY_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool LightGrayTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_TERRACOTTA);
+        LightGrayTerracottaPool.stairs(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS);
+        LightGrayTerracottaPool.slab(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_SLAB);
+        LightGrayTerracottaPool.wall(ColoredBlocks.LIGHT_GRAY_TERRACOTTA_WALL);
 
-        BlackWoolPool.stairs(ModBlocks.BLACK_WOOL_STAIRS);
-        BlackWoolPool.slab(ModBlocks.BLACK_WOOL_SLAB);
-        BlackWoolPool.wall(ModBlocks.BLACK_WOOL_WALL);
-        BlackWoolPool.pressurePlate(ModBlocks.BLACK_WOOL_PRESSURE_PLATE);
-        BlackWoolPool.button(ModBlocks.BLACK_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool GrayTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_TERRACOTTA);
+        GrayTerracottaPool.stairs(ColoredBlocks.GRAY_TERRACOTTA_STAIRS);
+        GrayTerracottaPool.slab(ColoredBlocks.GRAY_TERRACOTTA_SLAB);
+        GrayTerracottaPool.wall(ColoredBlocks.GRAY_TERRACOTTA_WALL);
 
-        BrownWoolPool.stairs(ModBlocks.BROWN_WOOL_STAIRS);
-        BrownWoolPool.slab(ModBlocks.BROWN_WOOL_SLAB);
-        BrownWoolPool.wall(ModBlocks.BROWN_WOOL_WALL);
-        BrownWoolPool.pressurePlate(ModBlocks.BROWN_WOOL_PRESSURE_PLATE);
-        BrownWoolPool.button(ModBlocks.BROWN_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool BlackTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_TERRACOTTA);
+        BlackTerracottaPool.stairs(ColoredBlocks.BLACK_TERRACOTTA_STAIRS);
+        BlackTerracottaPool.slab(ColoredBlocks.BLACK_TERRACOTTA_SLAB);
+        BlackTerracottaPool.wall(ColoredBlocks.BLACK_TERRACOTTA_WALL);
 
-        RedWoolPool.stairs(ModBlocks.RED_WOOL_STAIRS);
-        RedWoolPool.slab(ModBlocks.RED_WOOL_SLAB);
-        RedWoolPool.wall(ModBlocks.RED_WOOL_WALL);
-        RedWoolPool.pressurePlate(ModBlocks.RED_WOOL_PRESSURE_PLATE);
-        RedWoolPool.button(ModBlocks.RED_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool BrownTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_TERRACOTTA);
+        BrownTerracottaPool.stairs(ColoredBlocks.BROWN_TERRACOTTA_STAIRS);
+        BrownTerracottaPool.slab(ColoredBlocks.BROWN_TERRACOTTA_SLAB);
+        BrownTerracottaPool.wall(ColoredBlocks.BROWN_TERRACOTTA_WALL);
 
-        OrangeWoolPool.stairs(ModBlocks.ORANGE_WOOL_STAIRS);
-        OrangeWoolPool.slab(ModBlocks.ORANGE_WOOL_SLAB);
-        OrangeWoolPool.wall(ModBlocks.ORANGE_WOOL_WALL);
-        OrangeWoolPool.pressurePlate(ModBlocks.ORANGE_WOOL_PRESSURE_PLATE);
-        OrangeWoolPool.button(ModBlocks.ORANGE_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool RedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_TERRACOTTA);
+        RedTerracottaPool.stairs(ColoredBlocks.RED_TERRACOTTA_STAIRS);
+        RedTerracottaPool.slab(ColoredBlocks.RED_TERRACOTTA_SLAB);
+        RedTerracottaPool.wall(ColoredBlocks.RED_TERRACOTTA_WALL);
 
-        YellowWoolPool.stairs(ModBlocks.YELLOW_WOOL_STAIRS);
-        YellowWoolPool.slab(ModBlocks.YELLOW_WOOL_SLAB);
-        YellowWoolPool.wall(ModBlocks.YELLOW_WOOL_WALL);
-        YellowWoolPool.pressurePlate(ModBlocks.YELLOW_WOOL_PRESSURE_PLATE);
-        YellowWoolPool.button(ModBlocks.YELLOW_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool OrangeTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_TERRACOTTA);
+        OrangeTerracottaPool.stairs(ColoredBlocks.ORANGE_TERRACOTTA_STAIRS);
+        OrangeTerracottaPool.slab(ColoredBlocks.ORANGE_TERRACOTTA_SLAB);
+        OrangeTerracottaPool.wall(ColoredBlocks.ORANGE_TERRACOTTA_WALL);
 
-        LimeWoolPool.stairs(ModBlocks.LIME_WOOL_STAIRS);
-        LimeWoolPool.slab(ModBlocks.LIME_WOOL_SLAB);
-        LimeWoolPool.wall(ModBlocks.LIME_WOOL_WALL);
-        LimeWoolPool.pressurePlate(ModBlocks.LIME_WOOL_PRESSURE_PLATE);
-        LimeWoolPool.button(ModBlocks.LIME_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool YellowTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_TERRACOTTA);
+        YellowTerracottaPool.stairs(ColoredBlocks.YELLOW_TERRACOTTA_STAIRS);
+        YellowTerracottaPool.slab(ColoredBlocks.YELLOW_TERRACOTTA_SLAB);
+        YellowTerracottaPool.wall(ColoredBlocks.YELLOW_TERRACOTTA_WALL);
 
-        GreenWoolPool.stairs(ModBlocks.GREEN_WOOL_STAIRS);
-        GreenWoolPool.slab(ModBlocks.GREEN_WOOL_SLAB);
-        GreenWoolPool.wall(ModBlocks.GREEN_WOOL_WALL);
-        GreenWoolPool.pressurePlate(ModBlocks.GREEN_WOOL_PRESSURE_PLATE);
-        GreenWoolPool.button(ModBlocks.GREEN_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool LimeTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_TERRACOTTA);
+        LimeTerracottaPool.stairs(ColoredBlocks.LIME_TERRACOTTA_STAIRS);
+        LimeTerracottaPool.slab(ColoredBlocks.LIME_TERRACOTTA_SLAB);
+        LimeTerracottaPool.wall(ColoredBlocks.LIME_TERRACOTTA_WALL);
 
-        CyanWoolPool.stairs(ModBlocks.CYAN_WOOL_STAIRS);
-        CyanWoolPool.slab(ModBlocks.CYAN_WOOL_SLAB);
-        CyanWoolPool.wall(ModBlocks.CYAN_WOOL_WALL);
-        CyanWoolPool.pressurePlate(ModBlocks.CYAN_WOOL_PRESSURE_PLATE);
-        CyanWoolPool.button(ModBlocks.CYAN_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool GreenTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_TERRACOTTA);
+        GreenTerracottaPool.stairs(ColoredBlocks.GREEN_TERRACOTTA_STAIRS);
+        GreenTerracottaPool.slab(ColoredBlocks.GREEN_TERRACOTTA_SLAB);
+        GreenTerracottaPool.wall(ColoredBlocks.GREEN_TERRACOTTA_WALL);
 
-        LightBlueWoolPool.stairs(ModBlocks.LIGHT_BLUE_WOOL_STAIRS);
-        LightBlueWoolPool.slab(ModBlocks.LIGHT_BLUE_WOOL_SLAB);
-        LightBlueWoolPool.wall(ModBlocks.LIGHT_BLUE_WOOL_WALL);
-        LightBlueWoolPool.pressurePlate(ModBlocks.LIGHT_BLUE_WOOL_PRESSURE_PLATE);
-        LightBlueWoolPool.button(ModBlocks.LIGHT_BLUE_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool CyanTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_TERRACOTTA);
+        CyanTerracottaPool.stairs(ColoredBlocks.CYAN_TERRACOTTA_STAIRS);
+        CyanTerracottaPool.slab(ColoredBlocks.CYAN_TERRACOTTA_SLAB);
+        CyanTerracottaPool.wall(ColoredBlocks.CYAN_TERRACOTTA_WALL);
 
-        BlueWoolPool.stairs(ModBlocks.BLUE_WOOL_STAIRS);
-        BlueWoolPool.slab(ModBlocks.BLUE_WOOL_SLAB);
-        BlueWoolPool.wall(ModBlocks.BLUE_WOOL_WALL);
-        BlueWoolPool.pressurePlate(ModBlocks.BLUE_WOOL_PRESSURE_PLATE);
-        BlueWoolPool.button(ModBlocks.BLUE_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool LightBlueTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_TERRACOTTA);
+        LightBlueTerracottaPool.stairs(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS);
+        LightBlueTerracottaPool.slab(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_SLAB);
+        LightBlueTerracottaPool.wall(ColoredBlocks.LIGHT_BLUE_TERRACOTTA_WALL);
 
-        PurpleWoolPool.stairs(ModBlocks.PURPLE_WOOL_STAIRS);
-        PurpleWoolPool.slab(ModBlocks.PURPLE_WOOL_SLAB);
-        PurpleWoolPool.wall(ModBlocks.PURPLE_WOOL_WALL);
-        PurpleWoolPool.pressurePlate(ModBlocks.PURPLE_WOOL_PRESSURE_PLATE);
-        PurpleWoolPool.button(ModBlocks.PURPLE_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool BlueTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_TERRACOTTA);
+        BlueTerracottaPool.stairs(ColoredBlocks.BLUE_TERRACOTTA_STAIRS);
+        BlueTerracottaPool.slab(ColoredBlocks.BLUE_TERRACOTTA_SLAB);
+        BlueTerracottaPool.wall(ColoredBlocks.BLUE_TERRACOTTA_WALL);
 
-        MagentaWoolPool.stairs(ModBlocks.MAGENTA_WOOL_STAIRS);
-        MagentaWoolPool.slab(ModBlocks.MAGENTA_WOOL_SLAB);
-        MagentaWoolPool.wall(ModBlocks.MAGENTA_WOOL_WALL);
-        MagentaWoolPool.pressurePlate(ModBlocks.MAGENTA_WOOL_PRESSURE_PLATE);
-        MagentaWoolPool.button(ModBlocks.MAGENTA_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool PurpleTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_TERRACOTTA);
+        PurpleTerracottaPool.stairs(ColoredBlocks.PURPLE_TERRACOTTA_STAIRS);
+        PurpleTerracottaPool.slab(ColoredBlocks.PURPLE_TERRACOTTA_SLAB);
+        PurpleTerracottaPool.wall(ColoredBlocks.PURPLE_TERRACOTTA_WALL);
 
-        PinkWoolPool.stairs(ModBlocks.PINK_WOOL_STAIRS);
-        PinkWoolPool.slab(ModBlocks.PINK_WOOL_SLAB);
-        PinkWoolPool.wall(ModBlocks.PINK_WOOL_WALL);
-        PinkWoolPool.pressurePlate(ModBlocks.PINK_WOOL_PRESSURE_PLATE);
-        PinkWoolPool.button(ModBlocks.PINK_WOOL_BUTTON);
+        BlockStateModelGenerator.BlockTexturePool MagentaTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_TERRACOTTA);
+        MagentaTerracottaPool.stairs(ColoredBlocks.MAGENTA_TERRACOTTA_STAIRS);
+        MagentaTerracottaPool.slab(ColoredBlocks.MAGENTA_TERRACOTTA_SLAB);
+        MagentaTerracottaPool.wall(ColoredBlocks.MAGENTA_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PinkTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_TERRACOTTA);
+        PinkTerracottaPool.stairs(ColoredBlocks.PINK_TERRACOTTA_STAIRS);
+        PinkTerracottaPool.slab(ColoredBlocks.PINK_TERRACOTTA_SLAB);
+        PinkTerracottaPool.wall(ColoredBlocks.PINK_TERRACOTTA_WALL);
+
+        // Glazed Terracotta
+        BlockStateModelGenerator.BlockTexturePool WhiteGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_GLAZED_TERRACOTTA);
+        WhiteGlazedTerracottaPool.stairs(ColoredBlocks.WHITE_GLAZED_TERRACOTTA_STAIRS);
+        WhiteGlazedTerracottaPool.slab(ColoredBlocks.WHITE_GLAZED_TERRACOTTA_SLAB);
+        WhiteGlazedTerracottaPool.wall(ColoredBlocks.WHITE_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightGrayGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA);
+        LightGrayGlazedTerracottaPool.stairs(ColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_STAIRS);
+        LightGrayGlazedTerracottaPool.slab(ColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_SLAB);
+        LightGrayGlazedTerracottaPool.wall(ColoredBlocks.LIGHT_GRAY_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GrayGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_GLAZED_TERRACOTTA);
+        GrayGlazedTerracottaPool.stairs(ColoredBlocks.GRAY_GLAZED_TERRACOTTA_STAIRS);
+        GrayGlazedTerracottaPool.slab(ColoredBlocks.GRAY_GLAZED_TERRACOTTA_SLAB);
+        GrayGlazedTerracottaPool.wall(ColoredBlocks.GRAY_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlackGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_GLAZED_TERRACOTTA);
+        BlackGlazedTerracottaPool.stairs(ColoredBlocks.BLACK_GLAZED_TERRACOTTA_STAIRS);
+        BlackGlazedTerracottaPool.slab(ColoredBlocks.BLACK_GLAZED_TERRACOTTA_SLAB);
+        BlackGlazedTerracottaPool.wall(ColoredBlocks.BLACK_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BrownGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_GLAZED_TERRACOTTA);
+        BrownGlazedTerracottaPool.stairs(ColoredBlocks.BROWN_GLAZED_TERRACOTTA_STAIRS);
+        BrownGlazedTerracottaPool.slab(ColoredBlocks.BROWN_GLAZED_TERRACOTTA_SLAB);
+        BrownGlazedTerracottaPool.wall(ColoredBlocks.BROWN_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool RedGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_GLAZED_TERRACOTTA);
+        RedGlazedTerracottaPool.stairs(ColoredBlocks.RED_GLAZED_TERRACOTTA_STAIRS);
+        RedGlazedTerracottaPool.slab(ColoredBlocks.RED_GLAZED_TERRACOTTA_SLAB);
+        RedGlazedTerracottaPool.wall(ColoredBlocks.RED_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool OrangeGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_GLAZED_TERRACOTTA);
+        OrangeGlazedTerracottaPool.stairs(ColoredBlocks.ORANGE_GLAZED_TERRACOTTA_STAIRS);
+        OrangeGlazedTerracottaPool.slab(ColoredBlocks.ORANGE_GLAZED_TERRACOTTA_SLAB);
+        OrangeGlazedTerracottaPool.wall(ColoredBlocks.ORANGE_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool YellowGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_GLAZED_TERRACOTTA);
+        YellowGlazedTerracottaPool.stairs(ColoredBlocks.YELLOW_GLAZED_TERRACOTTA_STAIRS);
+        YellowGlazedTerracottaPool.slab(ColoredBlocks.YELLOW_GLAZED_TERRACOTTA_SLAB);
+        YellowGlazedTerracottaPool.wall(ColoredBlocks.YELLOW_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LimeGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_GLAZED_TERRACOTTA);
+        LimeGlazedTerracottaPool.stairs(ColoredBlocks.LIME_GLAZED_TERRACOTTA_STAIRS);
+        LimeGlazedTerracottaPool.slab(ColoredBlocks.LIME_GLAZED_TERRACOTTA_SLAB);
+        LimeGlazedTerracottaPool.wall(ColoredBlocks.LIME_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GreenGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_GLAZED_TERRACOTTA);
+        GreenGlazedTerracottaPool.stairs(ColoredBlocks.GREEN_GLAZED_TERRACOTTA_STAIRS);
+        GreenGlazedTerracottaPool.slab(ColoredBlocks.GREEN_GLAZED_TERRACOTTA_SLAB);
+        GreenGlazedTerracottaPool.wall(ColoredBlocks.GREEN_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CyanGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_GLAZED_TERRACOTTA);
+        CyanGlazedTerracottaPool.stairs(ColoredBlocks.CYAN_GLAZED_TERRACOTTA_STAIRS);
+        CyanGlazedTerracottaPool.slab(ColoredBlocks.CYAN_GLAZED_TERRACOTTA_SLAB);
+        CyanGlazedTerracottaPool.wall(ColoredBlocks.CYAN_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightBlueGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA);
+        LightBlueGlazedTerracottaPool.stairs(ColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_STAIRS);
+        LightBlueGlazedTerracottaPool.slab(ColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_SLAB);
+        LightBlueGlazedTerracottaPool.wall(ColoredBlocks.LIGHT_BLUE_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlueGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_GLAZED_TERRACOTTA);
+        BlueGlazedTerracottaPool.stairs(ColoredBlocks.BLUE_GLAZED_TERRACOTTA_STAIRS);
+        BlueGlazedTerracottaPool.slab(ColoredBlocks.BLUE_GLAZED_TERRACOTTA_SLAB);
+        BlueGlazedTerracottaPool.wall(ColoredBlocks.BLUE_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PurpleGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_GLAZED_TERRACOTTA);
+        PurpleGlazedTerracottaPool.stairs(ColoredBlocks.PURPLE_GLAZED_TERRACOTTA_STAIRS);
+        PurpleGlazedTerracottaPool.slab(ColoredBlocks.PURPLE_GLAZED_TERRACOTTA_SLAB);
+        PurpleGlazedTerracottaPool.wall(ColoredBlocks.PURPLE_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool MagentaGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_GLAZED_TERRACOTTA);
+        MagentaGlazedTerracottaPool.stairs(ColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_STAIRS);
+        MagentaGlazedTerracottaPool.slab(ColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_SLAB);
+        MagentaGlazedTerracottaPool.wall(ColoredBlocks.MAGENTA_GLAZED_TERRACOTTA_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PinkGlazedTerracottaPool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_GLAZED_TERRACOTTA);
+        PinkGlazedTerracottaPool.stairs(ColoredBlocks.PINK_GLAZED_TERRACOTTA_STAIRS);
+        PinkGlazedTerracottaPool.slab(ColoredBlocks.PINK_GLAZED_TERRACOTTA_SLAB);
+        PinkGlazedTerracottaPool.wall(ColoredBlocks.PINK_GLAZED_TERRACOTTA_WALL);
+
+        // Concrete
+        BlockStateModelGenerator.BlockTexturePool WhiteConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.WHITE_CONCRETE);
+        WhiteConcretePool.stairs(ColoredBlocks.WHITE_CONCRETE_STAIRS);
+        WhiteConcretePool.slab(ColoredBlocks.WHITE_CONCRETE_SLAB);
+        WhiteConcretePool.wall(ColoredBlocks.WHITE_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightGrayConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_GRAY_CONCRETE);
+        LightGrayConcretePool.stairs(ColoredBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
+        LightGrayConcretePool.slab(ColoredBlocks.LIGHT_GRAY_CONCRETE_SLAB);
+        LightGrayConcretePool.wall(ColoredBlocks.LIGHT_GRAY_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GrayConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GRAY_CONCRETE);
+        GrayConcretePool.stairs(ColoredBlocks.GRAY_CONCRETE_STAIRS);
+        GrayConcretePool.slab(ColoredBlocks.GRAY_CONCRETE_SLAB);
+        GrayConcretePool.wall(ColoredBlocks.GRAY_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlackConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLACK_CONCRETE);
+        BlackConcretePool.stairs(ColoredBlocks.BLACK_CONCRETE_STAIRS);
+        BlackConcretePool.slab(ColoredBlocks.BLACK_CONCRETE_SLAB);
+        BlackConcretePool.wall(ColoredBlocks.BLACK_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BrownConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BROWN_CONCRETE);
+        BrownConcretePool.stairs(ColoredBlocks.BROWN_CONCRETE_STAIRS);
+        BrownConcretePool.slab(ColoredBlocks.BROWN_CONCRETE_SLAB);
+        BrownConcretePool.wall(ColoredBlocks.BROWN_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool RedConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.RED_CONCRETE);
+        RedConcretePool.stairs(ColoredBlocks.RED_CONCRETE_STAIRS);
+        RedConcretePool.slab(ColoredBlocks.RED_CONCRETE_SLAB);
+        RedConcretePool.wall(ColoredBlocks.RED_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool OrangeConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.ORANGE_CONCRETE);
+        OrangeConcretePool.stairs(ColoredBlocks.ORANGE_CONCRETE_STAIRS);
+        OrangeConcretePool.slab(ColoredBlocks.ORANGE_CONCRETE_SLAB);
+        OrangeConcretePool.wall(ColoredBlocks.ORANGE_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool YellowConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.YELLOW_CONCRETE);
+        YellowConcretePool.stairs(ColoredBlocks.YELLOW_CONCRETE_STAIRS);
+        YellowConcretePool.slab(ColoredBlocks.YELLOW_CONCRETE_SLAB);
+        YellowConcretePool.wall(ColoredBlocks.YELLOW_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LimeConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIME_CONCRETE);
+        LimeConcretePool.stairs(ColoredBlocks.LIME_CONCRETE_STAIRS);
+        LimeConcretePool.slab(ColoredBlocks.LIME_CONCRETE_SLAB);
+        LimeConcretePool.wall(ColoredBlocks.LIME_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GreenConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.GREEN_CONCRETE);
+        GreenConcretePool.stairs(ColoredBlocks.GREEN_CONCRETE_STAIRS);
+        GreenConcretePool.slab(ColoredBlocks.GREEN_CONCRETE_SLAB);
+        GreenConcretePool.wall(ColoredBlocks.GREEN_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CyanConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.CYAN_CONCRETE);
+        CyanConcretePool.stairs(ColoredBlocks.CYAN_CONCRETE_STAIRS);
+        CyanConcretePool.slab(ColoredBlocks.CYAN_CONCRETE_SLAB);
+        CyanConcretePool.wall(ColoredBlocks.CYAN_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightBlueConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.LIGHT_BLUE_CONCRETE);
+        LightBlueConcretePool.stairs(ColoredBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
+        LightBlueConcretePool.slab(ColoredBlocks.LIGHT_BLUE_CONCRETE_SLAB);
+        LightBlueConcretePool.wall(ColoredBlocks.LIGHT_BLUE_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlueConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.BLUE_CONCRETE);
+        BlueConcretePool.stairs(ColoredBlocks.BLUE_CONCRETE_STAIRS);
+        BlueConcretePool.slab(ColoredBlocks.BLUE_CONCRETE_SLAB);
+        BlueConcretePool.wall(ColoredBlocks.BLUE_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PurpleConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PURPLE_CONCRETE);
+        PurpleConcretePool.stairs(ColoredBlocks.PURPLE_CONCRETE_STAIRS);
+        PurpleConcretePool.slab(ColoredBlocks.PURPLE_CONCRETE_SLAB);
+        PurpleConcretePool.wall(ColoredBlocks.PURPLE_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool MagentaConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.MAGENTA_CONCRETE);
+        MagentaConcretePool.stairs(ColoredBlocks.MAGENTA_CONCRETE_STAIRS);
+        MagentaConcretePool.slab(ColoredBlocks.MAGENTA_CONCRETE_SLAB);
+        MagentaConcretePool.wall(ColoredBlocks.MAGENTA_CONCRETE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PinkConcretePool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PINK_CONCRETE);
+        PinkConcretePool.stairs(ColoredBlocks.PINK_CONCRETE_STAIRS);
+        PinkConcretePool.slab(ColoredBlocks.PINK_CONCRETE_SLAB);
+        PinkConcretePool.wall(ColoredBlocks.PINK_CONCRETE_WALL);
+
+        // Concrete Tiles
+        BlockStateModelGenerator.BlockTexturePool WhiteConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.WHITE_CONCRETE_TILES);
+        WhiteConcreteTilePool.stairs(ColoredBlocks.WHITE_CONCRETE_TILE_STAIRS);
+        WhiteConcreteTilePool.slab(ColoredBlocks.WHITE_CONCRETE_TILE_SLAB);
+        WhiteConcreteTilePool.wall(ColoredBlocks.WHITE_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightGrayConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILES);
+        LightGrayConcreteTilePool.stairs(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_STAIRS);
+        LightGrayConcreteTilePool.slab(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_SLAB);
+        LightGrayConcreteTilePool.wall(ColoredBlocks.LIGHT_GRAY_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GrayConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.GRAY_CONCRETE_TILES);
+        GrayConcreteTilePool.stairs(ColoredBlocks.GRAY_CONCRETE_TILE_STAIRS);
+        GrayConcreteTilePool.slab(ColoredBlocks.GRAY_CONCRETE_TILE_SLAB);
+        GrayConcreteTilePool.wall(ColoredBlocks.GRAY_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlackConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.BLACK_CONCRETE_TILES);
+        BlackConcreteTilePool.stairs(ColoredBlocks.BLACK_CONCRETE_TILE_STAIRS);
+        BlackConcreteTilePool.slab(ColoredBlocks.BLACK_CONCRETE_TILE_SLAB);
+        BlackConcreteTilePool.wall(ColoredBlocks.BLACK_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BrownConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.BROWN_CONCRETE_TILES);
+        BrownConcreteTilePool.stairs(ColoredBlocks.BROWN_CONCRETE_TILE_STAIRS);
+        BrownConcreteTilePool.slab(ColoredBlocks.BROWN_CONCRETE_TILE_SLAB);
+        BrownConcreteTilePool.wall(ColoredBlocks.BROWN_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool RedConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.RED_CONCRETE_TILES);
+        RedConcreteTilePool.stairs(ColoredBlocks.RED_CONCRETE_TILE_STAIRS);
+        RedConcreteTilePool.slab(ColoredBlocks.RED_CONCRETE_TILE_SLAB);
+        RedConcreteTilePool.wall(ColoredBlocks.RED_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool OrangeConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.ORANGE_CONCRETE_TILES);
+        OrangeConcreteTilePool.stairs(ColoredBlocks.ORANGE_CONCRETE_TILE_STAIRS);
+        OrangeConcreteTilePool.slab(ColoredBlocks.ORANGE_CONCRETE_TILE_SLAB);
+        OrangeConcreteTilePool.wall(ColoredBlocks.ORANGE_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool YellowConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.YELLOW_CONCRETE_TILES);
+        YellowConcreteTilePool.stairs(ColoredBlocks.YELLOW_CONCRETE_TILE_STAIRS);
+        YellowConcreteTilePool.slab(ColoredBlocks.YELLOW_CONCRETE_TILE_SLAB);
+        YellowConcreteTilePool.wall(ColoredBlocks.YELLOW_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LimeConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.LIME_CONCRETE_TILES);
+        LimeConcreteTilePool.stairs(ColoredBlocks.LIME_CONCRETE_TILE_STAIRS);
+        LimeConcreteTilePool.slab(ColoredBlocks.LIME_CONCRETE_TILE_SLAB);
+        LimeConcreteTilePool.wall(ColoredBlocks.LIME_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool GreenConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.GREEN_CONCRETE_TILES);
+        GreenConcreteTilePool.stairs(ColoredBlocks.GREEN_CONCRETE_TILE_STAIRS);
+        GreenConcreteTilePool.slab(ColoredBlocks.GREEN_CONCRETE_TILE_SLAB);
+        GreenConcreteTilePool.wall(ColoredBlocks.GREEN_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool CyanConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.CYAN_CONCRETE_TILES);
+        CyanConcreteTilePool.stairs(ColoredBlocks.CYAN_CONCRETE_TILE_STAIRS);
+        CyanConcreteTilePool.slab(ColoredBlocks.CYAN_CONCRETE_TILE_SLAB);
+        CyanConcreteTilePool.wall(ColoredBlocks.CYAN_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool LightBlueConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILES);
+        LightBlueConcreteTilePool.stairs(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_STAIRS);
+        LightBlueConcreteTilePool.slab(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_SLAB);
+        LightBlueConcreteTilePool.wall(ColoredBlocks.LIGHT_BLUE_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool BlueConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.BLUE_CONCRETE_TILES);
+        BlueConcreteTilePool.stairs(ColoredBlocks.BLUE_CONCRETE_TILE_STAIRS);
+        BlueConcreteTilePool.slab(ColoredBlocks.BLUE_CONCRETE_TILE_SLAB);
+        BlueConcreteTilePool.wall(ColoredBlocks.BLUE_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PurpleConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.PURPLE_CONCRETE_TILES);
+        PurpleConcreteTilePool.stairs(ColoredBlocks.PURPLE_CONCRETE_TILE_STAIRS);
+        PurpleConcreteTilePool.slab(ColoredBlocks.PURPLE_CONCRETE_TILE_SLAB);
+        PurpleConcreteTilePool.wall(ColoredBlocks.PURPLE_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool MagentaConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.MAGENTA_CONCRETE_TILES);
+        MagentaConcreteTilePool.stairs(ColoredBlocks.MAGENTA_CONCRETE_TILE_STAIRS);
+        MagentaConcreteTilePool.slab(ColoredBlocks.MAGENTA_CONCRETE_TILE_SLAB);
+        MagentaConcreteTilePool.wall(ColoredBlocks.MAGENTA_CONCRETE_TILE_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool PinkConcreteTilePool = blockStateModelGenerator.registerCubeAllModelTexturePool(ColoredBlocks.PINK_CONCRETE_TILES);
+        PinkConcreteTilePool.stairs(ColoredBlocks.PINK_CONCRETE_TILE_STAIRS);
+        PinkConcreteTilePool.slab(ColoredBlocks.PINK_CONCRETE_TILE_SLAB);
+        PinkConcreteTilePool.wall(ColoredBlocks.PINK_CONCRETE_TILE_WALL);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ColoredBlocks.MESH_GLASS);
     }
 
     @Override

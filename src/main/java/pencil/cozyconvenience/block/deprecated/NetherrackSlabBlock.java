@@ -1,4 +1,4 @@
-package pencil.cozyconvenience.block.custom;
+package pencil.cozyconvenience.block.deprecated;
 
 import net.minecraft.block.*;
 import net.minecraft.block.enums.SlabType;
@@ -8,7 +8,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
-import pencil.cozyconvenience.block.ModBlocks;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 public class NetherrackSlabBlock extends SlabBlock implements Fertilizable {
 
@@ -47,10 +47,10 @@ public class NetherrackSlabBlock extends SlabBlock implements Fertilizable {
 
         for (BlockPos blockPos : BlockPos.iterate(pos.add(-1, -1, -1), pos.add(1, 1, 1))) {
             BlockState blockState = world.getBlockState(blockPos);
-            if (blockState.isOf(Blocks.WARPED_NYLIUM) || blockState.isOf(ModBlocks.WARPED_NYLIUM_SLAB)) {
+            if (blockState.isOf(Blocks.WARPED_NYLIUM) || blockState.isOf(NaturalBlocks.WARPED_NYLIUM_SLAB)) {
                 isWarpedNearby = true;
             }
-            if (blockState.isOf(Blocks.CRIMSON_NYLIUM) || blockState.isOf(ModBlocks.CRIMSON_NYLIUM_SLAB)) {
+            if (blockState.isOf(Blocks.CRIMSON_NYLIUM) || blockState.isOf(NaturalBlocks.CRIMSON_NYLIUM_SLAB)) {
                 isCrimsonNearby = true;
             }
             if (isWarpedNearby && isCrimsonNearby) {
@@ -63,14 +63,14 @@ public class NetherrackSlabBlock extends SlabBlock implements Fertilizable {
 
         if (isWarpedNearby && isCrimsonNearby) {
             world.setBlockState(pos, (random.nextBoolean()
-                    ? ModBlocks.WARPED_NYLIUM_SLAB.getDefaultState()
-                    : ModBlocks.CRIMSON_NYLIUM_SLAB.getDefaultState())
+                    ? NaturalBlocks.WARPED_NYLIUM_SLAB.getDefaultState()
+                    : NaturalBlocks.CRIMSON_NYLIUM_SLAB.getDefaultState())
                     .with(TYPE, slabType), Block.NOTIFY_ALL);
         } else if (isWarpedNearby) {
-            world.setBlockState(pos, ModBlocks.WARPED_NYLIUM_SLAB.getDefaultState()
+            world.setBlockState(pos, NaturalBlocks.WARPED_NYLIUM_SLAB.getDefaultState()
                     .with(TYPE, slabType), Block.NOTIFY_ALL);
         } else if (isCrimsonNearby) {
-            world.setBlockState(pos, ModBlocks.CRIMSON_NYLIUM_SLAB.getDefaultState()
+            world.setBlockState(pos, NaturalBlocks.CRIMSON_NYLIUM_SLAB.getDefaultState()
                     .with(TYPE, slabType), Block.NOTIFY_ALL);
         }
     }

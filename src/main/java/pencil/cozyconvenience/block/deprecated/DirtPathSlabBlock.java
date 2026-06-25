@@ -1,15 +1,12 @@
-package pencil.cozyconvenience.block.custom;
+package pencil.cozyconvenience.block.deprecated;
 
 import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.util.math.Direction;
-import pencil.cozyconvenience.block.ModBlocks;
-
-import static net.minecraft.block.SlabBlock.TYPE;
+import pencil.cozyconvenience.block.NaturalBlocks;
 
 public class DirtPathSlabBlock extends SlabBlock {
 
@@ -35,7 +32,7 @@ public class DirtPathSlabBlock extends SlabBlock {
             BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 
         if (direction == Direction.UP && neighborState.isSideSolidFullSquare(world, neighborPos, Direction.DOWN)) {
-            return ModBlocks.DIRT_SLAB.getDefaultState().with(TYPE, state.get(TYPE));
+            return NaturalBlocks.DIRT_SLAB.getDefaultState().with(TYPE, state.get(TYPE));
         }
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
